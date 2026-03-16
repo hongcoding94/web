@@ -1,0 +1,27 @@
+<article>
+    <h2>Tiles 기반 정적 블로그 만들기</h2>
+    <div class="meta">2026.03.16 · Frontend · JavaScript</div>
+
+    <p>
+        이 글은 HTML, CSS, JavaScript(ES6) 기반으로
+        타일즈 레이아웃을 구성하는 방법을 설명합니다.
+    </p>
+
+    <blockquote>
+        레이아웃 분리는 유지보수의 시작이다.
+    </blockquote>
+
+    <pre>
+        <code>
+            const loadTile = async (id, url) => {
+                const res = await fetch(url);
+                document.getElementById(id).innerHTML = await res.text();
+            };
+        </code>
+    </pre>
+
+    <p>
+        위와 같은 구조를 사용하면 SPA 이전 단계에서도
+        충분히 유지보수가 가능한 구조를 만들 수 있습니다.
+    </p>
+</article>
