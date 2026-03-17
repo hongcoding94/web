@@ -6,7 +6,10 @@ const changePage = async (page) => {
     };
 
     const file = map[page];
-    if (!file) return;
+    if (!file) {
+        console.warn("Unknown page:", page);
+        return;
+    }
 
     await loadTile("content", file);
 };
@@ -19,5 +22,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     initHeader();
     initSidebar();
 
-    changePage("home");
+    changePage("index");
 });

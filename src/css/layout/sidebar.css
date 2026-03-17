@@ -1,0 +1,122 @@
+/* ===============================
+   기본 사이드바 리스트 리셋
+================================ */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* marker(점) 제거 */
+.menu-group::marker,
+.menu-item::marker,
+.menu-node::marker {
+    content: "";
+}
+
+/* ===============================
+   공통 메뉴 스타일
+================================ */
+.menu-item,
+.menu-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 12px;
+    cursor: pointer;
+    user-select: none;
+
+    color: #a35858;
+    border-radius: 6px;
+}
+
+/* 다크모드 */
+body.dark .menu-item,
+body.dark .menu-label {
+    color: #eaeaea;
+}
+
+/* hover 효과 */
+.menu-item:hover,
+.menu-label:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===============================
+   폴더(Depth) 구조
+================================ */
+.menu-node {
+    position: relative;
+}
+
+/* submenu 기본 상태 */
+.submenu {
+    display: none;
+    margin-left: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 열렸을 때 */
+.submenu.open {
+    display: block;
+}
+
+/* ===============================
+   Depth 시각적 계층 표현
+   (오른쪽 이동 ❌, 톤/폰트로 표현)
+================================ */
+
+/* 1 Depth */
+.menu-node[data-depth="1"] > .menu-label {
+    font-weight: 600;
+}
+
+/* 2 Depth */
+.menu-node[data-depth="2"] > .menu-label {
+    opacity: 0.9;
+}
+
+/* 3 Depth */
+.menu-node[data-depth="3"] > .menu-label {
+    opacity: 0.85;
+    font-size: 13px;
+}
+
+/* 4 Depth */
+.menu-node[data-depth="4"] > .menu-label {
+    opacity: 0.75;
+    font-size: 12.5px;
+}
+
+/* ===============================
+   토글 아이콘 정렬 고정
+================================ */
+.toggle-icon {
+    width: 16px;
+    text-align: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* ===============================
+   열려있는 폴더 강조
+================================ */
+.menu-node.open > .menu-label {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   페이지 메뉴 (leaf 노드)
+================================ */
+.menu-item {
+    padding-left: 34px; /* 폴더 아이콘 공간만큼만 */
+}
+
+/* ===============================
+   사이드바 안정화
+================================ */
+.sidebar {
+    overflow-x: hidden; /* depth 증가 시 밀림 방지 */
+}
