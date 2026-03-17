@@ -1,6 +1,6 @@
-/* =====================
+/*
    Theme Variables
-===================== */
+*/
 :root {
     --bg-main: #f8f9fa;
     --bg-card: #ffffff;
@@ -22,9 +22,9 @@ body.dark {
     --code-bg: #020617;
 }
 
-/* =====================
+/*
    Reset & Base
-===================== */
+*/
 * {
     margin: 0;
     padding: 0;
@@ -43,9 +43,9 @@ body {
     line-height: 1.7;
 }
 
-/* =====================
+/*
    Header
-===================== */
+*/
 .header {
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
@@ -61,9 +61,9 @@ body {
     color: var(--text-main);
 }
 
-/* =====================
+/*
    Dark Mode Toggle
-===================== */
+*/
 .theme-toggle {
     position: relative;
     top: -5px;
@@ -116,9 +116,9 @@ body {
     content: "🌙";
 }
 
-/* =====================
+/*
    Layout
-===================== */
+*/
 .container {
     display: flex;
     max-width: 1200px;
@@ -127,9 +127,9 @@ body {
     padding: 0 20px;
 }
 
-/* =====================
+/*
    Sidebar
-===================== */
+*/
 .sidebar {
     width: 260px;
     background: var(--bg-card);
@@ -143,6 +143,11 @@ body {
 /* Sidebar Menu */
 .sidebar-menu {
     list-style: none;
+    /*
+        padding: 10 10 10 10px;
+        background-color: #20a161;
+        border-radius: 14px;
+    */
 }
 
 /* 1Depth Item */
@@ -168,6 +173,10 @@ body {
 
 body.dark .menu-title {
     color: #eaeaea;
+}
+
+body.dark .menu-title:hover {
+    background: rgba(221, 34, 34, 0.781);
 }
 
 .menu-title:hover {
@@ -205,9 +214,9 @@ body.dark .menu-depth {
     opacity: 1;
 }
 
-/* =====================
+/*
    Content
-===================== */
+*/
 .content {
     flex: 1;
 }
@@ -265,9 +274,9 @@ body.dark .menu-depth {
     font-style: italic;
 }
 
-/* =====================
+/*
    Footer
-===================== */
+*/
 .footer {
     margin-top: 60px;
     padding: 30px;
@@ -276,9 +285,9 @@ body.dark .menu-depth {
     color: var(--text-sub);
 }
 
-/* =====================
+/*
    Responsive
-===================== */
+*/
 @media (max-width: 900px) {
     .container {
         flex-direction: column;

@@ -1,13 +1,13 @@
 window.initSidebar = () => {
     const sidebar = document.querySelector(".sidebar-menu");
-    if (!sidebar) return; // ⭐ 핵심: 방어 코드
+    if (!sidebar) return;
 
     sidebar.addEventListener("click", (e) => {
 
         const title = e.target.closest(".menu-title");
         const item  = e.target.closest(".menu-item");
 
-        /** ✅ 폴더(Depth 토글) */
+        /** 폴더(Depth 토글) */
         if (title) {
             e.stopPropagation();
 
@@ -26,7 +26,7 @@ window.initSidebar = () => {
             return;
         }
 
-        /** ✅ 페이지 이동 */
+        /** 페이지 이동 */
         if (item) {
             e.stopPropagation();
 

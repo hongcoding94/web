@@ -1,122 +1,155 @@
-/* ===============================
-   기본 사이드바 리스트 리셋
-================================ */
+/* 
+   Sidebar Container
+*/
+.sidebar {
+    width: 260px;
+    background: #bbd3ec;
+    padding: 12px;
+    box-shadow: inset -1px 0 0 rgba(0,0,0,0.08);
+    overflow-x: hidden; /* depth 증가 시 밀림 방지 */
+}
+
+/* 
+   기본 리스트 리셋
+*/
 .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* marker(점) 제거 */
+/* marker 제거 */
+.menu-title::marker,
 .menu-group::marker,
-.menu-item::marker,
-.menu-node::marker {
+.menu-item::marker {
     content: "";
 }
 
-/* ===============================
-   공통 메뉴 스타일
-================================ */
+/* 
+   공통 메뉴 스타일 (모양 통일)
+*/
 .menu-item,
-.menu-label {
+.menu-title { /* HTML 구조에 맞춰 menu-title 사용 */
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 
-    padding: 10px 12px;
+    padding: 10px 14px;
     cursor: pointer;
     user-select: none;
 
-    color: #a35858;
-    border-radius: 6px;
+    color: #243447;
+    border-radius: 8px; /* 전 Depth 동일 */
+
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* 다크모드 */
+/* 
+   hover 효과 (화이트 모드 개선)
+*/
+.menu-item:hover,
+.menu-title:hover {
+    background: rgba(36, 52, 71, 0.12); /* 배경보다 진하게 */
+    color: #111827;
+}
+
+/* 
+   다크모드
+*/
+body.dark .sidebar {
+    background: linear-gradient(180deg, #1f1f1f, #181818);
+}
+
 body.dark .menu-item,
-body.dark .menu-label {
+body.dark .menu-title {
     color: #eaeaea;
 }
 
-/* hover 효과 */
-.menu-item:hover,
-.menu-label:hover {
-    background: rgba(255, 255, 255, 0.06);
+body.dark .menu-item:hover,
+body.dark .menu-title:hover {
+    background: rgba(255,255,255,0.1);
 }
 
-/* ===============================
-   폴더(Depth) 구조
-================================ */
-.menu-node {
+/* 
+   Depth 구조 (오른쪽 이동 최소화)
+*/
+.menu-group {
     position: relative;
 }
 
-/* submenu 기본 상태 */
+/* submenu */
 .submenu {
     display: none;
-    margin-left: 8px;
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    padding-left: 8px;
+    border-left: none;
 }
 
-/* 열렸을 때 */
 .submenu.open {
     display: block;
 }
 
-/* ===============================
-   Depth 시각적 계층 표현
-   (오른쪽 이동 ❌, 톤/폰트로 표현)
-================================ */
+body.dark .submenu {
+    border-left-color: none;
+}
 
-/* 1 Depth */
-.menu-node[data-depth="1"] > .menu-label {
+/* 
+   Depth 단계 표현 (톤으로만 구분)
+*/
+.menu-group[data-depth="1"] > .menu-title {
     font-weight: 600;
 }
 
-/* 2 Depth */
-.menu-node[data-depth="2"] > .menu-label {
-    opacity: 0.9;
+.menu-group[data-depth="2"] > .menu-title {
+    opacity: 0.95;
 }
 
-/* 3 Depth */
-.menu-node[data-depth="3"] > .menu-label {
-    opacity: 0.85;
+.menu-group[data-depth="3"] > .menu-title {
+    opacity: 0.9;
     font-size: 13px;
 }
 
-/* 4 Depth */
-.menu-node[data-depth="4"] > .menu-label {
-    opacity: 0.75;
+.menu-group[data-depth="4"] > .menu-title {
+    opacity: 0.85;
     font-size: 12.5px;
 }
 
-/* ===============================
-   토글 아이콘 정렬 고정
-================================ */
+/* 
+   Toggle Icon
+*/
 .toggle-icon {
     width: 16px;
     text-align: center;
     font-weight: bold;
-    flex-shrink: 0;
     opacity: 0.8;
 }
 
-/* ===============================
-   열려있는 폴더 강조
-================================ */
-.menu-node.open > .menu-label {
-    background: rgba(255, 255, 255, 0.08);
+/* 
+   열려있는 폴더 강조 (hover와 동일 계열)
+*/
+.menu-group.open > .menu-title {
+    background: rgba(36, 52, 71, 0.18);
+    box-shadow: inset 3px 0 0 #3b82f6; /* depth 강조 */
 }
 
-/* ===============================
-   페이지 메뉴 (leaf 노드)
-================================ */
+body.dark .menu-group.open > .menu-title {
+    background: rgba(255,255,255,0.12);
+}
+
+/* 
+   Leaf 메뉴 (페이지)
+*/
 .menu-item {
-    padding-left: 34px; /* 폴더 아이콘 공간만큼만 */
+    padding-left: 34px; /* 폴더 아이콘 공간 */
+    font-size: 13px;
+    color: #374151;
 }
 
-/* ===============================
-   사이드바 안정화
-================================ */
-.sidebar {
-    overflow-x: hidden; /* depth 증가 시 밀림 방지 */
+.menu-item.active {
+    background: rgba(59,130,246,0.25);
+    box-shadow: inset 3px 0 0 #3b82f6;
+    font-weight: 600;
+}
+
+body.dark .menu-item.active {
+    background: rgba(77,163,255,0.2);
 }
