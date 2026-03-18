@@ -23,7 +23,6 @@
 			 - (content_코드영역) 코드 번호와 코드라인 틀어짐 수정
              - common.js 경로 변경 ./common/common.css => ./layout/common.css
              - 태크 목차 css 깨짐으로 인해 수정
-             - content영역 max-width (1200px -> 80vw) 수정
 
 			추가
 			 - content영역 오른쪽 목차 클릭 시 해당 분류로 이동
