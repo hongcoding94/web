@@ -297,3 +297,44 @@ body.dark .menu-depth {
         width: 100%;
     }
 }
+
+/* ===============================
+   TOC (우측 목차)
+================================ */
+#toc {
+    width: 220px;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    font-size: 14px;
+    display: none; /* 기본 숨김 */
+}
+
+#toc a {
+    display: block;
+    padding: 6px 8px;
+    color: var(--text-sub);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+#toc a:hover {
+    background: rgba(99,102,241,0.1);
+    color: var(--text-main);
+}
+
+/* depth */
+.toc-c1 { font-weight: 700; }
+.toc-c2 { padding-left: 10px; }
+.toc-c3 { padding-left: 20px; font-size: 13px; }
+
+@media (max-width: 1200px) {
+    #toc {
+        display: none !important;
+    }
+}

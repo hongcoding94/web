@@ -13,7 +13,7 @@
     background: #0f172a;
     border-radius: 12px;
     margin: 24px 0;
-    width: 70vw;
+    width: 55vw;
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(0,0,0,0.2);
     font-family: "Fira Code", monospace;
@@ -62,7 +62,6 @@
 .code-body {
     display: flex;
     overflow-x: auto;
-    max-height: none;
 }
 
 /* 길면 스크롤 */
@@ -75,21 +74,26 @@
    Line Numbers
 */
 .line-numbers {
-    padding: 16px 8px;
-    background: #020617;
-    color: #64748b;
     text-align: right;
+    padding: 16px 10px;
+    color: #6b7280;
     user-select: none;
 }
 
-/*
-   Code
-*/
-.code-body code {
-    display: block;
+.code-lines {
     padding: 16px;
-    color: #e5e7eb;
-    line-height: 1.6;
     white-space: pre;
-    min-width: 100%;
+}
+
+.line-number,
+.code-line {
+    line-height: 1.6;
+    font-family: "Fira Code", monospace;
+}
+
+body .line-number,
+.code-line {
+    color: aliceblue;
+    line-height: 1.6;
+    font-family: "Fira Code", monospace;
 }
