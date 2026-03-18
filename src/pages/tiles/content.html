@@ -85,39 +85,40 @@ public class HelloWorld {
            <h3 class="c3">Code Block 테스트</h3>
         <div class="code-block">
         <div class="code-header">
-            <span class="language">Java</span>
+            <span class="language">XML</span>
             <button class="copy-btn">Copy</button>
         </div>
 
         <div class="code-body">
             <code>
-public class HelloWorld {
+<quartz>
+	<jobs>
+		<!-- Test1 Job  -->
+		<job>
+			<job-id>Test1Job</job-id>
+			<job-class>web.jobs.Test1Job</job-class>
+			<schedule-type>cron</schedule-type>
+			<schedule-info>*/1 * * * * ?</schedule-info>
+		</job>
+		
+		<!-- Test2 Job -->
+		<job>
+			<job-id>Test2Job</job-id>
+			<job-class>web.jobs.Test2Job</job-class>
+			<schedule-type>cron</schedule-type>
+			<schedule-info>*/10 * * * * ?</schedule-info>
+		</job>
+		
+		<!-- Test3 Job -->
+		<job>
+			<job-id>Test3Job</job-id>
+			<job-class>web.jobs.Test3Job</job-class>
+			<schedule-type>cron</schedule-type>
+			<schedule-info>*/* 1 * * * ?</schedule-info>
+		</job>
 
-    public static void main(String[] args) {
-
-        System.out.println("Hello World 1");
-        System.out.println("Hello World 2");
-        System.out.println("Hello World 3");
-        System.out.println("Hello World 4");
-        System.out.println("Hello World 5");
-        System.out.println("Hello World 6");
-        System.out.println("Hello World 7");
-        System.out.println("Hello World 8");
-        System.out.println("Hello World 9");
-        System.out.println("Hello World 10");
-        System.out.println("Hello World 11");
-        System.out.println("Hello World 12");
-        System.out.println("Hello World 13");
-        System.out.println("Hello World 14");
-        System.out.println("Hello World 15");
-        System.out.println("Hello World 16");
-        System.out.println("Hello World 17");
-        System.out.println("Hello World 18");
-        System.out.println("Hello World 19");
-        System.out.println("Hello World 20");
-
-    }
-}
+	</jobs>
+</quartz>
             </code>
         </div>
     </div>

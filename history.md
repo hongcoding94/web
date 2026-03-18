@@ -1,4 +1,4 @@
-13:51 2026-03-16
+00:00 2026-03-16
             수정
              - 디렉토리 구조 수정
             
@@ -6,9 +6,9 @@
              - github 특성 root index에서 현재 디렉토리 main 페이지로 이동 경로 처리
 
             삭제
-             - 불필요한 파일 삭제
+             - 불필요한 디렉토리 및 파일 삭제
 
-13:51 2026-03-17
+00:00 2026-03-17
             수정
              - sidebat maker 제거 및 Depth구조 수정
 
@@ -19,17 +19,19 @@
 
 
 13:51 2026-03-18
-			 수정
-			  - (content_코드영역) 코드 번호와 코드라인 틀어짐 수정
-              - common.js 경로 변경 ./common/common.css => ./layout/common.css
-              - 태크 목차 css 깨짐으로 인해 수정
+			수정
+			 - (content_코드영역) 코드 번호와 코드라인 틀어짐 수정
+             - common.js 경로 변경 ./common/common.css => ./layout/common.css
+             - 태크 목차 css 깨짐으로 인해 수정
+             - content영역 max-width (1200px -> 80vw) 수정
 
-			 추가
-			  - content영역 오른쪽 목차 클릭 시 해당 분류로 이동
+			추가
+			 - content영역 오른쪽 목차 클릭 시 해당 분류로 이동
 			  	- 대분류 <H*>태그 class="c1"
 			  	- 중분류 <H*>태그 class="c2"
 			  	- 소분류 <H*>태그 class="c3"
-              - 새로고침 시 다크모드 해제 방지 로직 추가
+             - 새로고침 시 다크모드 해제 방지 로직 추가
+             - sidebar에 Profile Img 추가
             
-             삭제
-              - 불필요한 디렉토리 삭제  ./common/* 
+            삭제
+             - 불필요한 디렉토리 삭제  ./common/* 
