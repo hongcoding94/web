@@ -1,6 +1,6 @@
-/* ===============================
+/*
    게시글 리스트 (TILES 전용)
-================================ */
+*/
 window.initList = function (root) {
   if (!root || root.id !== "content") return;
 

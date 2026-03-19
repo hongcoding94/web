@@ -36,16 +36,16 @@ window.initSidebar = () => {
     });
 };
 
-/* ===============================
+/*
    TOC 생성 + 초기화 통합 버전
-================================ */
+*/
 window.buildTOC = (root) => {
     const toc = document.getElementById("toc");
     if (!toc) return;
 
-    /* ===============================
+    /*
        1. 무조건 초기화 (핵심)
-    ============================== */
+    */
     // 기존 TOC 제거
     toc.innerHTML = "";
     toc.style.display = "none";
@@ -55,25 +55,25 @@ window.buildTOC = (root) => {
         el.removeAttribute("id");
     });
 
-    /* ===============================
+    /*
        2. content 아닌 경우 차단
-    ============================== */
+    */
     if (!root || root.id !== "content") {
         return;
     }
 
-    /* ===============================
+    /*
        3. header 탐색 (content 내부만)
-    ============================== */
+    */
     const headers = root.querySelectorAll(".c1, .c2, .c3");
 
     if (!headers.length) {
         return;
     }
 
-    /* ===============================
+    /*
        4. TOC 생성 시작
-    ============================== */
+    */
     toc.style.display = "block";
 
     headers.forEach((el, idx) => {
@@ -89,9 +89,9 @@ window.buildTOC = (root) => {
         if (el.classList.contains("c2")) link.className = "toc-c2";
         if (el.classList.contains("c3")) link.className = "toc-c3";
 
-        /* ===============================
+        /*
            5. 스크롤 이동 (핵심)
-        ============================== */
+        */
         link.addEventListener("click", (e) => {
             e.preventDefault();
 

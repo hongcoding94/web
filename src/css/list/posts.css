@@ -7,9 +7,9 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* ===============================
+/*
    Post List Header
-================================ */
+*/
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -25,9 +25,9 @@
     color: var(--text-main);
 }
 
-/* ===============================
+/*
    Page Size Control
-================================ */
+*/
 .page-size-wrap {
     display: flex;
     align-items: center;
@@ -76,9 +76,9 @@
     color: var(--text-sub);
 }
 
-/* ===============================
+/*
    Pagination
-================================ */
+*/
 #pagination {
     display: flex;
     justify-content: center;
