@@ -1,0 +1,131 @@
+.post-list-wrap {
+    flex: 1;                    /* 남은 공간 채움 */
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 40px;
+    min-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   Post List Header
+================================ */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+/* 제목 */
+.list-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* ===============================
+   Page Size Control
+================================ */
+.page-size-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-size-wrap label {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+}
+
+/* Select */
+#pageSize {
+    appearance: none;
+    padding: 6px 32px 6px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* Hover / Focus */
+#pageSize:hover {
+    border-color: var(--accent);
+}
+
+#pageSize:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* 화살표 */
+.page-size-wrap {
+    position: relative;
+}
+
+.page-size-wrap::after {
+    content: "▾";
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    font-size: 0.75rem;
+    color: var(--text-sub);
+}
+
+/* ===============================
+   Pagination
+================================ */
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+/* 페이지 버튼 */
+#pagination button {
+    min-width: 36px;
+    height: 36px;
+
+    padding: 0 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+#pagination button:hover:not(:disabled) {
+    background: rgba(99,102,241,0.1);
+    border-color: var(--accent);
+}
+
+/* 현재 페이지 */
+#pagination button:disabled {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+    cursor: default;
+}
+
+/* 다크모드 미세 보정 */
+body.dark #pagination button {
+    background: var(--bg-card);
+}
+
+body.dark #pagination button:hover:not(:disabled) {
+    background: rgba(99,102,241,0.2);
+}

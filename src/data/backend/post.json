@@ -1,0 +1,16 @@
+[
+  {
+    "id": "20260316-tiles",
+    "title": "Tiles 기반 정적 블로그 구조",
+    "date": "2026.03.16",
+    "summary": "HTML + JS만으로 레이아웃을 분리하는 방법",
+    "url": "/content/20260316-tiles.html"
+  },
+  {
+    "id": "20260314-fetch",
+    "title": "ES6 fetch로 템플릿 로딩하기",
+    "date": "2026.03.14",
+    "summary": "서버 없이 SPA처럼 동작시키는 패턴",
+    "url": "/content/20260314-fetch.html"
+  }
+]
