@@ -7,7 +7,7 @@ window.initSidebar = () => {
         const title = e.target.closest(".menu-title");
         const item  = e.target.closest(".menu-item");
 
-        /** 폴더 토글 */
+        /* 폴더 토글 */
         if (title) {
             e.stopPropagation();
 
@@ -24,7 +24,7 @@ window.initSidebar = () => {
             return;
         }
 
-        /** 페이지 이동 */
+        /* 페이지 이동 */
         if (item) {
             e.stopPropagation();
 

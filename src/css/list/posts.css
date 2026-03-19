@@ -1,5 +1,8 @@
+/* ===============================
+   Post List Wrapper
+================================ */
 .post-list-wrap {
-    flex: 1;                    /* 남은 공간 채움 */
+    flex: 1;
     background: var(--bg-card);
     border-radius: 16px;
     padding: 40px;
@@ -7,125 +10,231 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/*
-   Post List Header
-*/
+/* ===============================
+   Header
+================================ */
 .list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-bottom: 24px;
 }
 
-/* 제목 */
 .list-header h1 {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--text-main);
 }
 
-/*
-   Page Size Control
-*/
-.page-size-wrap {
+/* ===============================
+   Search Area
+================================ */
+.search-wrap {
     display: flex;
+    justify-content: flex-end;   /* 오른쪽 정렬 */
     align-items: center;
     gap: 8px;
+    margin: 15px 0px 15px 0px;
 }
 
-.page-size-wrap label {
-    font-size: 0.85rem;
-    color: var(--text-sub);
+.search-wrap select,
+.search-wrap input,
+.search-wrap button {
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-size: 0.9rem;
 }
 
-/* Select */
+.search-wrap select {
+    padding: 0 8px;
+}
+
+.search-wrap input {
+    padding: 0 12px;
+    width: 220px;
+    padding: 0 12px;
+}
+
+.search-wrap button {
+    padding: 0 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-wrap button:hover {
+    background: rgba(99,102,241,0.1);
+    border-color: var(--accent);
+}
+
+/* ===============================
+   Page Size
+================================ */
+.page-size-wrap {
+    position: relative;
+}
+
 #pageSize {
     appearance: none;
     padding: 6px 32px 6px 10px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
-
-    background-color: var(--bg-card);
+    background: var(--bg-card);
     color: var(--text-main);
     font-size: 0.85rem;
     cursor: pointer;
-}
-
-/* Hover / Focus */
-#pageSize:hover {
-    border-color: var(--accent);
-}
-
-#pageSize:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
-}
-
-/* 화살표 */
-.page-size-wrap {
-    position: relative;
 }
 
 .page-size-wrap::after {
     content: "▾";
     position: absolute;
     right: 10px;
-    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 0.75rem;
     color: var(--text-sub);
+    pointer-events: none;
 }
 
-/*
-   Pagination
-*/
-#pagination {
+/* ===============================
+   Post List
+================================ */
+#postList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===============================
+   Post Item
+================================ */
+.post-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-item a {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+}
+
+.post-item a:hover {
+    background: var(--bg-subtle);
+}
+
+/* ===============================
+   Post Number
+================================ */
+.post-no {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-sub);
+}
 
+/* ===============================
+   Post Main Area
+================================ */
+.post-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 제목 + 날짜 */
+.post-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    white-space: nowrap;
+}
+
+/* 설명 */
+.post-summary {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+}
+
+/* ===============================
+   Pagination
+================================ */
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
     margin-top: 32px;
     flex-wrap: wrap;
 }
 
-/* 페이지 버튼 */
 #pagination button {
     min-width: 36px;
     height: 36px;
-
     padding: 0 12px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
-
     background: var(--bg-card);
     color: var(--text-main);
     font-size: 0.85rem;
-    font-weight: 500;
-
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-/* Hover */
 #pagination button:hover:not(:disabled) {
     background: rgba(99,102,241,0.1);
     border-color: var(--accent);
 }
 
-/* 현재 페이지 */
 #pagination button:disabled {
     background: var(--accent);
-    color: #ffffff;
+    color: #fff;
     border-color: var(--accent);
-    cursor: default;
 }
 
-/* 다크모드 미세 보정 */
-body.dark #pagination button {
-    background: var(--bg-card);
-}
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 900px) {
+    .post-list-wrap {
+        min-width: auto;
+        padding: 24px;
+    }
 
-body.dark #pagination button:hover:not(:disabled) {
-    background: rgba(99,102,241,0.2);
+    .post-item a {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .post-no {
+        justify-content: flex-start;
+    }
+
+    .post-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-wrap {
+        flex-direction: column;
+    }
 }
