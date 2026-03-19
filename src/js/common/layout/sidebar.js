@@ -81,7 +81,7 @@ window.buildTOC = (root) => {
         el.id = id;
 
         const link = document.createElement("a");
-        link.href = "#"; // ❗ hash 방지
+        link.href = "#"; 
         link.textContent = el.textContent;
 
         // depth 스타일

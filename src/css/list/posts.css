@@ -1,6 +1,6 @@
-/* ===============================
+/*
    Post List Wrapper
-================================ */
+*/
 .post-list-wrap {
     flex: 1;
     background: var(--bg-card);
@@ -10,9 +10,9 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* ===============================
+/*
    Header
-================================ */
+*/
 .list-header {
     display: flex;
     justify-content: space-between;
@@ -26,9 +26,9 @@
     color: var(--text-main);
 }
 
-/* ===============================
+/*
    Search Area
-================================ */
+*/
 .search-wrap {
     display: flex;
     justify-content: flex-end;   /* 오른쪽 정렬 */
@@ -69,9 +69,9 @@
     border-color: var(--accent);
 }
 
-/* ===============================
+/*
    Page Size
-================================ */
+*/
 .page-size-wrap {
     position: relative;
 }
@@ -98,18 +98,18 @@
     pointer-events: none;
 }
 
-/* ===============================
+/*
    Post List
-================================ */
+*/
 #postList {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* ===============================
+/*
    Post Item
-================================ */
+*/
 .post-item {
     border-bottom: 1px solid var(--border-color);
 }
@@ -128,9 +128,9 @@
     background: var(--bg-subtle);
 }
 
-/* ===============================
+/*
    Post Number
-================================ */
+*/
 .post-no {
     display: flex;
     justify-content: center;
@@ -140,9 +140,9 @@
     color: var(--text-sub);
 }
 
-/* ===============================
+/*
    Post Main Area
-================================ */
+*/
 .post-main {
     display: flex;
     flex-direction: column;
@@ -176,9 +176,9 @@
     line-height: 1.6;
 }
 
-/* ===============================
+/*
    Pagination
-================================ */
+*/
 #pagination {
     display: flex;
     justify-content: center;
@@ -211,9 +211,9 @@
     border-color: var(--accent);
 }
 
-/* ===============================
+/*
    Responsive
-================================ */
+*/
 @media (max-width: 900px) {
     .post-list-wrap {
         min-width: auto;

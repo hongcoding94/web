@@ -22,9 +22,9 @@ window.initList = function (root) {
   let currentPage = 1;
   let pageSize = 10;
 
-  /* ===============================
+  /*
      Data Load
-  ================================ */
+  */
   fetch("../data/backend/post.json")
     .then(res => {
       if (!res.ok) throw new Error("post.json 로드 실패");
@@ -40,9 +40,9 @@ window.initList = function (root) {
       console.error("게시글 로드 실패:", err);
     });
 
-  /* ===============================
+  /*
      Render
-  ================================ */
+  */
   function render() {
     renderList();
     renderPagination();
@@ -99,18 +99,18 @@ window.initList = function (root) {
     }
   }
 
-  /* ===============================
+  /*
      Page Size Change
-  ================================ */
+  */
   pageSizeEl?.addEventListener("change", e => {
     pageSize = Number(e.target.value);
     currentPage = 1;
     render();
   });
 
-  /* ===============================
+  /*
      Search Logic
-  ================================ */
+  */
   function search() {
     const type = searchTypeEl.value;
     const keyword = searchKeywordEl.value.trim();
@@ -140,9 +140,9 @@ window.initList = function (root) {
     render();
   }
 
-  /* ===============================
-     Search Events (UX)
-  ================================ */
+  /*
+     Search Events
+  */
   searchBtnEl?.addEventListener("click", search);
 
   // 엔터키 검색
