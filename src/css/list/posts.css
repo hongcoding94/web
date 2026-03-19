@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 7px;
 }
 
 .list-header h1 {
@@ -237,4 +237,47 @@
     .search-wrap {
         flex-direction: column;
     }
+}
+
+.list-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-wrap input {
+    width: 160px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.search-wrap select {
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.search-wrap button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-sub);
+}
+
+.result-info {
+    display: contents;
+    margin: 10px 0 20px;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+}
+
+mark {
+    background: rgba(99,102,241,0.25);
+    padding: 0 2px;
+    border-radius: 4px;
 }

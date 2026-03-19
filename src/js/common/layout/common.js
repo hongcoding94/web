@@ -1,6 +1,6 @@
 const changePage = async (page) => {
     const map = {
-        index: "./index.html",
+        index: "./main.html",
         frontlist: "./frontend/list.html",
         backlist: "./backend/list.html",
         content: "./tiles/content.html"
