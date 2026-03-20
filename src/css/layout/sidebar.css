@@ -1,6 +1,6 @@
-/* ===============================
+/*
    기존 Sidebar & Profile
-=============================== */
+*/
 .profile-box {
     padding: 10px;
     width: 150px;
@@ -18,7 +18,8 @@
 }
 
 .sidebar {
-    width: 260px;
+    width: 100%;
+    min-width: unset;
     min-width: 150px;
     background: #bbd3ec;
     padding: 12px;
@@ -84,9 +85,9 @@ body.dark .menu-group.open > .menu-title {
 }
 body.dark .menu-item.active { background: rgba(77,163,255,0.2); }
 
-/* ===============================
+/*
    모바일 대응
-=============================== */
+*/
 @media (max-width: 1024px) {
     .sidebar {
         position: fixed;

@@ -37,19 +37,20 @@ html {
     font-size: 16px;
 }
 
-body { 
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    line-height:1.6;
-    color:#1f2937;
-    background:#fff;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    color: var(--text-main);
+    background: var(--bg-main);
 }
 
 /*
-   Layout
+   Layout (핵심 수정)
 */
 .container {
     display: flex;
-    max-width: 80vw;
+    max-width: 100%;
     margin: 40px auto;
     gap: 32px;
     padding: 0 20px;
@@ -60,51 +61,36 @@ body {
 */
 .sidebar {
     width: 260px;
+    flex-shrink: 0;
     background: var(--bg-card);
     border-radius: 14px;
     padding: 20px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.04);
     height: fit-content;
-    color: var(--text-main);
 }
 
 /* Sidebar Menu */
 .sidebar-menu {
     list-style: none;
-    /*
-        padding: 10 10 10 10px;
-        background-color: #20a161;
-        border-radius: 14px;
-    */
 }
 
-/* 1Depth Item */
-.menu-item {
-    margin-bottom: 10px;
-    border-radius: 12px;
-    overflow: hidden;
+/* Menu Group */
+.menu-group {
+    margin-bottom: 6px;
 }
 
-/* 1Depth Title */
+/* Menu Title */
 .menu-title {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 14px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    padding: 10px 14px;
     cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
     color: var(--text-main);
     transition: background 0.2s ease;
-    color: #a35858;
-}
-
-body.dark .menu-title {
-    color: #eaeaea;
-}
-
-body.dark .menu-title:hover {
-    background: rgba(221, 34, 34, 0.781);
 }
 
 .menu-title:hover {
@@ -113,33 +99,41 @@ body.dark .menu-title:hover {
 
 /* Toggle Icon */
 .toggle-icon {
-    width: 18px;
+    width: 16px;
     text-align: center;
     font-weight: bold;
 }
 
-/* 2Depth */
-.menu-depth {
+/* Submenu */
+.submenu {
     display: none;
-    padding: 10px 0 10px 34px;
-    background: rgba(0,0,0,0.02);
+    padding-left: 18px;
+    margin-top: 4px;
 }
 
-body.dark .menu-depth {
-    background: rgba(255,255,255,0.04);
+.submenu.open {
+    display: block;
 }
 
-.menu-depth li {
-    padding: 8px 0;
-    font-size: 0.92rem;
+/* Leaf Menu */
+.menu-item {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 6px;
     cursor: pointer;
-    color: var(--text-main);
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    color: var(--text-sub);
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.menu-depth li:hover {
-    opacity: 1;
+.menu-item:hover {
+    background: rgba(99,102,241,0.08);
+    color: var(--text-main);
+}
+
+.menu-item.active {
+    background: rgba(99,102,241,0.15);
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 /*
@@ -147,11 +141,12 @@ body.dark .menu-depth {
 */
 .content {
     flex: 1;
+    min-width: 0;
 }
 
 .content article {
     background: var(--bg-card);
-    padding: 40px;
+    padding: 48px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
@@ -161,21 +156,19 @@ body.dark .menu-depth {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--text-main);
 }
 
 /* Meta */
 .content .meta {
     font-size: 0.85rem;
     color: var(--text-sub);
-    margin-bottom: 28px;
+    margin-bottom: 32px;
 }
 
 /* Paragraph */
 .content p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: var(--text-main);
 }
 
 /* Code Block */
@@ -186,14 +179,14 @@ body.dark .menu-depth {
     border-radius: 12px;
     font-size: 0.9rem;
     overflow-x: auto;
-    margin: 24px 0;
+    margin: 28px 0;
 }
 
 .content code {
     font-family: "Fira Code", monospace;
 }
 
-/* Quote */
+/* Blockquote */
 .content blockquote {
     border-left: 4px solid var(--accent);
     padding-left: 16px;
@@ -203,10 +196,45 @@ body.dark .menu-depth {
 }
 
 /*
+   TOC (우측 목차)
+*/
+#toc {
+    width: 240px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    font-size: 14px;
+    display: none;
+}
+
+#toc a {
+    display: block;
+    padding: 6px 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    color: var(--text-sub);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#toc a:hover {
+    background: rgba(99,102,241,0.1);
+    color: var(--text-main);
+}
+
+.toc-c1 { font-weight: 700; }
+.toc-c2 { padding-left: 12px; font-size: 0.9rem; }
+.toc-c3 { padding-left: 24px; font-size: 0.85rem; }
+
+/*
    Footer
 */
 .footer {
-    margin-top: 60px;
+    margin-top: 80px;
     padding: 30px;
     text-align: center;
     font-size: 0.85rem;
@@ -216,6 +244,12 @@ body.dark .menu-depth {
 /*
    Responsive
 */
+@media (max-width: 1200px) {
+    #toc {
+        display: none !important;
+    }
+}
+
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -224,63 +258,8 @@ body.dark .menu-depth {
     .sidebar {
         width: 100%;
     }
-}
 
-/*
-   TOC (우측 목차)
-*/
-#toc {
-    width: 250px;
-    position: sticky;
-    top: 120px;
-    height: fit-content;
-    background: var(--sidebar-w-right);
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    font-size: 14px;
-    display: none; /* 기본 숨김 */
-}
-
-body.dark #toc {
-    color: #020617;
-    position: sticky;
-    background: var(--sidebar-d-right);
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
-}
-
-#toc a {
-    display: block;
-    padding: 6px 8px;
-    color: var(--text-sub);
-    text-decoration: none;
-    border-radius: 6px;
-    transition: all 0.2s;
-    width: 220px; /* 한줄 유지 */
-    text-overflow: ellipsis;
-}
-
-body.dark #toc a {
-    color: var(--bg-sub);
-}
-
-body.dark  #toc a:hover {
-    background: rgba(99,102,241,0.1);
-    color: var(--bg-main);
-}
-
-#toc a:hover {
-    background: rgba(99,102,241,0.1);
-    color: var(--text-main);
-}
-
-/* depth */
-.toc-c1 { font-weight: 700;   margin-bottom: 6px; }
-.toc-c2 { padding-left: 10px; margin-bottom: 6px; font-size: 0.9rem; }
-.toc-c3 { padding-left: 20px; margin-bottom: 6px; font-size: 0.85rem; color: var(--text-sub); }
-
-@media (max-width: 1200px) {
-    #toc {
-        display: none !important;
+    .content article {
+        padding: 32px 24px;
     }
 }
