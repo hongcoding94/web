@@ -1,3 +1,28 @@
+.icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon.github {
+    background-image: url("../../img/common/github3.png");
+}
+
+.icon.linkedin {
+    background-image: url("../../img/common/linkedin.png");
+}
+
+/* 다크모드 대응 */
+body.dark .icon.github {
+    filter: invert(1);
+}
+body.dark .icon.linkedin {
+    filter: invert(1);
+}
+
 /*
    Header
 */
@@ -71,6 +96,60 @@
 
 #themeToggle:checked + .toggle-label .toggle-ball::before {
     content: "🌙";
+}
+
+/*
+   Header Right (Icons + Toggle)
+*/
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;          /* 아이콘/토글 간격 */
+}
+
+/* 아이콘 버튼 */
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background: var(--bg-subtle);
+}
+
+/* 다크모드 대응 */
+body.dark .icon-btn {
+    color: #e5e7eb;
+}
+body.dark .icon-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/*
+   Theme Toggle (inline)
+*/
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 4px; /* 아이콘과 살짝 띄움 */
+}
+
+@media (max-width: 768px) {
+    .header-right {
+        gap: 10px;
+    }
+
+    .icon-btn {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 /*

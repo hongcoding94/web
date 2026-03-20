@@ -2,28 +2,18 @@
    게시글 리스트 + 검색 + UX 강화
 */
 window.initList = function (root) {
-  if (!root || root.id !== "content") return;
+    if (!root || root.id !== "content") return;
+    const pageEl = root.querySelector('[data-page="list"]');
+    if (!pageEl) return;
 
-  /*
-     DOM Cache (존재 검증)
-  */
-  const listEl = root.querySelector("#postList");
-  const resultInfo = root.querySelector("#resultInfo");
-  const paginationEl = root.querySelector("#pagination");
+    const listEl = pageEl.querySelector("#postList");
+    const resultInfo = pageEl.querySelector("#resultInfo");
+    const paginationEl = pageEl.querySelector("#pagination");
+    const searchInput = pageEl.querySelector("#searchInput");
+    const searchType = pageEl.querySelector("#searchType");
+    const clearBtn = pageEl.querySelector("#clearSearch");
+    const pageSizeSelect = pageEl.querySelector("#pageSize");
 
-  const searchInput = root.querySelector("#searchInput");
-  const searchType = root.querySelector("#searchType");
-  const clearBtn = root.querySelector("#clearSearch");
-  const pageSizeSelect = root.querySelector("#pageSize");
-
-  if (!listEl || !resultInfo || !searchInput || !searchType || !clearBtn || !paginationEl) {
-    console.warn("[post-list] required DOM not found. init skipped.");
-    return;
-  }
-
-  /*
-     State
-  */
   let posts = [];
   let filtered = [];
 
@@ -69,7 +59,7 @@ window.initList = function (root) {
       li.className = "post-item";
 
       li.innerHTML = `
-        <a href="${post.url}">
+        <a href="" data-tile="${post.data_url}" class="tile-link">
           <div class="post-no">${post.no}</div>
 
           <div class="post-main">
@@ -136,6 +126,16 @@ window.initList = function (root) {
       `<mark>$1</mark>`
     );
   }
+
+    listEl.addEventListener("click", (e) => {
+        const link = e.target.closest(".post-link");
+        if (!link) return;
+
+        e.preventDefault();
+
+        const url = link.dataset.url;
+        loadTile("content", url);
+    });
 
   /*
      Event Binding

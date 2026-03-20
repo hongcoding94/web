@@ -2,17 +2,9 @@ const changePage = async (page) => {
     const map = {
         index: "./main.html",
         frontlist: "./frontend/list.html",
-        backlist: "./backend/list.html",
-        content: "./tiles/content.html"
+        backlist: "./backend/list.html"
     };
-
-    const file = map[page];
-    if (!file) {
-        console.warn("Unknown page:", page);
-        return;
-    }
-
-    await loadTile("content", file);
+    await loadTile("content", map[page]);
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,9 +12,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadTile("sidebar", "./tiles/sidebar.html");
     await loadTile("footer", "./tiles/footer.html");
 
-    initHeader();
     initSidebar();
-
     changePage("index");
 });
-

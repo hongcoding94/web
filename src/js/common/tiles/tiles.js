@@ -1,16 +1,6 @@
-/*
-   TILES Loader (최종 통합본)
-*/
 window.loadTile = async (id, file) => {
     const res = await fetch(file);
     if (!res.ok) throw new Error(file);
-
-    /*
-       상태 초기화
-    */
-    if (typeof window.resetTOC === "function") {
-        window.resetTOC();
-    }
 
     const html = await res.text();
     const target = document.getElementById(id);
@@ -18,30 +8,38 @@ window.loadTile = async (id, file) => {
 
     target.innerHTML = html;
 
-    /*
-       content 영역 초기화
-    */
-    if (id === "content") {
+    if (id === "header" && typeof window.initHeader === "function") {
+        window.initHeader();
+    }
 
-        /* 공통 콘텐츠 초기화 */
+    if (id === "sidebar" && typeof window.initSidebar === "function") {
+        window.initSidebar();
+    }
+
+    if (id === "content") {
         if (typeof window.initContent === "function") {
             window.initContent(target);
         }
-
-        /* 게시글 리스트 페이지 */
         if (typeof window.initList === "function") {
             window.initList(target);
         }
-
-        /* 추후 확장 예시 */
-        /*
-        if (typeof window.initPost === "function") {
-            window.initPost(target);
-        }
-
-        if (typeof window.initAbout === "function") {
-            window.initAbout(target);
-        }
-        */
     }
 };
+
+function initByPageType(root) {
+    const page = root.querySelector("[data-page]");
+    if (!page) return;
+
+    const type = page.dataset.page;
+
+    if (type === "list") window.initList?.(root);
+    if (type === "post") window.initContent?.(root);
+}
+
+document.addEventListener("click", (e) => {
+    const link = e.target.closest("[data-tile]");
+    if (!link) return;
+
+    e.preventDefault();
+    loadTile("content", link.dataset.tile);
+});

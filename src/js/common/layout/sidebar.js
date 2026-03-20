@@ -1,38 +1,44 @@
-window.initSidebar = () => {
-    const sidebar = document.querySelector(".sidebar-menu");
-    if (!sidebar) return;
+window.initSidebar = async function () {
+    const nav = document.getElementById("sidebarNav");
 
-    sidebar.addEventListener("click", (e) => {
+    if (!nav) {
+        console.warn("[sidebar] sidebarNav not found");
+        return;
+    }
 
-        const title = e.target.closest(".menu-title");
-        const item  = e.target.closest(".menu-item");
+    console.log("[sidebar] init start");
 
-        /* 폴더 토글 */
-        if (title) {
-            e.stopPropagation();
+    const res = await fetch("../data/chapter/chapter_list.json");
+    if (!res.ok) {
+        console.error("[sidebar] json fetch failed");
+        return;
+    }
 
-            const group = title.closest(".menu-group");
-            if (!group) return;
+    const data = await res.json();
+    console.log("[sidebar] json loaded", data);
 
-            const submenu = group.querySelector(":scope > .submenu");
-            if (!submenu) return;
+    nav.innerHTML = "";
 
-            const icon = title.querySelector(".toggle-icon");
-            const isOpen = submenu.classList.toggle("open");
+    data.forEach(group => {
+        const section = document.createElement("div");
+        section.className = "sidebar-section";
 
-            if (icon) icon.textContent = isOpen ? "-" : "+";
-            return;
-        }
+        const title = document.createElement("h3");
+        title.textContent = group.title;
+        section.appendChild(title);
 
-        /* 페이지 이동 */
-        if (item) {
-            e.stopPropagation();
+        group.children.forEach(item => {
+            const link = document.createElement("a");
+            link.textContent = item.title;
+            link.href = "javascript:void(0)";
+            link.onclick = () => {
+                window.currentPostList = item.post_list;
+                changePage(item.page);
+            };
+            section.appendChild(link);
+        });
 
-            const page = item.dataset.page;
-            if (!page) return;
-
-            changePage(page);
-        }
+        nav.appendChild(section);
     });
 };
 

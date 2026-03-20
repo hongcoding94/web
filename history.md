@@ -49,6 +49,7 @@
             수정
              - 메인페이지 일부 수정
              - 모바일 웹 대응 css 수정
+             - sidebar 정적에서 동적으로 수정(css 재수정 필요함)
 
             추가
-             - 
+             - header 영역에 linkedin, git path 생성

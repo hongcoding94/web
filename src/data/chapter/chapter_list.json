@@ -1,0 +1,26 @@
+[
+  {
+    "key": "frontend",
+    "title": "Frontend",
+    "children": [
+      {
+        "key": "react",
+        "title": "React",
+        "post_list": "../data/frontend/post.json",
+        "page": "frontlist"
+      }
+    ]
+  },
+  {
+    "key": "backend",
+    "title": "Backend",
+    "children": [
+      {
+        "key": "spring",
+        "title": "Spring",
+        "post_list": "../data/backend/post.json",
+        "page": "backlist"
+      }
+    ]
+  }
+]
