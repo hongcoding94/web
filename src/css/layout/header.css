@@ -5,6 +5,7 @@
     background: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
     padding: 28px 40px;
+    min-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
