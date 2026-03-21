@@ -11,6 +11,12 @@
     --code-bg: #0f172a;
     --accent: #6366f1;
     --sidebar-w-right: #ffffff;
+    --sidebar-bg: #f0f4f8;
+    --sidebar-text: #111827;
+    --sidebar-hover: #e2e8f0;
+    --sidebar-dark-bg: #1f2937;
+    --sidebar-dark-text: #f9fafb;
+    --sidebar-dark-hover: #374151;
 }
 
 body.dark {
@@ -22,6 +28,9 @@ body.dark {
     --border-color: #1e293b;
     --code-bg: #020617;
     --sidebar-d-right: #ffffff;
+    --sidebar-bg: var(--sidebar-dark-bg);
+    --sidebar-text: var(--sidebar-dark-text);
+    --sidebar-hover: var(--sidebar-dark-hover);
 }
 
 /*

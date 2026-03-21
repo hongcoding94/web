@@ -1,115 +1,101 @@
-window.initSidebar = async function () {
+async function initSidebarData() {
     const nav = document.getElementById("sidebarNav");
-
-    if (!nav) {
-        console.warn("[sidebar] sidebarNav not found");
-        return;
-    }
-
-    console.log("[sidebar] init start");
+    if (!nav) return;
 
     const res = await fetch("../data/chapter/chapter_list.json");
-    if (!res.ok) {
-        console.error("[sidebar] json fetch failed");
-        return;
-    }
+    if (!res.ok) throw new Error("json load failed");
 
     const data = await res.json();
-    console.log("[sidebar] json loaded", data);
+    const fixedNodes = Array.from(nav.children).filter(el =>
+        el.classList.contains("profile-box") ||
+        el.classList.contains("sidebar-close")
+    );
 
     nav.innerHTML = "";
+    fixedNodes.forEach(el => nav.appendChild(el));
+
+    const rootUl = document.createElement("ul");
+    rootUl.className = "sidebar-root";
 
     data.forEach(group => {
-        const section = document.createElement("div");
-        section.className = "sidebar-section";
+        const groupLi = document.createElement("li");
+        groupLi.className = "sidebar-group";
 
-        const title = document.createElement("h3");
-        title.textContent = group.title;
-        section.appendChild(title);
+        const titleBtn = document.createElement("button");
+        titleBtn.className = "group-title";
+        titleBtn.textContent = group.title;
+        titleBtn.dataset.open = "false";
+
+        const childUl = document.createElement("ul");
+        childUl.className = "child-links";
 
         group.children.forEach(item => {
-            const link = document.createElement("a");
-            link.textContent = item.title;
-            link.href = "javascript:void(0)";
-            link.onclick = () => {
+            const li = document.createElement("li");
+            li.className = "sidebar-item";
+
+            const a = document.createElement("a");
+            a.href = "#";
+            a.textContent = item.title;
+
+            a.addEventListener("click", e => {
+                e.preventDefault();
                 window.currentPostList = item.post_list;
                 changePage(item.page);
-            };
-            section.appendChild(link);
-        });
 
-        nav.appendChild(section);
-    });
-};
-
-/*
-   TOC 생성 + 초기화 통합 버전
-*/
-window.buildTOC = (root) => {
-    const toc = document.getElementById("toc");
-    if (!toc) return;
-
-    /*
-       1. 무조건 초기화 (핵심)
-    */
-    // 기존 TOC 제거
-    toc.innerHTML = "";
-    toc.style.display = "none";
-
-    // 기존 content에 남아있는 toc-id 제거
-    document.querySelectorAll("[id^='toc-']").forEach(el => {
-        el.removeAttribute("id");
-    });
-
-    /*
-       2. content 아닌 경우 차단
-    */
-    if (!root || root.id !== "content") {
-        return;
-    }
-
-    /*
-       3. header 탐색 (content 내부만)
-    */
-    const headers = root.querySelectorAll(".c1, .c2, .c3");
-
-    if (!headers.length) {
-        return;
-    }
-
-    /*
-       4. TOC 생성 시작
-    */
-    toc.style.display = "block";
-
-    headers.forEach((el, idx) => {
-        const id = "toc-" + idx;
-        el.id = id;
-
-        const link = document.createElement("a");
-        link.href = "#"; 
-        link.textContent = el.textContent;
-
-        // depth 스타일
-        if (el.classList.contains("c1")) link.className = "toc-c1";
-        if (el.classList.contains("c2")) link.className = "toc-c2";
-        if (el.classList.contains("c3")) link.className = "toc-c3";
-
-        /*
-           5. 스크롤 이동 (핵심)
-        */
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-
-            const target = document.getElementById(id);
-            if (!target) return;
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+                // 모바일에서는 자동 닫기
+                closeSidebar();
             });
+
+            li.appendChild(a);
+            childUl.appendChild(li);
         });
 
-        toc.appendChild(link);
+        titleBtn.addEventListener("click", () => {
+            const isOpen = titleBtn.dataset.open === "true";
+            titleBtn.dataset.open = String(!isOpen);
+            groupLi.classList.toggle("open", !isOpen);
+        });
+
+        groupLi.appendChild(titleBtn);
+        groupLi.appendChild(childUl);
+        rootUl.appendChild(groupLi);
     });
+
+    nav.appendChild(rootUl);
+}
+
+function initSidebarUI() {
+    const nav = document.getElementById("sidebarNav");
+    const overlay = document.getElementById("sidebarOverlay");
+    const closeBtn = nav?.querySelector(".sidebar-close");
+
+    if (!nav || !overlay || !closeBtn) {
+        console.warn("[sidebar] UI element missing");
+        return;
+    }
+
+    window.openSidebar = () => {
+        nav.classList.add("open");
+        overlay.classList.add("active");
+    };
+
+    window.closeSidebar = () => {
+        nav.classList.remove("open");
+        overlay.classList.remove("active");
+    };
+
+    window.toggleSidebar = () => {
+        nav.classList.contains("open")
+            ? window.closeSidebar()
+            : window.openSidebar();
+    };
+
+    window.addEventListener("sidebar:toggle", window.toggleSidebar);
+    closeBtn.addEventListener("click", window.closeSidebar);
+    overlay.addEventListener("click", window.closeSidebar);
+}
+
+window.initSidebar = async function () {
+    await initSidebarData();
+    initSidebarUI();
 };

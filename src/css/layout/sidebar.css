@@ -1,3 +1,6 @@
+/* ==================================================
+   Profile
+================================================== */
 .profile-box {
     padding: 10px;
     width: 150px;
@@ -6,72 +9,197 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 16px auto;
+    overflow: hidden;
 }
+
 .profile-box img {
     width: 100%;
     height: 100%;
-    display: flex;
     object-fit: cover;
 }
 
-/* Sidebar Wrapper */
-#sidebar {
-    width: 180px;
-    flex-shrink: 0;
-}
-
-/* Nav */
+/* ==================================================
+   Sidebar Container
+================================================== */
 #sidebarNav {
     position: sticky;
-    top: 120px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    top: 60px;
+    width: 250px;
+    height: calc(100vh - 60px);
+    background: var(--bg-card);
+    padding: 16px;
+    overflow-y: auto;
+    z-index: 100;
 }
 
-/* Section */
-.sidebar-section h3 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #111827;
+/* 모바일 사이드바 */
+@media (max-width: 768px) {
+  #sidebarNav {
+      position: fixed;
+      top: 50%;
+      left: -260px;
+      transform: translateY(-50%);
+      width: 260px;
+      height: 80vh;
+      z-index: 1000;
+      transition: left 0.3s ease;
+  }
+
+    #sidebarNav.open {
+        left: 0;
+    }
+
+    .profile-box {
+      display: none;
+    }
+    
+}
+
+/* ==================================================
+   Overlay (Mobile)
+================================================== */
+#sidebarOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 999;
+}
+
+#sidebarOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (min-width: 769px) {
+    #sidebarOverlay {
+        display: none;
+    }
+
+}
+
+/* ==================================================
+   Close Button (Mobile)
+================================================== */
+.sidebar-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+/* ==================================================
+   Sidebar Root (UL / LI 구조)
+================================================== */
+.sidebar-root {
+    list-style: none;
+    padding: 0;
+    margin-top: 20%;
+}
+
+/* 그룹 */
+.sidebar-group {
     margin-bottom: 8px;
 }
 
-/* Item */
-.sidebar-section a {
-    display: block;
-    font-size: 13px;
-    color: #2563eb;
-    text-decoration: none;
-    margin-bottom: 6px;
+/* ===============================
+   Mobile Close Button (X)
+=============================== */
+.sidebar-close {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;   /* 🔥 오른쪽 */
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--text-main);
+    z-index: 1100;
 }
 
-.sidebar-section a:hover {
-    text-decoration: underline;
-}
-
-/* Active 상태 (content 기준) */
-.sidebar-section a.active {
-    font-weight: 600;
-    color: #1d4ed8;
-}
-
-/* Dark Mode */
-body.dark #sidebar {
-    color: #e5e7eb;
-}
-
-body.dark .sidebar-section h3 {
-    color: #f9fafb;
-}
-
-body.dark .sidebar-section a {
-    color: #93c5fd;
-}
-
-/* Mobile */
-@media (max-width: 1024px) {
-    #sidebar {
-        display: none;
+/* 모바일에서만 표시 */
+@media (max-width: 768px) {
+    .sidebar-close {
+        display: block;
     }
+}
+
+/* ==================================================
+   Folder (Group Title)
+================================================== */
+.group-title {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.group-title:hover {
+    background: var(--bg-subtle);
+}
+
+/* + / - 아이콘 */
+.group-title::before {
+    content: "+";
+    font-weight: bold;
+}
+
+.sidebar-group.open .group-title::before {
+    content: "−";
+}
+
+/* ==================================================
+   Child Links (Depth)
+================================================== */
+.child-links {
+    list-style: none;
+    padding-left: 16px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* 열림 상태 */
+.sidebar-group.open .child-links {
+    max-height: 600px;
+}
+
+/* ==================================================
+   Child Item (Page Link)
+================================================== */
+.child-links li a {
+    display: block;
+    padding: 6px 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: background 0.2s ease;
+}
+
+.child-links li a:hover {
+    background: var(--bg-subtle);
+}
+
+/* ==================================================
+   Dark Mode
+================================================== */
+body.dark .group-title:hover,
+body.dark .child-links li a:hover {
+    background: rgba(255,255,255,0.08);
 }

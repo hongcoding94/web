@@ -12,8 +12,13 @@ window.loadTile = async (id, file) => {
         window.initHeader();
     }
 
-    if (id === "sidebar" && typeof window.initSidebar === "function") {
-        window.initSidebar();
+    if (id === "sidebar") {
+        if (typeof window.initSidebar === "function") {
+            await window.initSidebar();   // DOM 생성
+        }
+        if (typeof window.initSidebarUI === "function") {
+            window.initSidebarUI();       // 이벤트 바인딩
+        }
     }
 
     if (id === "content") {
