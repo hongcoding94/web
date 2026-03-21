@@ -1,6 +1,6 @@
-/* ===============================
+/*
    Copy Button
-================================ */
+*/
 document.addEventListener("click", (e) => {
     const btn = e.target.closest(".copy-btn");
     if (!btn) return;
@@ -67,9 +67,9 @@ function renderCodeBlock(block) {
     });
 }
 
-/* ===============================
+/*
    initContent (최종)
-================================ */
+*/
 function initContent(root = document) {
     if (!root || root.id !== "content") return;
 

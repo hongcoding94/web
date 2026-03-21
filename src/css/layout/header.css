@@ -47,9 +47,9 @@ body.dark .icon {
     gap: 14px;
 }
 
-/* ============================= */
-/* Header Right Area */
-/* ============================= */
+/*
+  Header Right Area
+*/
 
 .header-right {
   display: flex;
@@ -57,9 +57,9 @@ body.dark .icon {
   gap: 12px;
 }
 
-/* ============================= */
-/* Dark Mode Toggle UI */
-/* ============================= */
+/*
+  Dark Mode Toggle UI
+*/
 
 .theme-toggle {
   display: flex;

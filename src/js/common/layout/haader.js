@@ -1,4 +1,3 @@
-// header.js
 window.initHeader = () => {
     const header = document.querySelector(".header");
     if (!header || header.dataset.inited) return;
