@@ -1,6 +1,49 @@
-/*
-   Code Block
-*/
+#contentWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+/* Content 영역 */
+#content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* TOC Wrapper */
+#tocWrapper {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: var(--sidebar-w-right);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* TOC 리스트 */
+#tocList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tocList li a {
+    display: block;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+#tocList li a.active {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Code Block */
 .code-block {
     position: relative;
     background: #0f172a;
@@ -12,7 +55,7 @@
     font-family: "Fira Code", monospace;
 }
 
-/* 왼쪽 강조 라인 */
+/* Left accent line */
 .code-block::before {
     content: "";
     position: absolute;
@@ -23,9 +66,7 @@
     background: linear-gradient(180deg, #3b82f6, #60a5fa);
 }
 
-/*
-   Header
-*/
+/* Code Header */
 .code-header {
     display: flex;
     justify-content: space-between;
@@ -49,23 +90,18 @@
     background: #334155;
 }
 
-/*
-   Code Body
-*/
+/* Code Body */
 .code-body {
     display: flex;
     overflow-x: auto;
 }
 
-/* 길면 스크롤 */
 .code-body.long {
     max-height: 60vh;
     overflow-y: auto;
 }
 
-/*
-   Line Numbers
-*/
+/* Line Numbers */
 .line-numbers {
     text-align: right;
     padding: 16px 10px;
@@ -82,11 +118,40 @@
 .code-line {
     line-height: 1.6;
     font-family: "Fira Code", monospace;
+    color: aliceblue;
 }
 
-body .line-number,
-.code-line {
-    color: aliceblue;
-    line-height: 1.6;
-    font-family: "Fira Code", monospace;
+/* Article */
+.content article {
+    background: var(--bg-card);
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #tocWrapper {
+        display: none !important;
+    }
+    #toc {
+        display: none !important;
+    }
+
+    #contentWrapper {
+        flex-direction: column;
+    }
+    
+    .code-lines {
+        padding: 12px;
+        white-space: pre;
+    }
+
+    .line-numbers {
+        text-align: right;
+        padding: 12px 10px;
+        color: #6b7280;
+        user-select: none;
+    }
+
 }

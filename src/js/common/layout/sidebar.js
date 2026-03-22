@@ -17,6 +17,21 @@ async function initSidebarData() {
     const rootUl = document.createElement("ul");
     rootUl.className = "sidebar-root";
 
+    const homeLi = document.createElement("li");
+    homeLi.className = "move-item";
+    const home = document.createElement("a");
+    home.textContent = "Home";
+    home.addEventListener("click", e => {
+        e.preventDefault();
+        changePage("index");
+        closeSidebar();
+
+        // 모바일에서는 자동 닫기
+        closeSidebar();
+    });
+    homeLi.appendChild(home);
+    rootUl.appendChild(homeLi);
+
     data.forEach(group => {
         const groupLi = document.createElement("li");
         groupLi.className = "sidebar-group";

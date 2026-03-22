@@ -5,7 +5,8 @@
     "title": "ES6 fetch로 템플릿 로딩하기",
     "date": "2026.03.01",
     "summary": "fetch API를 활용한 동적 HTML 로딩 방식",
-    "url": "/backend/20260301-fetch.html"
+    "data_url": "/backend/20260301-fetch.html",
+    "private_page": "y"
   },
   {
     "no": "2",
@@ -13,7 +14,8 @@
     "title": "Promise와 async/await 정리",
     "date": "2026.03.02",
     "summary": "비동기 처리 흐름을 깔끔하게 정리하는 방법",
-    "url": "/backend/20260302-async.html"
+    "data_url": "/backend/20260302-async.html",
+    "private_page": "y"
   },
   {
     "no": "3",
@@ -21,7 +23,8 @@
     "title": "REST API 설계 기본 원칙",
     "date": "2026.03.03",
     "summary": "URI 설계와 HTTP Method 사용 기준",
-    "url": "/backend/20260303-rest.html"
+    "data_url": "/backend/20260303-rest.html",
+    "private_page": "y"
   },
   {
     "no": "4",
@@ -29,7 +32,8 @@
     "title": "GET과 POST 차이 제대로 이해하기",
     "date": "2026.03.04",
     "summary": "보안과 데이터 전달 관점에서의 차이",
-    "url": "/backend/20260304-getpost.html"
+    "data_url": "/backend/20260304-getpost.html",
+    "private_page": "y"
   },
   {
     "no": "5",
@@ -37,7 +41,8 @@
     "title": "Spring Controller 구조 정리",
     "date": "2026.03.05",
     "summary": "RequestMapping 설계와 책임 분리",
-    "url": "/backend/20260305-controller.html"
+    "data_url": "/backend/20260305-controller.html",
+    "private_page": "y"
   },
   {
     "no": "6",
@@ -45,7 +50,8 @@
     "title": "Tiles 기반 화면 구성 이해",
     "date": "2026.03.06",
     "summary": "공통 레이아웃과 영역 분리 전략",
-    "url": "/backend/20260306-tiles.html"
+    "data_url": "/backend/20260306-tiles.html",
+    "private_page": "y"
   },
   {
     "no": "7",
@@ -53,7 +59,8 @@
     "title": "SPA와 MPA 구조 차이",
     "date": "2026.03.07",
     "summary": "페이지 전환 방식의 구조적 차이",
-    "url": "/backend/20260307-spa-mpa.html"
+    "data_url": "/backend/20260307-spa-mpa.html",
+    "private_page": "y"
   },
   {
     "no": "8",
@@ -61,7 +68,8 @@
     "title": "Fetch 에러 처리 패턴",
     "date": "2026.03.08",
     "summary": "네트워크 오류와 서버 오류 분리 처리",
-    "url": "/backend/20260308-fetch-error.html"
+    "data_url": "/backend/20260308-fetch-error.html",
+    "private_page": "y"
   },
   {
     "no": "9",
@@ -69,7 +77,8 @@
     "title": "JSON 응답 구조 설계 팁",
     "date": "2026.03.09",
     "summary": "프론트엔드 친화적인 응답 포맷",
-    "url": "/backend/20260309-json.html"
+    "data_url": "/backend/20260309-json.html",
+    "private_page": "y"
   },
   {
     "no": "10",
@@ -77,7 +86,8 @@
     "title": "Axios vs Fetch 비교",
     "date": "2026.03.10",
     "summary": "라이브러리 선택 기준 정리",
-    "url": "/backend/20260310-axios.html"
+    "data_url": "/backend/20260310-axios.html",
+    "private_page": "y"
   },
   {
     "no": "11",
@@ -85,7 +95,8 @@
     "title": "Interceptor 활용 사례",
     "date": "2026.03.11",
     "summary": "공통 로직 처리와 인증 필터링",
-    "url": "/backend/20260311-interceptor.html"
+    "data_url": "/backend/20260311-interceptor.html",
+    "private_page": "y"
   },
   {
     "no": "12",
@@ -93,7 +104,8 @@
     "title": "Servlet과 Filter 차이",
     "date": "2026.03.12",
     "summary": "요청 흐름 기준으로 이해하기",
-    "url": "/backend/20260312-filter.html"
+    "data_url": "/backend/20260312-filter.html",
+    "private_page": "y"
   },
   {
     "no": "13",
@@ -101,7 +113,8 @@
     "title": "페이징 처리 기본 공식",
     "date": "2026.03.13",
     "summary": "limit, offset 기반 페이징 설계",
-    "url": "/backend/20260313-paging.html"
+    "data_url": "/backend/20260313-paging.html",
+    "private_page": "y"
   },
   {
     "no": "14",
@@ -109,7 +122,8 @@
     "title": "ES6 모듈 시스템 이해",
     "date": "2026.03.14",
     "summary": "import/export 구조와 번들링",
-    "url": "/backend/20260314-module.html"
+    "data_url": "/backend/20260314-module.html",
+    "private_page": "y"
   },
   {
     "no": "15",
@@ -117,7 +131,8 @@
     "title": "CORS 오류 발생 원인",
     "date": "2026.03.15",
     "summary": "브라우저 보안 정책 이해",
-    "url": "/backend/20260315-cors.html"
+    "data_url": "/backend/20260315-cors.html",
+    "private_page": "y"
   },
   {
     "no": "16",
@@ -125,7 +140,8 @@
     "title": "JWT 인증 흐름 정리",
     "date": "2026.03.16",
     "summary": "토큰 기반 인증 구조",
-    "url": "/backend/20260316-jwt.html"
+    "data_url": "/backend/20260316-jwt.html",
+    "private_page": "y"
   },
   {
     "no": "17",
@@ -133,7 +149,8 @@
     "title": "세션과 토큰 비교",
     "date": "2026.03.17",
     "summary": "상태 관리 방식의 차이",
-    "url": "/backend/20260317-session.html"
+    "data_url": "/backend/20260317-session.html",
+    "private_page": "y"
   },
   {
     "no": "18",
@@ -141,7 +158,8 @@
     "title": "HTTP 상태 코드 정리",
     "date": "2026.03.18",
     "summary": "자주 쓰이는 상태 코드 의미",
-    "url": "/backend/20260318-httpcode.html"
+    "data_url": "/backend/20260318-httpcode.html",
+    "private_page": "y"
   },
   {
     "no": "19",
@@ -149,7 +167,8 @@
     "title": "DB 커넥션 풀 개념",
     "date": "2026.03.19",
     "summary": "성능 개선을 위한 필수 개념",
-    "url": "/backend/20260319-datasource.html"
+    "data_url": "/backend/20260319-datasource.html",
+    "private_page": "y"
   },
   {
     "no": "20",
@@ -157,7 +176,8 @@
     "title": "트랜잭션 전파 속성",
     "date": "2026.03.20",
     "summary": "Spring 트랜잭션 동작 원리",
-    "url": "/backend/20260320-transaction.html"
+    "data_url": "/backend/20260320-transaction.html",
+    "private_page": "y"
   },
   {
     "no": "21",
@@ -165,7 +185,8 @@
     "title": "배치 처리 개념 정리",
     "date": "2026.03.21",
     "summary": "대용량 데이터 처리 전략",
-    "url": "/backend/20260321-batch.html"
+    "data_url": "/backend/20260321-batch.html",
+    "private_page": "y"
   },
   {
     "no": "22",
@@ -173,7 +194,8 @@
     "title": "Spring Batch Chunk 방식",
     "date": "2026.03.22",
     "summary": "읽기-처리-쓰기 구조 이해",
-    "url": "/backend/20260322-chunk.html"
+    "data_url": "/backend/20260322-chunk.html",
+    "private_page": "y"
   },
   {
     "no": "23",
@@ -181,7 +203,8 @@
     "title": "로그 설계 베스트 프랙티스",
     "date": "2026.03.23",
     "summary": "장애 분석을 위한 로그 전략",
-    "url": "/backend/20260323-log.html"
+    "data_url": "/backend/20260323-log.html",
+    "private_page": "y"
   },
   {
     "no": "24",
@@ -189,7 +212,8 @@
     "title": "Exception Handler 구성",
     "date": "2026.03.24",
     "summary": "전역 예외 처리 패턴",
-    "url": "/backend/20260324-exception.html"
+    "data_url": "/backend/20260324-exception.html",
+    "private_page": "y"
   },
   {
     "no": "25",
@@ -197,7 +221,8 @@
     "title": "API 응답 표준화",
     "date": "2026.03.25",
     "summary": "공통 Response 구조 설계",
-    "url": "/backend/20260325-response.html"
+    "data_url": "/backend/20260325-response.html",
+    "private_page": "y"
   },
   {
     "no": "26",
@@ -205,7 +230,8 @@
     "title": "프론트-백엔드 역할 분리",
     "date": "2026.03.26",
     "summary": "협업을 위한 책임 분리",
-    "url": "/backend/20260326-role.html"
+    "data_url": "/backend/20260326-role.html",
+    "private_page": "y"
   },
   {
     "no": "27",
@@ -213,7 +239,8 @@
     "title": "CSR과 SSR 비교",
     "date": "2026.03.27",
     "summary": "렌더링 방식 차이",
-    "url": "/backend/20260327-render.html"
+    "data_url": "/backend/20260327-render.html",
+    "private_page": "y"
   },
   {
     "no": "28",
@@ -221,7 +248,8 @@
     "title": "보안 필터 체인 이해",
     "date": "2026.03.28",
     "summary": "Spring Security 동작 구조",
-    "url": "/backend/20260328-security.html"
+    "data_url": "/backend/20260328-security.html",
+    "private_page": "y"
   },
   {
     "no": "29",
@@ -229,7 +257,8 @@
     "title": "API 버저닝 전략",
     "date": "2026.03.29",
     "summary": "하위 호환성 유지 방법",
-    "url": "/backend/20260329-version.html"
+    "data_url": "/backend/20260329-version.html",
+    "private_page": "y"
   },
   {
     "no": "30",
@@ -237,6 +266,7 @@
     "title": "서비스 아키텍처 회고",
     "date": "2026.03.30",
     "summary": "확장성과 유지보수 관점 정리",
-    "url": "/backend/20260330-architecture.html"
+    "data_url": "../pages/tiles/content.html",
+    "private_page": "n"
   }
 ]

@@ -59,8 +59,8 @@ body {
 */
 .container {
     display: flex;
-    max-width: 100%;
-    margin: 40px auto;
+    max-width: 90%;
+    margin: 20px auto;
     gap: 32px;
     padding: 0 20px;
 }
@@ -146,100 +146,6 @@ body {
 }
 
 /*
-   Content
-*/
-.content {
-    flex: 1;
-    min-width: 0;
-}
-
-.content article {
-    background: var(--bg-card);
-    padding: 48px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Title */
-.content h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-/* Meta */
-.content .meta {
-    font-size: 0.85rem;
-    color: var(--text-sub);
-    margin-bottom: 32px;
-}
-
-/* Paragraph */
-.content p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-/* Code Block */
-.content pre {
-    background: var(--code-bg);
-    color: #e5e7eb;
-    padding: 20px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    overflow-x: auto;
-    margin: 28px 0;
-}
-
-.content code {
-    font-family: "Fira Code", monospace;
-}
-
-/* Blockquote */
-.content blockquote {
-    border-left: 4px solid var(--accent);
-    padding-left: 16px;
-    margin: 28px 0;
-    color: var(--text-sub);
-    font-style: italic;
-}
-
-/*
-   TOC (우측 목차)
-*/
-#toc {
-    width: 240px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 120px;
-    height: fit-content;
-    background: var(--bg-card);
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-    font-size: 14px;
-    display: none;
-}
-
-#toc a {
-    display: block;
-    padding: 6px 8px;
-    text-decoration: none;
-    border-radius: 6px;
-    color: var(--text-sub);
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-#toc a:hover {
-    background: rgba(99,102,241,0.1);
-    color: var(--text-main);
-}
-
-.toc-c1 { font-weight: 700; }
-.toc-c2 { padding-left: 12px; font-size: 0.9rem; }
-.toc-c3 { padding-left: 24px; font-size: 0.85rem; }
-
-/*
    Footer
 */
 .footer {
@@ -250,16 +156,7 @@ body {
     color: var(--text-sub);
 }
 
-/*
-   Responsive
-*/
-@media (max-width: 1200px) {
-    #toc {
-        display: none !important;
-    }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .container {
         flex-direction: column;
     }

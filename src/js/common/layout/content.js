@@ -1,6 +1,4 @@
-/*
-   Copy Button
-*/
+/* Copy Button 기능 */
 document.addEventListener("click", (e) => {
     const btn = e.target.closest(".copy-btn");
     if (!btn) return;
@@ -18,26 +16,23 @@ document.addEventListener("click", (e) => {
     }, 1200);
 });
 
+/* Render Code Block */
 function renderCodeBlock(block) {
     if (block.dataset.inited) return;
     block.dataset.inited = "true";
 
     const code = block.querySelector(".raw-code");
     const body = block.querySelector(".code-body");
-
     if (!code || !body) return;
 
     const raw = code.textContent.replace(/\n$/, "");
     const lines = raw.split("\n");
 
-    /* 원본 제거 */
     code.remove();
 
-    /* 좌측: 라인번호 */
     const lineNumbers = document.createElement("div");
     lineNumbers.className = "line-numbers";
 
-    /* 우측: 코드 */
     const codeLines = document.createElement("div");
     codeLines.className = "code-lines";
 
@@ -58,29 +53,74 @@ function renderCodeBlock(block) {
     body.appendChild(lineNumbers);
     body.appendChild(codeLines);
 
-    if (lines.length > 25) {
-        body.classList.add("long");
-    }
+    if (lines.length > 25) body.classList.add("long");
 
     body.addEventListener("scroll", () => {
         lineNumbers.scrollTop = body.scrollTop;
     });
 }
 
-/*
-   initContent (최종)
-*/
+/* TOC 생성 */
+function generateTOC() {
+    const content = document.querySelector(".content-article");
+    const tocList = document.getElementById("tocList");
+    if (!content || !tocList) return;
+
+    // 중복 방지
+    tocList.innerHTML = "";
+
+    const headers = content.querySelectorAll("h1, h2, h3");
+    headers.forEach((h, idx) => {
+        const li = document.createElement("li");
+        li.className = h.tagName.toLowerCase() === "h1" ? "c1" :
+                       h.tagName.toLowerCase() === "h2" ? "c2" : "c3";
+
+        const a = document.createElement("a");
+        a.href = `#toc-${idx}`;
+        a.textContent = h.textContent;
+
+        h.id = `toc-${idx}`;
+        li.appendChild(a);
+        tocList.appendChild(li);
+
+        a.addEventListener("click", (e) => {
+            e.preventDefault();
+            h.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+}
+
+window.initContent = initContent;
+
+function highlightTOCOnScroll(root = document) {
+    const content = root.querySelector(".content-article");
+    const tocLinks = root.querySelectorAll("#tocList li a");
+    if (!content || tocLinks.length === 0) return;
+
+    const headers = content.querySelectorAll("h1.c1, h2.c2, h3.c3");
+
+    window.addEventListener("scroll", () => {
+        let currentIdx = 0;
+        headers.forEach((h, idx) => {
+            const top = h.getBoundingClientRect().top;
+            if (top <= 100) currentIdx = idx;
+        });
+
+        tocLinks.forEach((link, idx) => {
+            link.classList.toggle("active", idx === currentIdx);
+        });
+    });
+}
+
 function initContent(root = document) {
     if (!root || root.id !== "content") return;
 
     root.querySelectorAll(".code-block").forEach(block => {
         renderCodeBlock(block);
     });
-
-    // TOC 생성
-    if (window.buildTOC) {
-        window.buildTOC(root);
-    }
+    
+    generateTOC();
+    highlightTOCOnScroll(root);
 }
 
 window.initContent = initContent;

@@ -55,24 +55,38 @@ window.initList = function (root) {
     const end = start + pageSize;
 
     filtered.slice(start, end).forEach(post => {
-      const li = document.createElement("li");
-      li.className = "post-item";
+    const li = document.createElement("li");
+    li.className = "post-item";
 
-      li.innerHTML = `
-        <a href="" data-tile="${post.data_url}" class="tile-link">
-          <div class="post-no">${post.no}</div>
+    li.innerHTML = `
+      <a href="#" data-tile="${post.data_url}" class="tile-link">
+        <div class="post-no">${post.no}</div>
 
-          <div class="post-main">
-            <div class="post-top">
-              <div class="post-title">
-                ${highlight(post.title)}
-              </div>
-              <div class="post-date">${post.date}</div>
+        <div class="post-main">
+          <div class="post-top">
+            <div class="post-title">
+              ${highlight(post.title)}
             </div>
-            <div class="post-summary">${post.summary}</div>
+            <div class="post-date">${post.date}</div>
           </div>
-        </a>
-      `;
+          <div class="post-summary">${post.summary}</div>
+        </div>
+      </a>
+    `;
+
+    // 🔥 private_page 처리
+    const link = li.querySelector("a");
+
+    if (post.private_page === "y") {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();       // 이동 차단
+        e.stopPropagation();     // tiles 전파 차단
+        alert("아직 공개되지 않은 글입니다");
+      });
+
+      // (선택) 시각적 힌트
+      li.classList.add("post-private");
+    }
 
       listEl.appendChild(li);
     });

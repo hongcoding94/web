@@ -1,4 +1,4 @@
-window.loadTile = async (id, file) => {
+window.loadTile = async (id, file, push = true) => {
     const res = await fetch(file);
     if (!res.ok) throw new Error(file);
 
@@ -8,38 +8,26 @@ window.loadTile = async (id, file) => {
 
     target.innerHTML = html;
 
-    if (id === "header" && typeof window.initHeader === "function") {
+    if (push) {
+        history.pushState(
+            { tile: file }, "", location.pathname
+        );
+    }
+
+    if (id === "header" && window.initHeader) {
         window.initHeader();
     }
 
     if (id === "sidebar") {
-        if (typeof window.initSidebar === "function") {
-            await window.initSidebar();   // DOM 생성
-        }
-        if (typeof window.initSidebarUI === "function") {
-            window.initSidebarUI();       // 이벤트 바인딩
-        }
+        if (window.initSidebar) await window.initSidebar();
+        if (window.initSidebarUI) window.initSidebarUI();
     }
 
     if (id === "content") {
-        if (typeof window.initContent === "function") {
-            window.initContent(target);
-        }
-        if (typeof window.initList === "function") {
-            window.initList(target);
-        }
+        if (window.initContent) window.initContent(target);
+        if (window.initList) window.initList(target);
     }
 };
-
-function initByPageType(root) {
-    const page = root.querySelector("[data-page]");
-    if (!page) return;
-
-    const type = page.dataset.page;
-
-    if (type === "list") window.initList?.(root);
-    if (type === "post") window.initContent?.(root);
-}
 
 document.addEventListener("click", (e) => {
     const link = e.target.closest("[data-tile]");
@@ -48,3 +36,15 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     loadTile("content", link.dataset.tile);
 });
+
+window.addEventListener("popstate", (e) => {
+    if (e.state?.tile) {
+        loadTile("content", e.state.tile, false);
+    } else {
+        loadTile("content", "../pages/tiles/list.html", false);
+    }
+});
+
+history.replaceState(
+    { tile: "../pages/tiles/list.html" }, "", location.pathname
+);
