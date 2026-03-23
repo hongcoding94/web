@@ -18,13 +18,13 @@
       , {
         "key": "SpringBatch",
         "title": "SpringBatch",
-        "list_path": "../data/backend/post.json",
+        "list_path": "../data/backend/springBatch_post/list.json",
         "page": "list"
       }
     ]
   }
   , {
-    "key": "frontend",
+    "key": "Frontend",
     "title": "Frontend",
     "children": [
       {
@@ -67,6 +67,18 @@
         "key": "Network",
         "title": "Network",
         "list_path": "../data/frontend/list.json",
+        "page": "list"
+      }
+    ]
+  }
+  , {
+    "key": "Project",
+    "title": "Project",
+    "children": [
+      {
+        "key": "Troubleshooting",
+        "title": "Troubleshooting",
+        "list_path": "../data/project/Troubleshooting_post/list.json",
         "page": "list"
       }
     ]

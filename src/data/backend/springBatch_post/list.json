@@ -1,0 +1,182 @@
+[
+  {
+    "no": "60",
+    "id": "hongcoding94",
+    "title": "Spring Batch Chunk 기반 대용량 데이터 처리 아키텍처",
+    "date": "2026.03.31",
+    "summary": "ItemReader-Processor-Writer 구조를 활용한 안정적인 배치 처리",
+    "data_url": "../backend/20260331-batch-chunk.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "59",
+    "id": "hongcoding94",
+    "title": "Spring Batch Job과 Step 책임 분리 설계",
+    "date": "2026.04.01",
+    "summary": "Job 흐름과 Step 단위 실행 전략",
+    "data_url": "../backend/20260401-batch-job-step.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "58",
+    "id": "hongcoding94",
+    "title": "Spring Batch JobLauncher 실행 구조 분석",
+    "date": "2026.04.02",
+    "summary": "동기·비동기 Job 실행 방식 비교",
+    "data_url": "../backend/20260402-batch-joblauncher.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "57",
+    "id": "hongcoding94",
+    "title": "Spring Batch JobRepository 내부 동작 원리",
+    "date": "2026.04.03",
+    "summary": "메타 테이블과 실행 이력 관리 구조",
+    "data_url": "../backend/20260403-batch-jobrepository.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "56",
+    "id": "hongcoding94",
+    "title": "Spring Batch 트랜잭션 경계 설정 전략",
+    "date": "2026.04.04",
+    "summary": "Chunk 단위 트랜잭션 관리 방식",
+    "data_url": "../backend/20260404-batch-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "55",
+    "id": "hongcoding94",
+    "title": "Spring Batch 재시작 가능한 Job 설계",
+    "date": "2026.04.05",
+    "summary": "ExecutionContext 기반 Restart 처리",
+    "data_url": "../backend/20260405-batch-restart.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "54",
+    "id": "hongcoding94",
+    "title": "Spring Batch 실패 재처리 전략",
+    "date": "2026.04.06",
+    "summary": "Skip, Retry 정책 활용",
+    "data_url": "../backend/20260406-batch-skip-retry.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "53",
+    "id": "hongcoding94",
+    "title": "Spring Batch StepExecution 흐름 분석",
+    "date": "2026.04.07",
+    "summary": "Step 상태 관리와 종료 조건",
+    "data_url": "../backend/20260407-batch-stepexecution.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "52",
+    "id": "hongcoding94",
+    "title": "Spring Batch 병렬 처리 구조 설계",
+    "date": "2026.04.08",
+    "summary": "TaskExecutor 기반 병렬 Step 실행",
+    "data_url": "../backend/20260408-batch-parallel.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "51",
+    "id": "hongcoding94",
+    "title": "Spring Batch Partition 방식 적용 사례",
+    "date": "2026.04.09",
+    "summary": "대량 데이터 분할 처리 전략",
+    "data_url": "../backend/20260409-batch-partition.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "50",
+    "id": "hongcoding94",
+    "title": "Spring Batch Multi-Step Job 설계 패턴",
+    "date": "2026.04.10",
+    "summary": "Step 흐름 제어와 조건 분기",
+    "data_url": "../backend/20260410-batch-multistep.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "49",
+    "id": "hongcoding94",
+    "title": "Spring Batch Flow 기반 Job 제어",
+    "date": "2026.04.11",
+    "summary": "Flow와 Decider 활용 전략",
+    "data_url": "../backend/20260411-batch-flow.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "48",
+    "id": "hongcoding94",
+    "title": "Spring Batch JobParameters 설계 기준",
+    "date": "2026.04.12",
+    "summary": "재실행 방지를 위한 파라미터 전략",
+    "data_url": "../backend/20260412-batch-jobparameters.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "47",
+    "id": "hongcoding94",
+    "title": "Spring Batch Custom ItemReader 구현",
+    "date": "2026.04.13",
+    "summary": "복잡한 조회 로직 분리 설계",
+    "data_url": "../backend/20260413-batch-itemreader.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "46",
+    "id": "hongcoding94",
+    "title": "Spring Batch ItemProcessor 책임 분리",
+    "date": "2026.04.14",
+    "summary": "비즈니스 로직 처리 전략",
+    "data_url": "../backend/20260414-batch-itemprocessor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "45",
+    "id": "hongcoding94",
+    "title": "Spring Batch ItemWriter 성능 최적화",
+    "date": "2026.04.15",
+    "summary": "Batch Insert와 Flush 전략",
+    "data_url": "../backend/20260415-batch-itemwriter.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "44",
+    "id": "hongcoding94",
+    "title": "Spring Batch JDBC Cursor 기반 처리",
+    "date": "2026.04.16",
+    "summary": "대용량 조회 성능 관리",
+    "data_url": "../backend/20260416-batch-jdbc-cursor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "43",
+    "id": "hongcoding94",
+    "title": "Spring Batch PagingItemReader 적용",
+    "date": "2026.04.17",
+    "summary": "페이징 기반 데이터 처리",
+    "data_url": "../backend/20260417-batch-paging.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "42",
+    "id": "hongcoding94",
+    "title": "Spring Batch Multi DataSource 구성",
+    "date": "2026.04.18",
+    "summary": "여러 DB 환경 배치 설계",
+    "data_url": "../backend/20260418-batch-multidatasource.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "41",
+    "id": "hongcoding94",
+    "title": "Spring Batch 메타 테이블 운영 전략",
+    "date": "2026.04.19",
+    "summary": "운영 환경 이력 관리",
+    "data_url": "../backend/20260419-batch-meta.html",
+    "private_page": "Y"
+  }
+]
