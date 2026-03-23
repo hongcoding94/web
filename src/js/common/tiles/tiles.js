@@ -36,7 +36,6 @@ window.loadTile = async (id, file, state = {}, push = true) => {
     }
 };
 
-/* 수정 필요하다 - 상태 값으로 변경  */
 document.addEventListener("click", (e) => {
     const link = e.target.closest("[data-tile]");
     if (!link) return;

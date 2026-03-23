@@ -30,7 +30,7 @@
       {
         "key": "react",
         "title": "React",
-        "list_path": "../data/frontend/list.json",
+        "list_path": "../data/frontend/react_post/list.json",
         "page": "list"
       }
     ]
@@ -42,13 +42,19 @@
       {
         "key": "Oracle",
         "title": "Oracle",
-        "list_path": "../data/backend/list.json",
+        "list_path": "../data/dbms/oracle_post/list.json",
         "page": "list"
       }
       , {
         "key": "Mysql",
         "title": "Mysql",
-        "list_path": "../data/backend/list.json",
+        "list_path": "../data/dbms/mysql_post/list.json",
+        "page": "list"
+      }
+      , {
+        "key": "PostgreSQL",
+        "title": "PostgreSQL",
+        "list_path": "../data/dbms/postgresql_post/list.json",
         "page": "list"
       }
     ]

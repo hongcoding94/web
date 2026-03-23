@@ -1,3 +1,13 @@
+/**
+ * 
+ * @param {*} page 
+ * @param {*} state
+ *      [ state 항목 ]
+ *      - listPath
+ * 
+ * 
+ */
+
 const changePage = async (page, state = {}) => {
     const map = {
         index: "./main.html",
