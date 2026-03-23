@@ -1,4 +1,4 @@
-window.loadTile = async (id, file, push = true) => {
+window.loadTile = async (id, file, state = {}, push = true) => {
     const res = await fetch(file);
     if (!res.ok) throw new Error(file);
 
@@ -10,7 +10,9 @@ window.loadTile = async (id, file, push = true) => {
 
     if (push) {
         history.pushState(
-            { tile: file }, "", location.pathname
+            { tile: file, state },
+            "",
+            location.pathname
         );
     }
 
@@ -18,33 +20,32 @@ window.loadTile = async (id, file, push = true) => {
         window.initHeader();
     }
 
+    if (id === "content") {
+        if (window.initContent) window.initContent(target);
+        if (window.initList) window.initList(target, state);
+    }
+
     if (id === "sidebar") {
         if (window.initSidebar) await window.initSidebar();
         if (window.initSidebarUI) window.initSidebarUI();
-    }
-
-    if (id === "content") {
-        if (window.initContent) window.initContent(target);
-        if (window.initList) window.initList(target);
+    
+        const hamburger = document.querySelector('[data-action="toggle-sidebar"]');
+        if (hamburger) {
+            hamburger.onclick = window.toggleSidebar;
+        }
     }
 };
 
+/* 수정 필요하다 - 상태 값으로 변경  */
 document.addEventListener("click", (e) => {
     const link = e.target.closest("[data-tile]");
     if (!link) return;
 
     e.preventDefault();
-    loadTile("content", link.dataset.tile);
+    loadTile("content", link.dataset.tile, e.state, false);
 });
 
 window.addEventListener("popstate", (e) => {
-    if (e.state?.tile) {
-        loadTile("content", e.state.tile, false);
-    } else {
-        loadTile("content", "../pages/tiles/list.html", false);
-    }
+    if (!e.state?.tile) return;
+    loadTile("content", e.state.tile, e.state, false);
 });
-
-history.replaceState(
-    { tile: "../pages/tiles/list.html" }, "", location.pathname
-);

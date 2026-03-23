@@ -6,20 +6,20 @@
       {
         "key": "Java",
         "title": "Java",
-        "post_list": "../data/backend/post.json",
-        "page": "backlist"
+        "list_path": "../data/backend/java_post/list.json",
+        "page": "list"
       }
       , {
         "key": "Spring",
         "title": "Spring",
-        "post_list": "../data/backend/post.json",
-        "page": "backlist"
+        "list_path": "../data/backend/spring_post/list.json",
+        "page": "list"
       }
       , {
         "key": "SpringBatch",
         "title": "SpringBatch",
-        "post_list": "../data/backend/post.json",
-        "page": "backlist"
+        "list_path": "../data/backend/post.json",
+        "page": "list"
       }
     ]
   }
@@ -30,8 +30,8 @@
       {
         "key": "react",
         "title": "React",
-        "post_list": "../data/frontend/post.json",
-        "page": "frontlist"
+        "list_path": "../data/frontend/list.json",
+        "page": "list"
       }
     ]
   }
@@ -42,14 +42,14 @@
       {
         "key": "Oracle",
         "title": "Oracle",
-        "post_list": "../data/backend/post.json",
-        "page": "backlist"
+        "list_path": "../data/backend/list.json",
+        "page": "list"
       }
       , {
         "key": "Mysql",
         "title": "Mysql",
-        "post_list": "../data/backend/post.json",
-        "page": "backlist"
+        "list_path": "../data/backend/list.json",
+        "page": "list"
       }
     ]
   }
@@ -60,8 +60,8 @@
       {
         "key": "Network",
         "title": "Network",
-        "post_list": "../data/frontend/post.json",
-        "page": "frontlist"
+        "list_path": "../data/frontend/list.json",
+        "page": "list"
       }
     ]
   }

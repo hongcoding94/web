@@ -1,0 +1,137 @@
+[
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "title": "백엔드 연동용 동적 템플릿 로딩",
+    "date": "2026.03.01",
+    "summary": "fetch API를 활용한 동적 HTML 로딩 방식 (백엔드 연동 포함)",
+    "data_url": "../pages/tiles/20260301-fetch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "title": "백엔드 비동기 처리 패턴 정리",
+    "date": "2026.03.02",
+    "summary": "백엔드 연동 비동기 처리 흐름 정리",
+    "data_url": "../pages/tiles/20260302-async.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "title": "REST API 설계와 백엔드 원칙",
+    "date": "2026.03.03",
+    "summary": "URI 설계와 HTTP Method 사용 기준",
+    "data_url": "../pages/tiles/20260303-rest.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "title": "GET/POST 처리와 백엔드 데이터 흐름 이해",
+    "date": "2026.03.04",
+    "summary": "보안과 데이터 전달 관점에서 GET/POST 차이",
+    "data_url": "../pages/tiles/20260304-getpost.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "title": "Spring Controller 책임 분리와 백엔드 설계",
+    "date": "2026.03.05",
+    "summary": "RequestMapping 설계와 책임 분리, 백엔드 처리 흐름 이해",
+    "data_url": "../pages/tiles/20260305-controller.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "title": "백엔드 연동 Tiles 기반 화면 구성",
+    "date": "2026.03.06",
+    "summary": "공통 레이아웃과 영역 분리 전략, 백엔드 연계 고려",
+    "data_url": "../pages/tiles/20260306-tiles.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "title": "SPA/MPA 구조와 백엔드 요청 처리 차이",
+    "date": "2026.03.07",
+    "summary": "페이지 전환 방식과 백엔드 데이터 처리 차이",
+    "data_url": "../pages/tiles/20260307-spa-mpa.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "title": "백엔드 연동 Fetch 에러 처리 패턴",
+    "date": "2026.03.08",
+    "summary": "백엔드 오류와 네트워크 오류 분리 처리",
+    "data_url": "../pages/tiles/20260308-fetch-error.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "title": "백엔드 친화적 JSON 응답 구조 설계",
+    "date": "2026.03.09",
+    "summary": "프론트엔드 친화적이지만 백엔드 처리 기준 포함",
+    "data_url": "../pages/tiles/20260309-json.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "title": "Axios/Fetch 기반 백엔드 통신 비교",
+    "date": "2026.03.10",
+    "summary": "백엔드 통신 라이브러리 선택 기준",
+    "data_url": "../pages/tiles/20260310-axios.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "title": "Spring Interceptor 활용 백엔드 사례",
+    "date": "2026.03.11",
+    "summary": "공통 로직 처리와 인증 필터링, 백엔드 적용",
+    "data_url": "../pages/tiles/20260311-interceptor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "title": "Servlet/Filter 백엔드 요청 흐름 이해",
+    "date": "2026.03.12",
+    "summary": "요청 흐름 기준으로 백엔드 처리 이해",
+    "data_url": "../pages/tiles/20260312-filter.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "title": "백엔드 페이징 처리 공식",
+    "date": "2026.03.13",
+    "summary": "limit, offset 기반 백엔드 페이징 설계",
+    "data_url": "../pages/tiles/20260313-paging.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "title": "ES6 모듈 시스템과 백엔드 연동",
+    "date": "2026.03.14",
+    "summary": "import/export 구조와 번들링, 백엔드 연동 고려",
+    "data_url": "../pages/tiles/20260314-module.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "title": "CORS 오류와 백엔드 처리 이해",
+    "date": "2026.03.15",
+    "summary": "브라우저 보안 정책과 백엔드 처리 이해",
+    "data_url": "../pages/tiles/20260315-cors.html",
+    "private_page": "Y"
+  }
+]

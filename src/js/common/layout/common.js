@@ -1,10 +1,16 @@
-const changePage = async (page) => {
+const changePage = async (page, state = {}) => {
     const map = {
         index: "./main.html",
-        frontlist: "./frontend/list.html",
-        backlist: "./backend/list.html"
+        list: "./components/list.html"
     };
-    await loadTile("content", map[page]);
+
+    const file = map[page];
+    if (!file) return;
+
+    await loadTile("content", file, {
+        tile: file,
+        ...state
+    });
 };
 
 document.addEventListener("DOMContentLoaded", async () => {

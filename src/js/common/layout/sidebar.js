@@ -25,9 +25,6 @@ async function initSidebarData() {
         e.preventDefault();
         changePage("index");
         closeSidebar();
-
-        // 모바일에서는 자동 닫기
-        closeSidebar();
     });
     homeLi.appendChild(home);
     rootUl.appendChild(homeLi);
@@ -54,10 +51,11 @@ async function initSidebarData() {
 
             a.addEventListener("click", e => {
                 e.preventDefault();
-                window.currentPostList = item.post_list;
-                changePage(item.page);
-
-                // 모바일에서는 자동 닫기
+                
+                changePage(item.page, {
+                    listPath: item.list_path
+                });
+            
                 closeSidebar();
             });
 
@@ -89,25 +87,36 @@ function initSidebarUI() {
         return;
     }
 
-    window.openSidebar = () => {
+    window.openSidebar = function () {
+        const nav = document.getElementById("sidebarNav");
+        const overlay = document.getElementById("sidebarOverlay");
+        if (!nav || !overlay) return;
+
         nav.classList.add("open");
         overlay.classList.add("active");
     };
 
-    window.closeSidebar = () => {
+    window.closeSidebar = function () {
+        const nav = document.getElementById("sidebarNav");
+        const overlay = document.getElementById("sidebarOverlay");
+        if (!nav || !overlay) return;
+
         nav.classList.remove("open");
         overlay.classList.remove("active");
     };
 
-    window.toggleSidebar = () => {
+    window.toggleSidebar = function () {
+        const nav = document.getElementById("sidebarNav");
+        const overlay = document.getElementById("sidebarOverlay");
+        if (!nav || !overlay) return;
+
         nav.classList.contains("open")
             ? window.closeSidebar()
             : window.openSidebar();
     };
 
-    window.addEventListener("sidebar:toggle", window.toggleSidebar);
-    closeBtn.addEventListener("click", window.closeSidebar);
-    overlay.addEventListener("click", window.closeSidebar);
+    closeBtn.onclick = window.closeSidebar;
+    overlay.onclick = window.closeSidebar;
 }
 
 window.initSidebar = async function () {

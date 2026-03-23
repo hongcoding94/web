@@ -1,10 +1,8 @@
-/*
-   게시글 리스트 + 검색 + UX 강화
-*/
-window.initList = function (root) {
-    if (!root || root.id !== "content") return;
-    const pageEl = root.querySelector('[data-page="list"]');
-    if (!pageEl) return;
+window.initList = function (root, state = {}) {
+      if (!root || root.id !== "content") return;
+  
+      const pageEl = root.querySelector('[data-page="list"]');
+      if (!pageEl) return;
 
     const listEl = pageEl.querySelector("#postList");
     const resultInfo = pageEl.querySelector("#resultInfo");
@@ -20,23 +18,20 @@ window.initList = function (root) {
   let currentPage = 1;
   let pageSize = Number(pageSizeSelect?.value || 10);
 
-  /*
-     Data Load
-  */
-  fetch("../data/backend/post.json")
+  const listPath = state.listPath;
+  if (!listPath) {
+      console.warn("[post-list] listPath missing in state");
+      return;
+  }
+  
+  fetch(listPath)
     .then(res => res.json())
     .then(data => {
-      posts = data.sort((a, b) => b.date.localeCompare(a.date));
-      filtered = posts;
-      render();
-    })
-    .catch(err => {
-      console.error("[post-list] data load failed", err);
+        posts = data.sort((a, b) => b.date.localeCompare(a.date));
+        filtered = posts;
+        render();
     });
 
-  /*
-     Render
-  */
   function render() {
     renderList();
     renderPagination();
@@ -59,7 +54,7 @@ window.initList = function (root) {
     li.className = "post-item";
 
     li.innerHTML = `
-      <a href="#" data-tile="${post.data_url}" class="tile-link">
+      <a data-tile="${post.data_url}" class="tile-link">
         <div class="post-no">${post.no}</div>
 
         <div class="post-main">
@@ -74,17 +69,15 @@ window.initList = function (root) {
       </a>
     `;
 
-    // 🔥 private_page 처리
     const link = li.querySelector("a");
 
-    if (post.private_page === "y") {
+    if (post.private_page === "Y") {
       link.addEventListener("click", (e) => {
-        e.preventDefault();       // 이동 차단
-        e.stopPropagation();     // tiles 전파 차단
+        e.preventDefault();
+        e.stopPropagation();
         alert("아직 공개되지 않은 글입니다");
       });
 
-      // (선택) 시각적 힌트
       li.classList.add("post-private");
     }
 
@@ -110,9 +103,7 @@ window.initList = function (root) {
     }
   }
 
-  /*
-     Search
-  */
+  /* Search */
   function applySearch() {
     const keyword = searchInput.value.trim();
 
@@ -151,9 +142,7 @@ window.initList = function (root) {
         loadTile("content", url);
     });
 
-  /*
-     Event Binding
-  */
+  /* Event Binding */
   searchInput.addEventListener("input", applySearch);
   searchType.addEventListener("change", applySearch);
 

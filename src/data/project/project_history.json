@@ -1,0 +1,128 @@
+[
+    {
+        "no": "7",
+        "projectName": "메세지 플랫폼 (MPushAgent) 시스템 관리 및 운영",
+        "customer": "LG CNS",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "신규 고객사 시스템 설치 및 DB별 에이전트 지원 자동화",
+        "role": "백엔드 개발 및 시스템 운영",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "Spring",
+            "protocol": "",
+            "detail_comment": "신규 고객사 시스템 설치 준비 체계 구축, DB별 에이전트 솔루션 지원 및 자동화 도구 설계·구현"
+        }
+    },
+    {
+        "no": "6",
+        "projectName": "Spring Batch 기반 금융 데이터 모니터링·개인정보 분리보관 시스템 개발",
+        "customer": "우리은행",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "금융 데이터 배치 자동화 및 개인정보 분리보관 구축",
+        "role": "백엔드 개발 및 배치 운영",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "Spring Batch",
+            "protocol": "",
+            "detail_comment": "기업 인터넷뱅킹 자금 보고서 자동화, 개인정보 분리보관 파기 시스템 구축"
+        }
+    },
+    {
+        "no": "5",
+        "projectName": "서버 데이터 보존 유지 관리 및 웹 추가 기능 개발 / 인프라 관리",
+        "customer": "검찰청",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "서버 및 웹 인프라 운영과 보안 취약점 대응",
+        "role": "인프라 및 웹 개발",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "",
+            "protocol": "",
+            "detail_comment": "서버실 랙 구성도 및 네트워크 다이어그램 표준화, 인프라 운영, Log4j 보안 취약점 대응, 내부 웹 시스템 기능 개발"
+        }
+    },
+    {
+        "no": "4",
+        "projectName": "Compliance 통합 관리 업무 홈페이지 신규 구축",
+        "customer": "삼성증권",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "업무 통합 관리 웹 포털 구축",
+        "role": "웹 개발 및 시스템 구축",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "",
+            "protocol": "",
+            "detail_comment": "업무 통합 관리 웹 포털 설계 및 구축, DB 기반 To-Do List 및 알림 기능 구현, 문서 미리보기 적용"
+        }
+    },
+    {
+        "no": "3",
+        "projectName": "사내 포털(PLUSi) Java 업그레이드 및 웹 표준화 고도화",
+        "customer": "LG생활건강",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "사내 포털 Java 업그레이드 및 웹 표준화",
+        "role": "프론트엔드 및 백엔드 개발",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "Spring",
+            "protocol": "",
+            "detail_comment": "Java 업그레이드, HTML5 표준화, 멀티 브라우저 지원, API 연계, 메뉴바 리뉴얼 및 페이지 기능 개발"
+        }
+    },
+    {
+        "no": "2",
+        "projectName": "읍·면·동 취학아동 주민등록정보 고도화 시스템 구축",
+        "customer": "행정안전부",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "취학아동 정보 관리 시스템 고도화",
+        "role": "시스템 개발",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "",
+            "protocol": "",
+            "detail_comment": "취학아동 지문·서명 관리, 전입 이력 기반 조회 기능 고도화, 통지서 발급 및 분기별 미발급자 구분 기능 구현"
+        }
+    },
+    {
+        "no": "1",
+        "projectName": "내부 어드민 홈페이지 유지보수 및 게시판 기능 개선",
+        "customer": "한국수자원공사",
+        "contractor": "",
+        "startDate": "",
+        "endDate": "",
+        "comment": "내부 홈페이지 유지보수 및 게시판 개선",
+        "role": "백엔드 및 프론트엔드 개발",
+        "detail": {
+            "status_yn": "Y",
+            "dbms": "",
+            "os": "",
+            "framework": "",
+            "protocol": "",
+            "detail_comment": "내부 홈페이지 유지보수 및 단독 개발, 디컴파일 후 로직 복원, 3-Depth 네비게이션 개선 및 게시판 기능 개발"
+        }
+    }
+]

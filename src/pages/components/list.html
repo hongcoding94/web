@@ -1,0 +1,29 @@
+<div class="post-list-wrap" data-page="list">
+
+    <div class="list-header">
+        <h1>글 목록</h1>
+
+        <div class="page-size-wrap">
+            <select id="pageSize">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+    </div>
+
+    <ul id="postList"></ul>
+    
+    <div class="search-wrap">
+        <div class="result-info" id="resultInfo"></div>
+        <select id="searchType">
+            <option value="title">제목</option>
+            <option value="no">번호</option>
+        </select>
+        <input id="searchInput" type="text" placeholder="검색어 입력" />
+        <button id="clearSearch">✕</button>
+    </div>
+    
+    <div id="pagination"></div>
+
+</div>
