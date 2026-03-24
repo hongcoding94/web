@@ -208,3 +208,7 @@ body.dark .group-title:hover,
 body.dark .child-links li a:hover {
     background: rgba(255,255,255,0.08);
 }
+
+body.dark .group-title {
+    color: #ffff;
+}

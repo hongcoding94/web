@@ -1,157 +1,226 @@
-#contentWrapper {
-    display: flex;
-    gap: 20px;
-}
-
 /* Content 영역 */
 #content {
     flex: 1;
     min-width: 0;
 }
 
-/* TOC Wrapper */
-#tocWrapper {
-    width: 220px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 100px;
-    max-height: calc(100vh - 120px);
-    overflow-y: auto;
-    background: var(--sidebar-w-right);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+/*
+   Content Article Base
+*/
+.content-article {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, "Noto Sans KR", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 56px 64px;
+
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
-/* TOC 리스트 */
-#tocList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.content-article * {
+  box-sizing: border-box;
 }
 
-#tocList li a {
+/*
+   Light Mode (Default)
+*/
+.content-article {
+  --bg-main: #ffffff;
+  --bg-card: #f9fafb;
+  --bg-code: #1f2933;
+
+  --border-soft: #e5e7eb;
+
+  --text-main: #1f2937;
+  --text-sub: #4b5563;
+  --text-muted: #6b7280;
+  --text-link: #2563eb;
+  --text-code: #e5e7eb;
+}
+
+/*
+   Typography
+*/
+.content-article h1,
+.content-article h2,
+.content-article h3 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 2.4em 0 0.9em;
+}
+
+.content-article h1 {
+  font-size: 2rem;
+}
+
+.content-article h2 {
+  font-size: 1.55rem;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0.4em;
+}
+
+.content-article h3 {
+  font-size: 1.25rem;
+}
+
+.content-article p {
+  margin: 1em 0;
+  color: var(--text-main);
+}
+
+/*
+   Links / Emphasis
+*/
+.content-article a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content-article strong {
+  font-weight: 600;
+}
+
+/*
+   Lists
+*/
+.content-article ul,
+.content-article ol {
+  margin: 1.2em 0 1.2em 1.4em;
+  padding-left: 1em;
+}
+
+.content-article li {
+  margin: 0.5em 0;
+}
+
+/*
+   Blockquote / Aside
+*/
+.content-article blockquote {
+  margin: 1.8em 0;
+  padding: 1.2em 1.4em;
+  background: var(--bg-card);
+  border-left: 4px solid var(--border-soft);
+  color: var(--text-sub);
+  border-radius: 6px;
+}
+
+/*
+   Code
+*/
+.content-article code {
+  background: rgba(31, 41, 55, 0.08);
+  padding: 0.25em 0.4em;
+  border-radius: 4px;
+  font-family: "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+.content-article pre {
+  margin: 1.8em 0;
+  padding: 1.4em;
+  background: var(--bg-code);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.content-article pre code {
+  background: transparent;
+  color: var(--text-code);
+  padding: 0;
+  font-size: 0.95em;
+}
+
+/*
+   Table
+*/
+.content-article table {
     display: block;
-    padding: 4px 8px;
-    text-decoration: none;
-    color: var(--text-main);
-    font-size: 0.9rem;
-}
-
-#tocList li a.active {
-    font-weight: 600;
-    color: var(--accent);
-}
-
-/* Code Block */
-.code-block {
-    position: relative;
-    background: #0f172a;
-    border-radius: 12px;
-    margin: 24px 0;
     width: 100%;
-    overflow: hidden;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-    font-family: "Fira Code", monospace;
-}
-
-/* Left accent line */
-.code-block::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, #3b82f6, #60a5fa);
-}
-
-/* Code Header */
-.code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px 10px 18px;
-    background: #020617;
-    color: #cbd5f5;
-    font-size: 13px;
-}
-
-.copy-btn {
-    border: 1px solid #334155;
-    background: transparent;
-    color: #cbd5f5;
-    padding: 4px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.copy-btn:hover {
-    background: #334155;
-}
-
-/* Code Body */
-.code-body {
-    display: flex;
+    max-width: 100%;
+  
     overflow-x: auto;
+    white-space: nowrap;
+  
+    border-collapse: collapse;
 }
 
-.code-body.long {
-    max-height: 60vh;
-    overflow-y: auto;
+.content-article th,
+.content-article td {
+  padding: 0.8em 0.9em;
+  border: 1px solid var(--border-soft);
+  text-align: left;
 }
 
-/* Line Numbers */
-.line-numbers {
-    text-align: right;
-    padding: 16px 10px;
-    color: #6b7280;
-    user-select: none;
+.content-article th {
+  background: var(--bg-card);
+  font-weight: 600;
 }
 
-.code-lines {
-    padding: 16px;
-    white-space: pre;
+/*
+   Divider
+*/
+.content-article hr {
+  margin: 3em 0;
+  border: none;
+  border-top: 1px solid var(--border-soft);
 }
 
-.line-number,
-.code-line {
-    line-height: 1.6;
-    font-family: "Fira Code", monospace;
-    color: aliceblue;
+/*
+   Dark Mode
+*/
+@media (prefers-color-scheme: dark) {
+  .content-article {
+    --bg-main: #1c1f24;
+    --bg-card: #262a31;
+    --bg-code: #111418;
+
+    --border-soft: #343a40;
+
+    --text-main: #e6e8eb;
+    --text-sub: #c7cbd1;
+    --text-muted: #9aa0a6;
+    --text-link: #7aa2ff;
+    --text-code: #e6e8eb;
+
+    background: var(--bg-main);
+  }
+
+  .content-article code {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-code);
+  }
 }
 
-/* Article */
-.content article {
-    background: var(--bg-card);
-    padding: 48px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* Responsive */
+/*
+   Mobile (≤768px)
+*/
 @media (max-width: 768px) {
-    #tocWrapper {
-        display: none !important;
-    }
-    #toc {
-        display: none !important;
-    }
+  .content-article {
+    padding: 36px 22px;
+    font-size: 15px;
+  }
 
-    #contentWrapper {
-        flex-direction: column;
-    }
-    
-    .code-lines {
-        padding: 12px;
-        white-space: pre;
-    }
+  .content-article h1 {
+    font-size: 1.6rem;
+  }
 
-    .line-numbers {
-        text-align: right;
-        padding: 12px 10px;
-        color: #6b7280;
-        user-select: none;
-    }
+  .content-article h2 {
+    font-size: 1.35rem;
+  }
 
+  .content-article h3 {
+    font-size: 1.15rem;
+  }
+
+  .content-article table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
