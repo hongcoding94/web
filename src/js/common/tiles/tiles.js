@@ -19,10 +19,15 @@ window.loadTile = async (id, file, state = {}, push = true) => {
     if (id === "header" && window.initHeader) {
         window.initHeader();
     }
-
+    
     if (id === "content") {
         if (window.initContent) window.initContent(target);
         if (window.initList) window.initList(target, state);
+        
+        if (state?.markdownPath) {
+            if (window.loadMarkdown) window.loadMarkdown(state.markdownPath);
+        }
+
     }
 
     if (id === "sidebar") {

@@ -70,7 +70,6 @@ window.initList = function (root, state = {}) {
     `;
 
     const link = li.querySelector("a");
-
     if (post.private_page === "Y") {
       link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -79,8 +78,15 @@ window.initList = function (root, state = {}) {
       });
 
       li.classList.add("post-private");
-    }
+    } else {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        e.stopPropagation();
 
+        changePage('content', { markdownPath: post.data_url });
+      });
+    }
+    
       listEl.appendChild(li);
     });
   }
@@ -158,4 +164,5 @@ window.initList = function (root, state = {}) {
     currentPage = 1;
     render();
   });
+
 };

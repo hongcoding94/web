@@ -1,17 +1,8 @@
-/**
- * 
- * @param {*} page 
- * @param {*} state
- *      [ state 항목 ]
- *      - listPath
- * 
- * 
- */
-
 const changePage = async (page, state = {}) => {
     const map = {
         index: "./main.html",
-        list: "./components/list.html"
+        list: "./components/list.html",
+        content: "./tiles/content.html"
     };
 
     const file = map[page];
@@ -27,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadTile("header", "./tiles/header.html");
     await loadTile("sidebar", "./tiles/sidebar.html");
     await loadTile("footer", "./tiles/footer.html");
+
 
     initSidebar();
     changePage("index");

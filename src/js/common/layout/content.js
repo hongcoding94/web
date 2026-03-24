@@ -90,8 +90,6 @@ function generateTOC() {
     });
 }
 
-window.initContent = initContent;
-
 function highlightTOCOnScroll(root = document) {
     const content = root.querySelector(".content-article");
     const tocLinks = root.querySelectorAll("#tocList li a");
@@ -121,6 +119,38 @@ function initContent(root = document) {
     
     generateTOC();
     highlightTOCOnScroll(root);
+}
+
+async function loadMarkdown(path) {
+  if (!path) return;
+
+  const fetchAndRender = async (article) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error(`Cannot fetch ${path}`);
+      const markdown = await res.text();
+      const html = marked.parse(markdown);
+      article.innerHTML = html;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      console.error("Markdown load error:", err);
+    }
+  };
+
+  let article = document.querySelector(".content-article");
+  if (article) {
+    await fetchAndRender(article);
+  } else {
+
+    const observer = new MutationObserver(async (mutations, obs) => {
+      article = document.querySelector(".content-article");
+      if (article) {
+        await fetchAndRender(article);
+        obs.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
 }
 
 window.initContent = initContent;
