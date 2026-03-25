@@ -20,9 +20,9 @@
 }
 
 body.dark {
-    --bg-main: #0b1220;
+    --bg-main: #0e121a;
     --bg-card: #020617;
-    --bg-subtle: rgba(255,255,255,0.05);
+    --bg-subtle: rgba(255, 255, 255, 0.05);
     --text-main: #e5e7eb;
     --text-sub: #9ca3af;
     --border-color: #1e293b;
@@ -31,11 +31,11 @@ body.dark {
     --sidebar-bg: var(--sidebar-dark-bg);
     --sidebar-text: var(--sidebar-dark-text);
     --sidebar-hover: var(--sidebar-dark-hover);
+
+    background: var(--bg-main);
+    color: var(--text-main);
 }
 
-/*
-   Reset & Base
-*/
 * {
     margin: 0;
     padding: 0;
@@ -49,32 +49,38 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.6;
-    width: 100%;
-    color: var(--text-main);
-    background: var(--bg-main);
+    color: #1f2937;
+    background: #fff;
 }
 
-/*
-   Layout (핵심 수정)
-*/
-.container {
+.main {
+    flex: 1;
     display: flex;
-    max-width: 90%;
-    margin: 20px auto;
-    gap: 32px;
-    padding: 0 20px;
+    justify-content: center;
 }
 
-/*
-   Sidebar
-*/
+.layout {
+    display: flex;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.container {
+    flex: 1;
+    min-width: 0;
+}
+
 .sidebar {
     width: 260px;
     flex-shrink: 0;
     background: var(--bg-card);
     border-radius: 14px;
     padding: 20px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     height: fit-content;
 }
 
@@ -103,7 +109,7 @@ body {
 }
 
 .menu-title:hover {
-    background: rgba(99,102,241,0.08);
+    background: rgba(99, 102, 241, 0.08);
 }
 
 /* Toggle Icon */
@@ -135,12 +141,12 @@ body {
 }
 
 .menu-item:hover {
-    background: rgba(99,102,241,0.08);
+    background: rgba(99, 102, 241, 0.08);
     color: var(--text-main);
 }
 
 .menu-item.active {
-    background: rgba(99,102,241,0.15);
+    background: rgba(99, 102, 241, 0.15);
     color: var(--text-main);
     font-weight: 600;
 }

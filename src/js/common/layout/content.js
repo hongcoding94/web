@@ -1,14 +1,15 @@
-/* Copy Button 기능 */
+/*
+   Copy Button
+*/
 document.addEventListener("click", (e) => {
     const btn = e.target.closest(".copy-btn");
     if (!btn) return;
 
-    const code = btn
-        .closest(".code-block")
-        .querySelector(".code-lines")
-        .innerText;
+    const block = btn.closest(".code-block");
+    const code = block.querySelector(".code-lines");
+    if (!code) return;
 
-    navigator.clipboard.writeText(code);
+    navigator.clipboard.writeText(code.innerText);
 
     btn.textContent = "Copied!";
     setTimeout(() => {
@@ -16,19 +17,55 @@ document.addEventListener("click", (e) => {
     }, 1200);
 });
 
-/* Render Code Block */
+/*
+   Markdown Code → Custom Wrapper
+*/
+function replaceCodeBlocks(root) {
+    if (!root) return;
+
+    const codes = root.querySelectorAll("pre > code");
+
+    codes.forEach(code => {
+        const pre = code.parentElement;
+        if (!pre || pre.dataset.replaced) return;
+
+        const langClass = [...code.classList].find(c => c.startsWith("language-"));
+        const language = langClass
+            ? langClass.replace("language-", "").toUpperCase()
+            : "TEXT";
+
+        const raw = code.textContent;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "code-block";
+
+        wrapper.innerHTML = `
+            <div class="code-header">
+                <span class="language">${language}</span>
+                <button class="copy-btn">Copy</button>
+            </div>
+            <div class="code-body">
+                <script type="text/plain" class="raw-code"></script>
+            </div>
+        `;
+
+        wrapper.querySelector(".raw-code").textContent = raw;
+
+        pre.dataset.replaced = "true";
+        pre.replaceWith(wrapper);
+    });
+}
+
 function renderCodeBlock(block) {
-    if (block.dataset.inited) return;
+    if (block.dataset.inited === "true") return;
     block.dataset.inited = "true";
 
-    const code = block.querySelector(".raw-code");
+    const rawEl = block.querySelector(".raw-code");
     const body = block.querySelector(".code-body");
-    if (!code || !body) return;
+    if (!rawEl || !body) return;
 
-    const raw = code.textContent.replace(/\n$/, "");
-    const lines = raw.split("\n");
-
-    code.remove();
+    const lines = rawEl.textContent.replace(/\n$/, "").split("\n");
+    rawEl.remove();
 
     const lineNumbers = document.createElement("div");
     lineNumbers.className = "line-numbers";
@@ -36,121 +73,128 @@ function renderCodeBlock(block) {
     const codeLines = document.createElement("div");
     codeLines.className = "code-lines";
 
-    lines.forEach((line, idx) => {
-        const num = document.createElement("div");
-        num.className = "line-number";
-        num.textContent = idx + 1;
+    lines.forEach((line, i) => {
+        const ln = document.createElement("div");
+        ln.className = "line-number";
+        ln.textContent = i + 1;
 
-        const codeLine = document.createElement("div");
-        codeLine.className = "code-line";
-        codeLine.textContent = line || " ";
+        const cl = document.createElement("div");
+        cl.className = "code-line";
+        cl.textContent = line || " ";
 
-        lineNumbers.appendChild(num);
-        codeLines.appendChild(codeLine);
+        lineNumbers.appendChild(ln);
+        codeLines.appendChild(cl);
     });
 
     body.innerHTML = "";
-    body.appendChild(lineNumbers);
-    body.appendChild(codeLines);
-
-    if (lines.length > 25) body.classList.add("long");
+    body.append(lineNumbers, codeLines);
 
     body.addEventListener("scroll", () => {
         lineNumbers.scrollTop = body.scrollTop;
     });
 }
 
-/* TOC 생성 */
-function generateTOC() {
-    const content = document.querySelector(".content-article");
-    const tocList = document.getElementById("tocList");
-    if (!content || !tocList) return;
+/*
+   TOC
+*/
+function generateTOC(root = document) {
+    const contentRoot = root.querySelector("#content");
+    if (!contentRoot) return;
 
-    // 중복 방지
+    const article = contentRoot.querySelector(".content-article");
+    const tocList = contentRoot.querySelector("#tocList");
+
+    if (!article || !tocList) return;
+
     tocList.innerHTML = "";
 
-    const headers = content.querySelectorAll("h1, h2, h3");
+    const headers = article.querySelectorAll("h1, h2, h3");
+    if (headers.length === 0) return;
+
     headers.forEach((h, idx) => {
         const li = document.createElement("li");
-        li.className = h.tagName.toLowerCase() === "h1" ? "c1" :
-                       h.tagName.toLowerCase() === "h2" ? "c2" : "c3";
+        li.className =
+            h.tagName === "H1" ? "c1" :
+            h.tagName === "H2" ? "c2" : "c3";
+
+        const id = `toc-${idx}`;
+        h.id = id;
 
         const a = document.createElement("a");
-        a.href = `#toc-${idx}`;
+        a.href = `#${id}`;
         a.textContent = h.textContent;
-
-        h.id = `toc-${idx}`;
-        li.appendChild(a);
-        tocList.appendChild(li);
 
         a.addEventListener("click", (e) => {
             e.preventDefault();
-            h.scrollIntoView({ behavior: "smooth", block: "start" });
+            h.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
     });
 }
 
-function highlightTOCOnScroll(root = document) {
-    const content = root.querySelector(".content-article");
-    const tocLinks = root.querySelectorAll("#tocList li a");
-    if (!content || tocLinks.length === 0) return;
-
-    const headers = content.querySelectorAll("h1.c1, h2.c2, h3.c3");
-
-    window.addEventListener("scroll", () => {
-        let currentIdx = 0;
-        headers.forEach((h, idx) => {
-            const top = h.getBoundingClientRect().top;
-            if (top <= 100) currentIdx = idx;
-        });
-
-        tocLinks.forEach((link, idx) => {
-            link.classList.toggle("active", idx === currentIdx);
-        });
-    });
-}
-
-function initContent(root = document) {
-    if (!root || root.id !== "content") return;
+/*
+   Init Content
+*/
+function initContent(root) {
+    if (!root) return;
 
     root.querySelectorAll(".code-block").forEach(block => {
+        block.dataset.inited = "";
         renderCodeBlock(block);
     });
-    
-    generateTOC();
-    highlightTOCOnScroll(root);
+
 }
 
+/*
+   Markdown Loader
+*/
 async function loadMarkdown(path) {
-  if (!path) return;
+    if (!path) return;
 
-  const fetchAndRender = async (article) => {
-    try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error(`Cannot fetch ${path}`);
-      const markdown = await res.text();
-      const html = marked.parse(markdown);
-      article.innerHTML = html;
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (err) {
-      console.error("Markdown load error:", err);
+    const render = async (article) => {
+        try {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error(path);
+
+            const markdown = await res.text();
+            const html = marked.parse(markdown);
+
+            article.innerHTML = html;
+
+            replaceCodeBlocks(article);
+            generateTOC(document);
+            initContent(document);
+
+            window.scrollTo({ top: 0 });
+        } catch (e) {
+            console.error("Markdown load error:", e);
+        }
+    };
+
+    let article = document.querySelector(".content-article");
+    if (article) {
+        await render(article);
+        return;
     }
-  };
 
-  let article = document.querySelector(".content-article");
-  if (article) {
-    await fetchAndRender(article);
-  } else {
-
-    const observer = new MutationObserver(async (mutations, obs) => {
-      article = document.querySelector(".content-article");
-      if (article) {
-        await fetchAndRender(article);
-        obs.disconnect();
-      }
+    const observer = new MutationObserver(async (_, obs) => {
+        article = document.querySelector(".content-article");
+        if (article) {
+            await render(article);
+            obs.disconnect();
+        }
     });
+
     observer.observe(document.body, { childList: true, subtree: true });
-  }
 }
 
+/*
+   Export
+*/
+window.loadMarkdown = loadMarkdown;
 window.initContent = initContent;

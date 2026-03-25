@@ -146,6 +146,7 @@ body.dark .icon {
 @media (max-width: 768px) {
     #sidebarToggle {
         display: block;
+        color: var(--text-main);
     }
 
     #header {

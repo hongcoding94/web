@@ -1,24 +1,27 @@
 /* Content 영역 */
 #content {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 40px 24px;
+  min-width: 0;
 }
 
 /*
    Content Article Base
 */
 .content-article {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, "Noto Sans KR", Arial, sans-serif;
+  width: 100%;
+  max-width: 720px;
+  padding: 48px 48px;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.75;
 
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 56px 64px;
-
-  background: var(--bg-main);
-  color: var(--text-main);
+  border-radius: 16px;
 }
 
 .content-article * {
@@ -172,6 +175,147 @@
 }
 
 /*
+   Code Block
+*/
+.code-block {
+    position: relative;
+    background: #0f172a;
+    border-radius: 12px;
+    margin: 24px 0;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    font-family: "Fira Code", monospace;
+}
+
+/* 왼쪽 강조 라인 */
+.code-block::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6, #60a5fa);
+}
+
+/*
+   Header
+*/
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px 10px 18px;
+    background: #020617;
+    color: #cbd5f5;
+    font-size: 13px;
+}
+
+.copy-btn {
+    border: 1px solid #334155;
+    background: transparent;
+    color: #cbd5f5;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background: #334155;
+}
+
+/*
+   Code Body
+*/
+.code-body {
+    display: flex;
+    overflow-x: auto;
+}
+
+/* 길면 스크롤 */
+.code-body.long {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+/*
+   Line Numbers
+*/
+.line-numbers {
+    text-align: right;
+    padding: 16px 10px;
+    color: #6b7280;
+    user-select: none;
+}
+
+.code-lines {
+    padding: 16px;
+    white-space: pre;
+}
+
+.line-number,
+.code-line {
+    line-height: 1.6;
+    font-family: "Fira Code", monospace;
+}
+
+body .line-number,
+.code-line {
+    color: aliceblue;
+    line-height: 1.6;
+    font-family: "Fira Code", monospace;
+}
+
+.toc-wrapper {
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 20px 22px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.toc-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+.toc-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+#tocList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#tocList li {
+  margin: 6px 0;
+}
+
+#tocList li a {
+  text-decoration: none;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+#tocList li a:hover {
+  color: var(--accent);
+}
+
+/*
    Dark Mode
 */
 @media (prefers-color-scheme: dark) {
@@ -201,6 +345,10 @@
    Mobile (≤768px)
 */
 @media (max-width: 768px) {
+  .toc-wrapper {
+    display: none;
+  }
+
   .content-article {
     padding: 36px 22px;
     font-size: 15px;

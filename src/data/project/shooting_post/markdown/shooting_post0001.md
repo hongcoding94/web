@@ -281,31 +281,31 @@ SELECT CASE WHEN ROW_NUMBER() OVER(ORDER BY COLUMN_NAME) = 1 THEN '' ELSE 'UNION
 ```sql
 -- [ 클라이언트사 제공 생성 로직 ] 클라이언트의 테이블과 비교하여 column이 없다면 add column이 있지만 타입과 길이가 맞지 않다면 modify 하는 작업
 SELECT CASE WHEN AA.COLUMN_NAME_O IS NULL THEN 'ALTER TABLE ' || AA.TABLE_NAME_N || ' ADD ' || AA.COLUMN_NAME_N || ' ' || AA.DATA_TYPE_N || AA.DATA_LENGTH || AA.DEFAULT_T || AA.NULLABLE_N || ';'
-						ELSE 'ALTER TABLE ' || AA.TABLE_NAME_N || ' MODIFY ' || AA.COLUMN_NAME_O || ' ' || AA.DATA_TYPE_N || AA.DATA_LENGTH || AA.DEFAULT_T || ';'
-						 END AS ALTER_SQL
+    ELSE 'ALTER TABLE ' || AA.TABLE_NAME_N || ' MODIFY ' || AA.COLUMN_NAME_O || ' ' || AA.DATA_TYPE_N || AA.DATA_LENGTH || AA.DEFAULT_T || ';'
+      END AS ALTER_SQL
+FROM (
+SELECT A.COLUMN_NAME 		  AS COLUMN_NAME_N
+      , B.COLUMN_NAME 		  AS COLUMN_NAME_O
+      , A.TABLE_NAME 		  AS TABLE_NAME_N
+      , UPPER(A.DATA_TYPE) AS DATA_TYPE_N
+      -- Data Type에 길이가 없는 경우의 케이스를 방지하고자 Case 조건 사용
+      , CASE WHEN UPPER(A.DATA_TYPE) = 'DATE' THEN '' 
+            ELSE '(' || COALESCE(A.CHARACTER_MAXIMUM_LENGTH, '') || ')' 
+              END          AS DATA_LENGTH
+      , A.NULLABLE         AS NULLABLE_N
+      -- 특정 Default Value의 값은 수동으로 정정하기 위한 Case 조건
+      , CASE WHEN A.COLUMN_NAME = 'PROCESS_CODE'		        THEN ' DEFAULT ''003'''
+            WHEN A.COLUMN_NAME = 'REGISTER_DATE'				  THEN ' DEFAULT SYSDATE'
+            ELSE '' 
+              END          AS DEFAULT_T
   FROM (
-				SELECT A.COLUMN_NAME 		  AS COLUMN_NAME_N
-					   , B.COLUMN_NAME 		  AS COLUMN_NAME_O
-					   , A.TABLE_NAME 		  AS TABLE_NAME_N
-					   , UPPER(A.DATA_TYPE) AS DATA_TYPE_N
-					   -- Data Type에 길이가 없는 경우의 케이스를 방지하고자 Case 조건 사용
-					   , CASE WHEN UPPER(A.DATA_TYPE) = 'DATE' THEN '' 
-										ELSE '(' || COALESCE(A.CHARACTER_MAXIMUM_LENGTH, '') || ')' 
-										 END          AS DATA_LENGTH
-					   , A.NULLABLE         AS NULLABLE_N
-					   -- 특정 Default Value의 값은 수동으로 정정하기 위한 Case 조건
-					   , CASE WHEN A.COLUMN_NAME = 'PROCESS_CODE'		        THEN ' DEFAULT ''003'''
-							      WHEN A.COLUMN_NAME = 'REGISTER_DATE'				  THEN ' DEFAULT SYSDATE'
-							      ELSE '' 
-							       END          AS DEFAULT_T
-				  FROM (
-						  -- [기준의 테이블을 가상의 테이블로 생성하는 Query]의 가상의 테이블을 입력한다.
-							{임시 테이블 입력}	
-						   ) A
-				  LEFT OUTER JOIN {SCHEMA}.USER_TAB_COLUMNS B ON B.COLUMN_NAME = A.COLUMN_NAME AND B.TABLE_NAME = '{TABLE_NAME}'
-				 WHERE B.COLUMN_NAME IS NULL
-					  OR UPPER(B.DATA_TYPE) != A.DATA_TYPE
-					  OR TO_CHAR(B.DATA_LENGTH) != A.CHARACTER_MAXIMUM_LENGTH
+      -- [기준의 테이블을 가상의 테이블로 생성하는 Query]의 가상의 테이블을 입력한다.
+      {임시 테이블 입력}	
+        ) A
+  LEFT OUTER JOIN {SCHEMA}.USER_TAB_COLUMNS B ON B.COLUMN_NAME = A.COLUMN_NAME AND B.TABLE_NAME = '{TABLE_NAME}'
+  WHERE B.COLUMN_NAME IS NULL
+    OR UPPER(B.DATA_TYPE) != A.DATA_TYPE
+    OR TO_CHAR(B.DATA_LENGTH) != A.CHARACTER_MAXIMUM_LENGTH
 	 	 ) AA	
 ```
 
@@ -616,8 +616,6 @@ ChatGPT를 통해서 정확한 결과 값을 추출하였습니다.
 | 자원 기반 효율성 | 3 ÷ 1 | 3 | 3 × 0.97 = **2.91 건** | 서버 1코어로 3건 처리 → 자원 1당 3건 처리 |
 | 목표 기반 효율성 | (89 ÷ 100) × 100% | 89% | 89% × 0.97 = **86.33%** | 목표 100건 대비 89건 달성 → 목표 달성률 89% |
 | 정확성 | (97 ÷ 100) × 100% | 97% | — | 100건 중 97건 정확 처리 → 업무 품질 반영 |
-
-                                                                                                                                                                                                         (ChatGpt 기반 효율성 지표)
 
 💡 **GPT** **해석 요약**
 
