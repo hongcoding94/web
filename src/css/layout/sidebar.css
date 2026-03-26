@@ -26,38 +26,14 @@
     position: sticky;
     top: 60px;
     width: 250px;
-    height: calc(100vh - 60px);
     background: var(--bg-card);
     padding: 16px;
     overflow-y: auto;
     z-index: 100;
 }
 
-/* 모바일 사이드바 */
-@media (max-width: 768px) {
-  #sidebarNav {
-      position: fixed;
-      top: 50%;
-      left: -260px;
-      transform: translateY(-50%);
-      width: 260px;
-      height: 80vh;
-      z-index: 1000;
-      transition: left 0.3s ease;
-  }
-
-    #sidebarNav.open {
-        left: 0;
-    }
-
-    .profile-box {
-      display: none;
-    }
-    
-}
-
 /*
-   Overlay (Mobile)
+   Overlay
 */
 #sidebarOverlay {
     position: fixed;
@@ -74,15 +50,8 @@
     pointer-events: auto;
 }
 
-@media (min-width: 769px) {
-    #sidebarOverlay {
-        display: none;
-    }
-
-}
-
 /*
-   Close Button (Mobile)
+   Close Button
 */
 .sidebar-close {
     background: none;
@@ -120,13 +89,6 @@
     cursor: pointer;
     color: var(--text-main);
     z-index: 1100;
-}
-
-/* 모바일에서만 표시 */
-@media (max-width: 768px) {
-    .sidebar-close {
-        display: block;
-    }
 }
 
 /*
@@ -211,4 +173,36 @@ body.dark .child-links li a:hover {
 
 body.dark .group-title {
     color: #ffff;
+}
+
+
+/* 모바일 사이드바 */
+@media (max-width: 768px) {
+    #sidebarNav {
+        position: fixed;
+        top: 50%;
+        left: -260px;
+        transform: translateY(-50%);
+        height: calc(100vh - 60px);
+        width: 260px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarNav.open {
+        left: 0;
+    }
+
+    .profile-box {
+        display: none;
+    }
+
+    .sidebar-close {
+        display: block;
+    }
+    
 }

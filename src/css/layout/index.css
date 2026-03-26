@@ -65,7 +65,7 @@ body.dark .stack p { color:#9ca3af; }
 /*
    모바일 대응
 */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .hero { min-width: auto; padding:40px 20px; }
     Section h2 { font-size:22px; margin:60px auto 20px; }
 }
