@@ -288,6 +288,16 @@ body .line-number,
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
+body.dark .toc-title {
+  color: #020617;
+}
+
+body.dark .toc-wrapper {
+  background-color: #ffffff;
+  color: #7e889c;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
 .toc-wrapper::-webkit-scrollbar {
   width: 6px;
 }
@@ -298,7 +308,8 @@ body .line-number,
 }
 
 .toc-title {
-  font-size: 15px;
+  font-size: 20px;
+  text-align: center;;
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -309,18 +320,57 @@ body .line-number,
   padding: 0;
 }
 
-#tocList li {
-  margin: 6px 0;
-}
-
 #tocList li a {
   text-decoration: none;
   color: var(--text-sub);
-  font-size: 14px;
 }
 
 #tocList li a:hover {
   color: var(--accent);
+  text-decoration: underline;
+}
+
+#tocList .c1,
+#tocList .c2,
+#tocList .c3 {
+  white-space: nowrap;
+  display: block;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  line-height: 1.5;
+  transition: background-color 0.2s ease;
+  font-family: 'Pretendard', sans-serif; 
+  border-radius: 4px;
+}
+
+#tocList .c1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  padding: 0px 4px;
+}
+
+#tocList .c2 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 3px 8px 3px 20px;
+  margin-top: 4px;
+  border-left: 2px solid #dee2e6;
+}
+
+#tocList .c3 {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 2px 8px 2px 32px;
+  margin-top: 2px;
+  position: relative;
+}
+
+#tocList .c3::before {
+  content: "•";
+  margin-right: 5px;
+  color: #adb5bd;
 }
 
 /*
