@@ -17,6 +17,7 @@
     --sidebar-dark-bg: #1f2937;
     --sidebar-dark-text: #f9fafb;
     --sidebar-dark-hover: #374151;
+    --font-type:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
 }
 
 body.dark {
@@ -47,7 +48,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--font-type);
     line-height: 1.6;
     color: #1f2937;
     background: #fff;
@@ -64,14 +65,14 @@ body {
     align-items: flex-start;
 }
 
-.sidebar {
-    width: 240px;
-    flex-shrink: 0;
-}
-
 .container {
     flex: 1;
     min-width: 0;
+}
+
+#sidebar {
+    margin-top: 20px;
+    padding-left : 20px;
 }
 
 .sidebar {

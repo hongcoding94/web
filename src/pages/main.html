@@ -54,26 +54,19 @@
     </ul>
   </section>
 
-  <section class="section gray">
+  <section class="project-section">
     <h2>Featured Projects</h2>
-    <div class="projects">
-        <div class="project-card">
-            <h3>LG CNS 메세징플랫폼 </h3>
-            <p>Spring 기반 메세지(kakaotalk, nevertalk등) 발송</p>
-            <span>Java, Spring, Oracle</span>
-        </div>
-        <div class="project-card">
-            <h3>우리WON뱅킹 개인정보 배치</h3>
-            <p>Spring Batch 기반 금융 데이터 배치 시스템</p>
-            <span>Java, Spring, Oracle</span>
-        </div>
-        <div class="project-card">
-            <h3>우리은행 기업 데일리브리핑</h3>
-            <p>Spring 기반 금융 데이터 리포트 배치 시스템</p>
-            <span>Java, Spring, Oracle</span>
-        </div>
-    </div>
+    <div id="projectList" class="project-list projects"></div>
   </section>
+
+  <!-- Modal -->
+  <div id="projectModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
   <section class="section">
     <h2>Tech Stack</h2>
