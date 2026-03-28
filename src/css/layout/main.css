@@ -85,8 +85,10 @@
 .project-list {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
     padding: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .project-card {

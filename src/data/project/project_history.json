@@ -10,9 +10,9 @@
         "role": "백엔드 개발 및 시스템 운영",
         "detail": {
             "status_yn": "Y",
-            "dbms": "",
-            "os": "",
-            "framework": "Spring",
+            "dbms": "Oracle, Mysql, Mssql, Postgresql, tibero",
+            "os": "Linux, Windows",
+            "tool": "Spring",
             "protocol": "",
             "detail_comment": "신규 고객사 시스템 설치 준비 체계 구축, DB별 에이전트 솔루션 지원 및 자동화 도구 설계·구현"
         }
@@ -28,9 +28,9 @@
         "role": "백엔드 개발 및 배치 운영",
         "detail": {
             "status_yn": "Y",
-            "dbms": "",
+            "dbms": "Oracle",
             "os": "",
-            "framework": "Spring Batch",
+            "tool": "Spring Batch",
             "protocol": "",
             "detail_comment": "기업 인터넷뱅킹 자금 보고서 자동화, 개인정보 분리보관 파기 시스템 구축"
         }
@@ -46,9 +46,9 @@
         "role": "인프라 및 웹 개발",
         "detail": {
             "status_yn": "Y",
-            "dbms": "",
-            "os": "",
-            "framework": "",
+            "dbms": "Oracle",
+            "os": "Linux",
+            "tool": "",
             "protocol": "",
             "detail_comment": "서버실 랙 구성도 및 네트워크 다이어그램 표준화, 인프라 운영, Log4j 보안 취약점 대응, 내부 웹 시스템 기능 개발"
         }
@@ -66,7 +66,7 @@
             "status_yn": "Y",
             "dbms": "",
             "os": "",
-            "framework": "",
+            "tool": "",
             "protocol": "",
             "detail_comment": "업무 통합 관리 웹 포털 설계 및 구축, DB 기반 To-Do List 및 알림 기능 구현, 문서 미리보기 적용"
         }
@@ -84,7 +84,7 @@
             "status_yn": "Y",
             "dbms": "",
             "os": "",
-            "framework": "Spring",
+            "tool": "Spring",
             "protocol": "",
             "detail_comment": "Java 업그레이드, HTML5 표준화, 멀티 브라우저 지원, API 연계, 메뉴바 리뉴얼 및 페이지 기능 개발"
         }
@@ -102,7 +102,7 @@
             "status_yn": "Y",
             "dbms": "",
             "os": "",
-            "framework": "",
+            "tool": "",
             "protocol": "",
             "detail_comment": "취학아동 지문·서명 관리, 전입 이력 기반 조회 기능 고도화, 통지서 발급 및 분기별 미발급자 구분 기능 구현"
         }
@@ -120,7 +120,7 @@
             "status_yn": "Y",
             "dbms": "",
             "os": "",
-            "framework": "",
+            "tool": "",
             "protocol": "",
             "detail_comment": "내부 홈페이지 유지보수 및 단독 개발, 디컴파일 후 로직 복원, 3-Depth 네비게이션 개선 및 게시판 기능 개발"
         }

@@ -115,6 +115,11 @@ function openModal(project) {
     <p>${project.comment}</p>
     <hr>
     <br/>
+
+    <p><strong>운영체제 : </strong> ${project.detail.os}</p>
+    <p><strong>Tool : </strong> ${project.detail.tool}</p>
+    <p><strong>DBMS : </strong> ${project.detail.dbms}</p>
+    <br/>
     <p><strong>기간 : </strong> ${project.startDate} ~ ${project.endDate}</p>
     <p><strong>내용 : </strong>
       ${project.detail.detail_comment}

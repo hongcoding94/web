@@ -166,6 +166,8 @@ async function loadMarkdown(path) {
 
             article.innerHTML = html;
 
+            replaceVideoLinks(article);
+
             replaceCodeBlocks(article);
             generateTOC(document);
             initContent(document);
@@ -191,6 +193,21 @@ async function loadMarkdown(path) {
     });
 
     observer.observe(document.body, { childList: true, subtree: true });
+}
+
+function replaceVideoLinks(root) {
+    if (!root) return;
+
+    const links = root.querySelectorAll("a[href$='.mp4']");
+    links.forEach(link => {
+        const video = document.createElement("video");
+        video.src = link.href;
+        video.controls = true;
+        video.textContent = link.textContent || "Video";
+
+        // 원래 링크를 video로 교체
+        link.replaceWith(video);
+    });
 }
 
 /*

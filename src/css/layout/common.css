@@ -54,6 +54,14 @@ body {
     background: #fff;
 }
 
+img {
+    max-width: 100%;
+}
+
+video {
+    max-width: 100%;
+}
+
 .main {
     flex: 1;
     display: flex;
@@ -174,5 +182,13 @@ body {
 
     .content article {
         padding: 32px 24px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    video {
+        max-width: 100%;
     }
 }
