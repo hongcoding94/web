@@ -188,7 +188,7 @@ div#modalBody h2 {
     }
 
     .modal-content {
-        max-width: 420px;
+        max-width: 20vh;
     }
 
     #modalBody {
