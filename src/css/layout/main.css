@@ -186,11 +186,7 @@ div#modalBody h2 {
     .projects.grid .swiper-wrapper {
         grid-template-columns: 1fr;
     }
-
-    .modal-content {
-        max-width: 20vh;
-    }
-
+    
     #modalBody {
         margin-top: 20px;
         padding: 10px 20px;
