@@ -167,7 +167,6 @@ async function loadMarkdown(path) {
             article.innerHTML = html;
 
             replaceVideoLinks(article);
-
             replaceCodeBlocks(article);
             generateTOC(document);
             initContent(document);

@@ -53,8 +53,8 @@ function renderProjects(projects) {
     card.className = "project-card";
     card.innerHTML = `
       <h3>[${p.customer}] ${p.projectName}</h3>
-      <p>${p.comment}</p>
-      <span>${p.startDate} ~ ${p.endDate}</span>
+      <p>${p.role}</p>
+      <span>${p.period.start} ~ ${p.period.end}</span>
     `;
 
     card.addEventListener("click", () => openModal(p));
@@ -112,18 +112,32 @@ function openModal(project) {
 
   modalBody.innerHTML = `
     <h2>[${project.customer}] ${project.projectName}</h2>
-    <p>${project.comment}</p>
-    <hr>
+    <p>${project.summary}</p>
+
+    <hr><br/>
+
+    <p><strong>역할 :</strong> ${project.role}</p>
+    <p><strong>기간 :</strong> ${project.period.start} ~ ${project.period.end}
+    <span class="project-status">(${project.status.active ? "진행중" : "종료"})</span>
+    </p>
     <br/>
 
-    <p><strong>운영체제 : </strong> ${project.detail.os}</p>
-    <p><strong>Tool : </strong> ${project.detail.tool}</p>
-    <p><strong>DBMS : </strong> ${project.detail.dbms}</p>
+    <h3>기술 스택</h3>
+    <p><strong>OS :</strong> ${project.techStack.os.join(", ")}</p>
+    <p><strong>DBMS :</strong> ${project.techStack.dbms.join(", ")}</p>
+    <p><strong>Backend :</strong> ${project.techStack.backend.join(", ")}</p>
+
     <br/>
-    <p><strong>기간 : </strong> ${project.startDate} ~ ${project.endDate}</p>
-    <p><strong>내용 : </strong>
-      ${project.detail.detail_comment}
-    </p>
+
+    <h3>상세 내용</h3>
+    <p>${project.description}</p>
+
+    <br/>
+
+    <h3>태그</h3>
+    <div class="tag-list">
+      ${project.tags.map(tag => `<span class="tag">#${tag}</span>`).join("")}
+    </div>
   `;
 
   modal.classList.remove("hidden");
