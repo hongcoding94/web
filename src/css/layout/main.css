@@ -149,8 +149,31 @@ body.scroll-lock {
     margin-top: 20px;
 }
 
-div#modalBody h2 { 
-    color: black;
+
+div#modalBody h2,
+div#modalBody h3 {
+    color: var(--text-main);
+}
+
+div#modalBody p {
+    color: var(--text-sub);
+}
+
+div#modalBody span {
+    color: var(--sidebar-text);
+}
+
+body.dark div#modalBody h2,
+body.dark div#modalBody h3 {
+    color: var(--bg-card);
+}
+
+body.dark div#modalBody p {
+    color: var(--border-color);
+}
+
+body.dark div#modalBody span {
+    color: var(--border-color);
 }
 
 .modal-close {
@@ -168,22 +191,6 @@ div#modalBody h2 {
 @media (max-width: 1200px) {
     .section.gray {
         padding: 70px 40px;
-    }
-}
-
-
-@media (prefers-color-scheme: dark) {
-    div#modalBody h2,
-    div#modalBody h3 {
-        color: var(--bg-card);
-    }
-
-    div#modalBody p {
-        color: var(--border-color);
-    }
-
-    div#modalBody span {
-        color: var(--border-color);
     }
 }
 

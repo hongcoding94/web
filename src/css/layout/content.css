@@ -370,12 +370,10 @@ body.dark .toc-wrapper {
   margin-right: 5px;
   color: #adb5bd;
 }
-
 /*
    Dark Mode
 */
-@media (prefers-color-scheme: dark) {
-  .content-article {
+  body.dark .content-article {
     --bg-main: #1c1f24;
     --bg-card: #262a31;
     --bg-code: #111418;
@@ -391,12 +389,11 @@ body.dark .toc-wrapper {
     background: var(--bg-main);
   }
 
-  .content-article code {
+  body.dark .content-article code {
     background: rgba(255, 255, 255, 0.08);
     color: var(--text-code);
   }
 
-}
 
 /*
    Mobile (≤768px)
