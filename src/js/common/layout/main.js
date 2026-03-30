@@ -110,8 +110,6 @@ function openModal(project) {
     return;
   }
 
-  document.body.classList.add("scroll-lock");
-
   modalBody.innerHTML = `
     <h2>[${project.customer}] ${project.projectName}</h2>
     <p>${project.summary}</p>
@@ -142,12 +140,13 @@ function openModal(project) {
     </div>
   `;
 
+  document.body.classList.add("scroll-lock");
   modal.classList.remove("hidden");
 }
 
 window.closeModal = function () {
-  modal.classList.add("hidden");
   document.body.classList.remove("scroll-lock");
+  modal.classList.add("hidden");
 }
 
 function initProjectSection() {

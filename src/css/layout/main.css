@@ -192,6 +192,10 @@ div#modalBody h2 {
         padding: 60px 24px;
     }
 
+    body.scroll-lock {
+    overflow: hidden;
+    }
+
     .projects.grid .swiper-wrapper {
         grid-template-columns: 1fr;
     }
