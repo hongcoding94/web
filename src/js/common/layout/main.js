@@ -118,14 +118,20 @@ function openModal(project) {
 
     <p><strong>역할 :</strong> ${project.role}</p>
     <p><strong>기간 :</strong> ${project.period.start} ~ ${project.period.end}
-    <span class="project-status">(${project.status.active ? "진행중" : "종료"})</span>
+    <span className="project-status">
+      ${project.status.active === "ACTIVE"
+        ? "<strong>진행중</strong>"
+        : project.status.active === "PLANNED"
+          ? "<strong>진행예정</strong>"
+          : "<strong>종료</strong>"}
+    </span>
     </p>
     <br/>
 
     <h3>기술 스택</h3>
     <p><strong>OS :</strong> ${project.techStack.os.join(", ")}</p>
     <p><strong>DBMS :</strong> ${project.techStack.dbms.join(", ")}</p>
-    <p><strong>Backend :</strong> ${project.techStack.backend.join(", ")}</p>
+    <p><strong>skilStack :</strong> ${project.techStack.skilStack.join(", ")}</p>
 
     <br/>
 

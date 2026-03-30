@@ -1,5 +1,39 @@
 [
 	{
+		"id": 9,
+		"projectName": "외부플랫폼 연계 모바일 웹 상품가입 개발(모니모)",
+		"customer": "우리은행",
+		"contractor": "주식회사지티이노비젼",
+		"period": {
+			"start": "2026.04.01",
+			"end": "2027.01.02"
+		},
+		"role": "프론트엔드 및 백엔드 개발",
+		"summary": "직무 배정 이후 상세 정보가 안내될 예정입니다.",
+		"description": "직무 배정 이후 상세 정보가 안내될 예정입니다.",
+		"techStack": {
+			"os": [
+				"직무 배정 이후 상세 정보가 안내될 예정입니다."
+			],
+			"dbms": [
+				"Oracle"
+			],
+			"skilStack": [
+				"Spring Boot",
+				"React"
+			],
+			"protocol": []
+		},
+		"status": {
+			"active": "PLANNED"
+		},
+		"tags": [
+			"모니모",
+			"금융",
+			"모바일 웹"
+		]
+	},
+	{
 		"id": 8,
 		"projectName": "메세지 플랫폼 (MPushAgent) 시스템 관리 및 운영",
 		"customer": "LG CNS",
@@ -23,13 +57,14 @@
 				"PostgreSQL",
 				"Tibero"
 			],
-			"backend": [
-				"Spring"
+			"skilStack": [
+				"Spring",
+				"Spring Boot"
 			],
 			"protocol": []
 		},
 		"status": {
-			"active": true
+			"active": "ENDED"
 		},
 		"tags": [
 			"운영",
@@ -55,13 +90,13 @@
 			"dbms": [
 				"Oracle"
 			],
-			"backend": [
+			"skilStack": [
 				"Spring Batch"
 			],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"배치",
@@ -87,7 +122,7 @@
 			"dbms": [
 				"Oracle"
 			],
-			"backend": [
+			"skilStack": [
 				"Spring Batch"
 			],
 			"protocol": [
@@ -95,7 +130,7 @@
 			]
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"기업인터넷뱅킹",
@@ -125,11 +160,11 @@
 			"dbms": [
 				"Oracle"
 			],
-			"backend": [],
+			"skilStack": [],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"인프라",
@@ -153,11 +188,11 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [],
+			"skilStack": [],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"웹",
@@ -180,13 +215,13 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [
+			"skilStack": [
 				"Spring"
 			],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"웹표준",
@@ -209,11 +244,11 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [],
+			"skilStack": [],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"공공",
@@ -236,11 +271,11 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [],
+			"skilStack": [],
 			"protocol": []
 		},
 		"status": {
-			"active": false
+			"active": "ENDED"
 		},
 		"tags": [
 			"유지보수",

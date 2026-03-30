@@ -1,16 +1,16 @@
 window.initList = function (root, state = {}) {
-      if (!root || root.id !== "content") return;
-  
-      const pageEl = root.querySelector('[data-page="list"]');
-      if (!pageEl) return;
+  if (!root || root.id !== "content") return;
 
-    const listEl = pageEl.querySelector("#postList");
-    const resultInfo = pageEl.querySelector("#resultInfo");
-    const paginationEl = pageEl.querySelector("#pagination");
-    const searchInput = pageEl.querySelector("#searchInput");
-    const searchType = pageEl.querySelector("#searchType");
-    const clearBtn = pageEl.querySelector("#clearSearch");
-    const pageSizeSelect = pageEl.querySelector("#pageSize");
+  const pageEl = root.querySelector('[data-page="list"]');
+  if (!pageEl) return;
+
+  const listEl = pageEl.querySelector("#postList");
+  const resultInfo = pageEl.querySelector("#resultInfo");
+  const paginationEl = pageEl.querySelector("#pagination");
+  const searchInput = pageEl.querySelector("#searchInput");
+  const searchType = pageEl.querySelector("#searchType");
+  const clearBtn = pageEl.querySelector("#clearSearch");
+  const pageSizeSelect = pageEl.querySelector("#pageSize");
 
   let posts = [];
   let filtered = [];
