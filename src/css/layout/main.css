@@ -103,6 +103,10 @@
 
 .hidden { display: none; }
 
+body.scroll-lock {
+  overflow: hidden;
+}
+
 .modal {
     position: fixed;
     inset: 0;
@@ -169,16 +173,16 @@ div#modalBody h2 {
 
 
 @media (prefers-color-scheme: dark) {
-    #modalBody h2,
-    #modalBody h3 {
+    .dark #modalBody h2,
+    .dark #modalBody h3 {
         color: var(--bg-card);
     }
 
-    #modalBody p {
+    .dark #modalBody p {
         color: var(--border-color);
     }
 
-    #modalBody span {
+    .dark #modalBody span {
         color: var(--border-color);
     }
 }
