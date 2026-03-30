@@ -131,8 +131,9 @@ function openModal(project) {
     <h3>기술 스택</h3>
     <p><strong>OS :</strong> ${project.techStack.os.join(", ")}</p>
     <p><strong>DBMS :</strong> ${project.techStack.dbms.join(", ")}</p>
-    <p><strong>skilStack :</strong> ${project.techStack.skilStack.join(", ")}</p>
-
+    <p><strong>Backend :</strong> ${project.techStack.backend.join(", ")}</p>
+    <p><strong>Frontend :</strong> ${project.techStack.frontend.join(", ")}</p>
+    
     <br/>
 
     <h3>상세 내용</h3>

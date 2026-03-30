@@ -18,8 +18,11 @@
 			"dbms": [
 				"Oracle"
 			],
-			"skilStack": [
-				"Spring Boot",
+			"backend": [
+				"Spring",
+				"Spring Boot"
+			],
+			"frontend": [
 				"React"
 			],
 			"protocol": []
@@ -57,9 +60,13 @@
 				"PostgreSQL",
 				"Tibero"
 			],
-			"skilStack": [
+			"backend": [
 				"Spring",
-				"Spring Boot"
+				"Spring Boot",
+				"Spring Batch"
+			],
+			"frontend": [
+
 			],
 			"protocol": []
 		},
@@ -90,8 +97,11 @@
 			"dbms": [
 				"Oracle"
 			],
-			"skilStack": [
+			"backend": [
 				"Spring Batch"
+			],
+			"frontend": [
+
 			],
 			"protocol": []
 		},
@@ -122,8 +132,11 @@
 			"dbms": [
 				"Oracle"
 			],
-			"skilStack": [
+			"backend": [
 				"Spring Batch"
+			],
+			"frontend": [
+				"JSP"
 			],
 			"protocol": [
 				"UMS Push"
@@ -160,7 +173,12 @@
 			"dbms": [
 				"Oracle"
 			],
-			"skilStack": [],
+			"backend": [
+				"Spring"
+			],
+			"frontend": [
+				"JSP"
+			],
 			"protocol": []
 		},
 		"status": {
@@ -188,7 +206,12 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"skilStack": [],
+			"backend": [
+				"Spring"
+			],
+			"frontend": [
+				"JSP"
+			],
 			"protocol": []
 		},
 		"status": {
@@ -215,8 +238,11 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"skilStack": [
+			"backend": [
 				"Spring"
+			],
+			"frontend": [
+				"JSP"
 			],
 			"protocol": []
 		},
