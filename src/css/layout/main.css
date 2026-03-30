@@ -173,16 +173,16 @@ div#modalBody h2 {
 
 
 @media (prefers-color-scheme: dark) {
-    .dark #modalBody h2,
-    .dark #modalBody h3 {
+    div#modalBody h2,
+    div#modalBody h3 {
         color: var(--bg-card);
     }
 
-    .dark #modalBody p {
+    div#modalBody p {
         color: var(--border-color);
     }
 
-    .dark #modalBody span {
+    div#modalBody span {
         color: var(--border-color);
     }
 }
