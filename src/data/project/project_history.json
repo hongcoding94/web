@@ -9,31 +9,33 @@
 			"end": "2027.01.02"
 		},
 		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "직무 배정 이후 상세 정보가 안내될 예정입니다.",
-		"description": "직무 배정 이후 상세 정보가 안내될 예정입니다.",
+		"summary": "WON뱅킹 FATCA 리액트 고도화",
+		"description": "해외 납세의무 리액트 고도화",
 		"techStack": {
 			"os": [
-				"직무 배정 이후 상세 정보가 안내될 예정입니다."
+				"Windows"
 			],
 			"dbms": [
 				"Oracle"
 			],
 			"backend": [
-				"Spring",
-				"Spring Boot"
+				"Spring"
 			],
 			"frontend": [
-				"React"
+				"React",
+				"JSP"
 			],
 			"protocol": []
 		},
 		"status": {
-			"active": "PLANNED"
+			"active": "ACTIVE"
 		},
 		"tags": [
 			"모니모",
+			"공통",
 			"금융",
-			"모바일 웹"
+			"모바일 웹",
+			"해외 납세의무자"
 		]
 	},
 	{
