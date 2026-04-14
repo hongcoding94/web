@@ -1,20 +1,30 @@
 [
   {
-    "no": "1",
+    "no": "3",
     "id": "hongcoding94",
     "category": "Operation",
-    "title": "JDK 상위 버전 마이그레이션 시 Windows 서비스 등록 불가로 인한 대처 방안",
-    "date": "2026.02.21 19:38",
-    "summary": "JDK 업그레이드로 Windows서비스 등록 불가",
-    "data_url": "../data/project/shooting_post/markdown/shooting_post0002.md",
+    "title": "[Quartz Scheduler 上] Agent Service Memory Issue",
+    "date": "2026.02.21 19:45",
+    "summary": "Quartz Scheduler 특정 job의 정지에 따른 원인 분석",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0003.md",
     "private_page": "N"
   },
   {
     "no": "2",
     "id": "hongcoding94",
     "category": "Operation",
+    "title": "JDK 상위 버전 마이그레이션 시 Windows 서비스 등록 불가로 인한 대처 방안",
+    "date": "2026.02.21 19:45",
+    "summary": "JDK 업그레이드로 Windows서비스 등록 불가",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0002.md",
+    "private_page": "N"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Operation",
     "title": "Agent Upgrade Query / Excel Table Column‘Add’ or ‘Modify’ Auto DDL",
-    "date": "2026.02.21 20:01",
+    "date": "2026.02.21 19:45",
     "summary": "반복된 수행 작업을 Excel과 Query를 통한 자동화",
     "data_url": "../data/project/shooting_post/markdown/shooting_post0001.md",
     "private_page": "N"

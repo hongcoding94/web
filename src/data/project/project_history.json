@@ -9,8 +9,8 @@
 			"end": "2027.01.02"
 		},
 		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "WON뱅킹 FATCA 리액트 고도화",
-		"description": "해외 납세의무 리액트 고도화",
+		"summary": "WON뱅킹 KYC(CDD/EDD),FATCA",
+		"description": "해외 납세의무,  리액트",
 		"techStack": {
 			"os": [
 				"Windows"
@@ -19,11 +19,12 @@
 				"Oracle"
 			],
 			"backend": [
-				"Spring"
+				"SpringBoot"
 			],
 			"frontend": [
 				"React",
-				"JSP"
+				"Redux",
+				"Axios"
 			],
 			"protocol": []
 		},
@@ -35,7 +36,10 @@
 			"공통",
 			"금융",
 			"모바일 웹",
-			"해외 납세의무자"
+			"해외 납세의무자",
+			"고객 신원 확인",
+			"고객확인의무",
+			"강화된 고객확인"
 		]
 	},
 	{
