@@ -1,4 +1,14 @@
 [
+    {
+    "no": "4",
+    "id": "hongcoding94",
+    "category": "Operation",
+    "title": "[Quartz Scheduler 下] NTP 시간 변경으로 인한 Quartz 스케줄러 특정 Job 미실행 장애 예방 방안",
+    "date": "2026.02.21 19:45",
+    "summary": "Quartz Scheduler 특정 job의 정지에 따른 원인 분석",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0004.md",
+    "private_page": "N"
+  },
   {
     "no": "3",
     "id": "hongcoding94",
