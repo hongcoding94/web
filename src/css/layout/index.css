@@ -281,7 +281,7 @@ body.dark .stack p {
     color: #9ca3af;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1200px) {
     body {
         font-size: 14px;
     }

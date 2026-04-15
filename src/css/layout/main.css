@@ -194,7 +194,7 @@ body.dark div#modalBody span {
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1200px) {
     .section.gray {
         padding: 60px 24px;
     }

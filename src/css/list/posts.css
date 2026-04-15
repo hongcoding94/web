@@ -264,7 +264,7 @@ mark {
     border-radius: 4px;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1200px) {
    .post-list-wrap {
         min-width: auto;
         padding: 24px;
