@@ -9,8 +9,8 @@
 			"end": "2027.01.02"
 		},
 		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "WON뱅킹 KYC(CDD/EDD),FATCA",
-		"description": "해외 납세의무,  리액트",
+		"summary": "외부 플랫폼 연계 웹 상품가입 과정에서 KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발",
+		"description": "KYC(CDD/EDD) 및 FATCA 규제 요건을 반영한 우리은행 웹 상품가입 React 기반 화면 및 API 연계 개발",
 		"techStack": {
 			"os": [
 				"Windows"
@@ -30,7 +30,7 @@
 			"active": "ACTIVE"
 		},
 		"tags": [
-			"모니모", "공통", "금융", "모바일 웹", "해외 납세의무자", "고객 신원 확인", "고객확인의무", "강화된 고객확인"
+			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot"
 		]
 	},
 	{
