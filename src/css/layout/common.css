@@ -171,9 +171,13 @@ video {
     color: var(--text-sub);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
     .container {
         flex-direction: column;
+    }
+
+    #sidebar {
+        padding-left: 0px;
     }
 
     .sidebar {

@@ -178,7 +178,7 @@ body.dark .group-title {
 
 
 /* 모바일 사이드바 */
-@media (max-width: 768px) {
+@media (max-width: 1040px) {
     #sidebarNav {
         position: fixed;
         top: 50%;
