@@ -9,7 +9,7 @@
 			"end": "2027.01.02"
 		},
 		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "외부 플랫폼 연계 웹 상품가입 과정에서 KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발",
+		"summary": "외KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발 및 공통 개발 가이드 문서화",
 		"description": "KYC(CDD/EDD) 및 FATCA 규제 요건을 반영한 우리은행 웹 상품가입 React 기반 화면 및 API 연계 개발",
 		"techStack": {
 			"os": [
@@ -30,7 +30,7 @@
 			"active": "ACTIVE"
 		},
 		"tags": [
-			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot"
+			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot","React 공통","React 공통 개발 가이드"
 		]
 	},
 	{
