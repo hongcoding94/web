@@ -87,9 +87,7 @@
 			"backend": [
 				"Spring Batch"
 			],
-			"frontend": [
-
-			],
+			"frontend": [],
 			"protocol": []
 		},
 		"status": {
@@ -242,8 +240,8 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [],
-			"frontend": [],
+			"backend": ["spring"],
+			"frontend": ["Nexacro"],
 			"protocol": []
 		},
 		"status": {
@@ -268,8 +266,8 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"backend": [],
-			"frontend": [],
+			"backend": ["spring"],
+			"frontend": ["JSP"],
 			"protocol": []
 		},
 		"status": {
