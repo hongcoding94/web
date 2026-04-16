@@ -10,7 +10,7 @@
 		},
 		"role": "프론트엔드 및 백엔드 개발",
 		"summary": "외KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발 및 공통 개발 가이드 문서화",
-		"description": "KYC(CDD/EDD) 및 FATCA 규제 요건을 반영한 우리은행 웹 상품가입 React 기반 화면 및 API 연계 개발",
+		"description": "KYC(CDD/EDD) 및 FATCA 요건을 반영한 우리은행 웹 상품가입 React 기반 화면 및 API 연계 개발",
 		"techStack": {
 			"os": [
 				"Windows"
@@ -242,7 +242,8 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"skilStack": [],
+			"backend": [],
+			"frontend": [],
 			"protocol": []
 		},
 		"status": {
@@ -267,7 +268,8 @@
 		"techStack": {
 			"os": [],
 			"dbms": [],
-			"skilStack": [],
+			"backend": [],
+			"frontend": [],
 			"protocol": []
 		},
 		"status": {
