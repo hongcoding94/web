@@ -84,9 +84,7 @@ function renderRecentPosts(posts) {
     return;
   }
 
-  // 1. HTML 구조 생성 (기존의 심플한 리스트 구조로 복원)
   listEl.innerHTML = posts.map((post, index) => {
-    // 카테고리 정보가 없으면 기본값 'tech' 사용
     const category = (post.category || 'tech').toLowerCase();
     const title = post.title || "제목 없음";
     const displayTitle = typeof highlight === 'function' ? highlight(title) : title;
@@ -104,10 +102,9 @@ function renderRecentPosts(posts) {
     `;
   }).join('');
 
-  // 2. 클릭 이벤트 리스너 (기존 로직 유지)
   listEl.querySelectorAll('.tile-link').forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault(); // 기본 동작 방지
+      e.preventDefault(); 
       
       const idx = this.getAttribute('data-index');
       const post = posts[idx];
@@ -117,17 +114,14 @@ function renderRecentPosts(posts) {
         return;
       }
 
-      // 전달할 데이터 구조 설정
       const id = post.id || 'content';
-      const fixedFile = "./tiles/content.html"; // 레이아웃 파일
+      const fixedFile = "./tiles/content.html"; 
       
       const newState = {
-        ...post.state,
         tile: fixedFile,
-        markdownPath: post.data_url || "#" // data_url을 경로로 사용
+        markdownPath: post.data_url
       };
 
-      // window.loadTile 호출
       if (typeof window.loadTile === 'function') {
         window.loadTile(id, fixedFile, newState, true);
       }
