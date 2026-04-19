@@ -10,9 +10,15 @@ window.loadTile = async (id, file, state = {}, push = true) => {
 
     if (push) {
         history.pushState(
-            { tile: file, ...state },
-            "",
-            location.pathname
+            { tile: file, ...state, targetId: id }
+            , ""
+            , location.pathname
+        );
+    } else {
+        history.replaceState(
+            { tile: file, ...state, targetId: id }
+            , ""
+            , location.pathname
         );
     }
 

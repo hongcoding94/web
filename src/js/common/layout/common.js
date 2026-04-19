@@ -15,8 +15,8 @@ const changePage = async (page, state = {}) => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await loadTile("header", "./tiles/header.html");
-    await loadTile("sidebar", "./tiles/sidebar.html");
+    await loadTile("header", "./tiles/header.html", {}, false);
+    await loadTile("sidebar", "./tiles/sidebar.html", {}, false);
     await loadTile("footer", "./tiles/footer.html");
 
 
