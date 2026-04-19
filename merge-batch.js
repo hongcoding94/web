@@ -45,18 +45,9 @@ function runBatch() {
 
             const correctedPosts = posts.map(post => {
                 if (post.data_url) {
-                    // 기존의 잘못된 방식: "./src/data" + ...
-                    // 수정된 방식: 호출부 기준에 맞춰 "../data"로 경로 시작점 변경
-                    
-                    // 1. 현재 파일의 위치를 기준으로 하지 않고, JSON 데이터 내의 경로만 추출
-                    const rawPath = post.data_url; // 예: "git_post/git_post0001.md"
-                    
-                    // 2. list.json이 위치한 폴더명 추출
+                    const rawPath = post.data_url;
                     const listFolder = path.dirname(filePath.split(path.join('src', 'data'))[1]); 
-
-                    // 3. 최종 경로 조립 (상위 폴더 참조 방식 적용)
-                    const finalPath = path.join('../', listFolder, rawPath)
-                                        .replace(/\\/g, '/'); // 윈도우 역슬래시 치환
+                    const finalPath = path.join('../', listFolder, rawPath).replace(/\\/g, '/');
                     
                     post.data_url = finalPath; 
                 }
