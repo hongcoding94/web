@@ -113,7 +113,7 @@ function renderRecentPosts(posts) {
         return;
       }
 
-      const id = post.id || 'content';
+      const id = "content";
       const fixedFile = "./tiles/content.html"; 
       
       const newState = {
