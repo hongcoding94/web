@@ -43,7 +43,6 @@ function runBatch() {
 
             if (!Array.isArray(posts)) posts = [posts];
 
-            // [핵심] 경로 보정 로직
             const correctedPosts = posts.map(post => {
                 if (post.data_url) {
                     const relativeFromData = filePath.split(path.join('src', 'data'))[1];

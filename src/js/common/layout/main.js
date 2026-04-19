@@ -42,7 +42,6 @@ async function initFeaturedProjects() {
 async function initProjectPosts() {
   console.log("🔍 최근 게시물 초기화 시작...");
   
-  // Tiles 환경에서는 레이아웃이 합쳐지는 시간이 필요할 수 있습니다.
   setTimeout(async () => {
     try {
       const posts = await loadRecentPosts();
@@ -50,7 +49,7 @@ async function initProjectPosts() {
     } catch (e) {
       console.error("❌ 최근 게시물 초기화 중 예외 발생:", e);
     }
-  }, 50); // 0.05초의 미세한 지연으로 DOM 안정성 확보
+  }, 50);
 }
 
 async function loadRecentPosts() {
@@ -193,7 +192,6 @@ function openModal(project) {
     modalBody = document.getElementById("modalBody");
 
   if (!modal || !modalBody) {
-    // console.error("❌ modal DOM not initialized");
     return;
   }
 

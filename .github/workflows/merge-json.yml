@@ -3,7 +3,7 @@ name: Auto Merge Post JSONs
 on:
   push:
     paths:
-      - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 감시
+      - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 읽기
     branches:
       - main               # 브랜치명 확인
   schedule:                # 매 시간마다 실행 (UTC 기준)
