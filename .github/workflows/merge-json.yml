@@ -1,0 +1,40 @@
+name: Auto Merge Post JSONs
+
+on:
+  push:
+    paths:
+      - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 감시
+    branches:
+      - main               # 브랜치명 확인
+  schedule:                # 매 시간마다 실행 (UTC 기준)
+    - cron: '0 0,12 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run Merge Script
+        run: node merge-batch.js
+
+      - name: Commit and Push changes
+        run: |
+          # 1. 로봇 계정 설정
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 2. 배치 스크립트이 생성한 결과물 파일만 추가
+          git add src/data/total_posts.json src/data/recent_3.json
+          
+          # 3. 변경 사항이 있을 때만 커밋하고 푸시 (무한 루프 방지 [skip ci] 포함)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]" && git push)

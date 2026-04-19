@@ -26,42 +26,17 @@
       </div>
     </div>
   </section>
-<!-- 미구현 부분 숨김처림
+
+  <!-- 최근 게시물 3개 호출 -->
   <section class="section">
     <h2>Recent Posts</h2>
 
-    <div class="post-filters">
-      <button class="filter-btn active" data-cat="all">All</button>
-      <button class="filter-btn" data-cat="backend">Backend</button>
-      <button class="filter-btn" data-cat="frontend">Frontend</button>
-      <button class="filter-btn" data-cat="db">DB</button>
-    </div>
+    <ul id="dynamic-post-list" class="post-list">
 
-    <ul class="post-list">
-      <li data-cat="backend">
-        <a href="#">
-          <strong>Spring Batch Chunk 처리 구조 정리</strong>
-          <p>대용량 금융 데이터 배치 처리 구조 정리</p>
-          <span>2026.03.14</span>
-        </a>
-      </li>
-      <li data-cat="backend">
-        <a href="#">
-          <strong>REST API 설계 시 고려했던 보안 포인트</strong>
-          <p>Path 변형과 파라미터 설계 경험</p>
-          <span>2026.03.10</span>
-        </a>
-      </li>
-      <li data-cat="db">
-        <a href="#">
-          <strong>Oracle ↔ MySQL 이중 DataSource 구성</strong>
-          <p>AbstractDataSourceConfig 적용 사례</p>
-          <span>2026.03.05</span>
-        </a>
-      </li>
     </ul>
   </section>
--->
+  
+  <!-- 프로젝트 -->
   <section class="project-section">
     <h2>Featured Projects</h2>
     <div id="projectList" class="project-list projects"></div>
@@ -76,6 +51,7 @@
     </div>
   </div>
 
+  <!-- 기술 스택 -->
   <section class="section">
     <h2>Tech Stack</h2>
     <div class="stack">

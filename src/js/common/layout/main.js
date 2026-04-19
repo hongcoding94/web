@@ -39,13 +39,106 @@ async function initFeaturedProjects() {
   }
 }
 
-function renderProjects(projects) {
-  const listEl = document.getElementById("projectList");
-  if (!listEl) {
-    // console.error("❌ projectList not found");
+async function initProjectPosts() {
+  console.log("🔍 최근 게시물 초기화 시작...");
+  
+  // Tiles 환경에서는 레이아웃이 합쳐지는 시간이 필요할 수 있습니다.
+  setTimeout(async () => {
+    try {
+      const posts = await loadRecentPosts();
+      renderRecentPosts(posts);
+    } catch (e) {
+      console.error("❌ 최근 게시물 초기화 중 예외 발생:", e);
+    }
+  }, 50); // 0.05초의 미세한 지연으로 DOM 안정성 확보
+}
+
+async function loadRecentPosts() {
+  const targetPath = "../data/recent_3.json";
+  
+  try {
+    const res = await fetch(targetPath);
+    
+    if (!res.ok) {
+      console.warn(`⚠️ 파일을 찾을 수 없습니다 (Status: ${res.status})`);
+      return []; 
+    }
+
+    const data = await res.json();
+    return (data && Array.isArray(data)) ? data : [];
+  } catch (e) {
+    console.error("❌ Recent Posts Fetch Error:", e);
+    return [];
+  }
+}
+
+function renderRecentPosts(posts) {
+  const listEl = document.getElementById("dynamic-post-list");
+  if (!listEl) return;
+
+  if (posts.length === 0) {
+    listEl.innerHTML = `
+      <li class="no-data">
+        <p>최근 게시물이 없습니다. 곧 새로운 소식으로 찾아뵙겠습니다!</p>
+      </li>`;
     return;
   }
 
+  // 1. HTML 구조 생성 (기존의 심플한 리스트 구조로 복원)
+  listEl.innerHTML = posts.map((post, index) => {
+    // 카테고리 정보가 없으면 기본값 'tech' 사용
+    const category = (post.category || 'tech').toLowerCase();
+    const title = post.title || "제목 없음";
+    const displayTitle = typeof highlight === 'function' ? highlight(title) : title;
+    const description = post.description || post.summary || '내용 요약이 없습니다.';
+    const date = post.date || '-';
+
+    return `
+      <li data-cat="${category}">
+        <a href="javascript:void(0);" class="tile-link" data-index="${index}">
+          <strong>${displayTitle}</strong>
+          <p>${description}</p>
+          <span>${date}</span>
+        </a>
+      </li>
+    `;
+  }).join('');
+
+  // 2. 클릭 이벤트 리스너 (기존 로직 유지)
+  listEl.querySelectorAll('.tile-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // 기본 동작 방지
+      
+      const idx = this.getAttribute('data-index');
+      const post = posts[idx];
+
+      if (post.private_page === "Y") {
+        alert("🤖 봇이 최신 데이터를 인덱싱 중입니다. \n누락된 정보가 없도록 꼼꼼히 검토한 뒤 공개하겠습니다.");
+        return;
+      }
+
+      // 전달할 데이터 구조 설정
+      const id = post.id || 'content';
+      const fixedFile = "./tiles/content.html"; // 레이아웃 파일
+      
+      const newState = {
+        ...post.state,
+        tile: fixedFile,
+        markdownPath: post.data_url || "#" // data_url을 경로로 사용
+      };
+
+      // window.loadTile 호출
+      if (typeof window.loadTile === 'function') {
+        window.loadTile(id, fixedFile, newState, true);
+      }
+    });
+  });
+}
+
+function renderProjects(projects) {
+  const listEl = document.getElementById("projectList");
+  if (!listEl)  return;
+ 
   listEl.innerHTML = "";
 
   projects.forEach(p => {
@@ -159,6 +252,7 @@ window.closeModal = function () {
 function initProjectSection() {
   initModal();
   initFeaturedProjects();
+  initProjectPosts();
 }
 
 window.initProjectSection = initProjectSection;

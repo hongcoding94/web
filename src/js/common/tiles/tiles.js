@@ -7,11 +7,6 @@ window.loadTile = async (id, file, state = {}, push = true) => {
     if (!target) return;
 
     target.innerHTML = html;
-
-    console.debug("history : ", history);
-    console.debug("target : ", target);
-    console.debug("push : ", push);
-    console.debug("state : ", state);
     
     if (push) {
         history.pushState(
@@ -20,6 +15,8 @@ window.loadTile = async (id, file, state = {}, push = true) => {
             , location.pathname
         );
     }
+
+    console.debug(`✅ Loaded tile: ${file} into #${id}`, { file, id, state });
 
     if (id === "header" && window.initHeader) {
         window.initHeader();
@@ -35,6 +32,10 @@ window.loadTile = async (id, file, state = {}, push = true) => {
         
         if (window.initFeaturedProjects) {
             window.initFeaturedProjects();
+        }
+
+        if (window.initProjectPosts) {
+            window.initProjectPosts();
         }
 
         if (state?.markdownPath) {

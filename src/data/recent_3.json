@@ -1,0 +1,29 @@
+[
+  {
+    "no": "41",
+    "id": "hongcoding94",
+    "title": "Spring Batch 메타 테이블 운영 전략",
+    "date": "2026.04.19",
+    "summary": "운영 환경 이력 관리",
+    "data_url": "../src/data/backend/springBatch_post/20260419-batch-meta.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "42",
+    "id": "hongcoding94",
+    "title": "Spring Batch Multi DataSource 구성",
+    "date": "2026.04.18",
+    "summary": "여러 DB 환경 배치 설계",
+    "data_url": "../src/data/backend/springBatch_post/20260418-batch-multidatasource.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "43",
+    "id": "hongcoding94",
+    "title": "Spring Batch PagingItemReader 적용",
+    "date": "2026.04.17",
+    "summary": "페이징 기반 데이터 처리",
+    "data_url": "../src/data/backend/springBatch_post/20260417-batch-paging.html",
+    "private_page": "Y"
+  }
+]
