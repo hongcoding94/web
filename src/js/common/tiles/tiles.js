@@ -52,6 +52,10 @@ window.loadTile = async (id, file, state = {}, push = true) => {
             hamburger.onclick = window.toggleSidebar;
         }
     }
+
+    if (id === "footer") {
+       window.initFooter();
+    }
 };
 
 document.addEventListener("click", (e) => {

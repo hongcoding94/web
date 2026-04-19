@@ -1,18 +1,22 @@
-window.addEventListener("scroll", () => {
-    const btn = document.getElementById("scrollTopBtn");
-    if (!btn) return;
+window.initFooter = () => {
+    const footer = document.querySelector(".footer");
 
-    if (window.scrollY > 500) {
-        btn.classList.add("show");
-    } else {
-        btn.classList.remove("show");
-    }
+    footer.addEventListener("scroll", () => {
+        const btn = document.getElementById("scrollTopBtn");
+        if (!btn) return;
 
-    btn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+        if (window.scrollY > 500) {
+            btn.classList.add("show");
+        } else {
+            btn.classList.remove("show");
+        }
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
+        
     });
-    
-});
+}

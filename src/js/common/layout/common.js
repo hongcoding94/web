@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadTile("sidebar", "./tiles/sidebar.html", {}, false);
     await loadTile("footer", "./tiles/footer.html", {}, false);
 
-
     initSidebar();
     changePage("index");
 });
