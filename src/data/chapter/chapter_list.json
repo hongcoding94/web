@@ -72,6 +72,18 @@
     ]
   }
   , {
+    "key": "Git",
+    "title": "Git",
+    "children": [
+      {
+        "key": "Git",
+        "title": "Git",
+        "list_path": "../data/git/list.json",
+        "page": "list"
+      }
+    ]
+  }
+  , {
     "key": "Project",
     "title": "Project",
     "children": [
