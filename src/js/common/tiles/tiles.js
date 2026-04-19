@@ -8,14 +8,13 @@ window.loadTile = async (id, file, state = {}, push = true) => {
 
     target.innerHTML = html;
 
+    console.debug("history : ", history);
+    console.debug("target : ", target);
+    console.debug("push : ", push);
+    console.debug("state : ", state);
+    
     if (push) {
         history.pushState(
-            { tile: file, ...state, targetId: id }
-            , ""
-            , location.pathname
-        );
-    } else {
-        history.replaceState(
             { tile: file, ...state, targetId: id }
             , ""
             , location.pathname
@@ -53,9 +52,6 @@ window.loadTile = async (id, file, state = {}, push = true) => {
         }
     }
 
-    if (id === "footer") {
-       window.initFooter();
-    }
 };
 
 document.addEventListener("click", (e) => {

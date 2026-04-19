@@ -2,7 +2,7 @@ const changePage = async (page, state = {}) => {
     const map = {
         index: "./main.html",
         list: "./components/list.html",
-        content: "./tiles/content.html"
+        content: "./tiles/content.html",
     };
 
     const file = map[page];
