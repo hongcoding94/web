@@ -9,7 +9,7 @@
 			"end": "2027.01.02"
 		},
 		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "외KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발 및 공통 개발 가이드 문서화",
+		"summary": "KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발",
 		"description": "KYC(CDD/EDD) 및 FATCA 요건을 반영한 우리은행 웹 상품가입 React 기반 화면 및 API 연계 개발",
 		"techStack": {
 			"os": [
@@ -30,7 +30,7 @@
 			"active": "ACTIVE"
 		},
 		"tags": [
-			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot","React 공통","React 공통 개발 가이드"
+			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot"
 		]
 	},
 	{
@@ -69,7 +69,7 @@
 	},
 	{
 		"id": 7,
-		"projectName": "Spring Batch 기반 금융 데이터 모니터링·개인정보 분리보관 시스템 개발",
+		"projectName": "금융 데이터 모니터링·개인정보 분리보관 시스템 개발",
 		"customer": "우리은행",
 		"contractor": "주식회사지티이노비젼",
 		"period": {
@@ -133,7 +133,7 @@
 	},
 	{
 		"id": 5,
-		"projectName": "서버 데이터 보존 유지 관리 및 웹 추가 기능 개발 / 인프라 관리",
+		"projectName": "서버 데이터보존 유지관리 및 웹 추가 기능개발/인프라 관리",
 		"customer": "검찰청",
 		"contractor": "주식회사인사이드정보",
 		"period": {

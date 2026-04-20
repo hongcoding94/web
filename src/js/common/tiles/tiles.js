@@ -34,6 +34,10 @@ window.loadTile = async (id, file, state = {}, push = true) => {
             window.initFeaturedProjects();
         }
 
+        if(window.initExperiencePage) {
+            window.initExperiencePage();
+        }
+
         if (window.initProjectPosts) {
             window.initProjectPosts();
         }

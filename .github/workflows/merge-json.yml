@@ -31,8 +31,8 @@ jobs:
       - name: Commit and Push changes
         run: |
           # 1. 로봇 계정 설정
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "merge_bot"
+          git config --global user.email "merge_bot@users.noreply.github.com"
           
           # 2. 배치 스크립트이 생성한 결과물 파일만 추가
           git add src/data/total_posts.json src/data/recent_3.json

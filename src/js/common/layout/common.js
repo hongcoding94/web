@@ -1,6 +1,7 @@
 const changePage = async (page, state = {}) => {
     const map = {
         index: "./main.html",
+        experience: "./experience.html",
         list: "./components/list.html",
         content: "./tiles/content.html",
     };
@@ -19,6 +20,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadTile("sidebar", "./tiles/sidebar.html", {}, false);
     await loadTile("footer", "./tiles/footer.html", {}, false);
 
-    initSidebar();
     changePage("index");
 });

@@ -113,16 +113,13 @@ function renderRecentPosts(posts) {
         return;
       }
 
-      const id = "content";
-      const fixedFile = "./tiles/content.html"; 
-      
       const newState = {
-        tile: fixedFile,
+        tile: "./tiles/content.html",
         markdownPath: post.data_url
       };
 
       if (typeof window.loadTile === 'function') {
-        window.loadTile(id, fixedFile, newState, true);
+        window.loadTile("content", "./tiles/content.html", newState, true);
       }
     });
   });
@@ -131,7 +128,7 @@ function renderRecentPosts(posts) {
 function renderProjects(projects) {
   const listEl = document.getElementById("projectList");
   if (!listEl)  return;
- 
+  
   listEl.innerHTML = "";
 
   projects.forEach(p => {
@@ -239,6 +236,10 @@ function openModal(project) {
 window.closeModal = function () {
   document.body.classList.remove("scroll-lock");
   modal.classList.add("hidden");
+}
+
+function professionalExperience() {
+  changePage('experience');
 }
 
 function initProjectSection() {
