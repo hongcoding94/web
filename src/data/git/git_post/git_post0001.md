@@ -1,7 +1,7 @@
 # GitHub Actions 기반 포스트 데이터 자동 병합 시스템 구축
 
 진행 상황 : 최종완료
-최종 업데이트 시간 : 2026년 4월 19일
+최종 업데이트 시간 : 2026년 4월 20일 오후 11:42
 개발 상태 : 운영 배포 완료
 기술 타입 : CI/CD, Automation, Node.js
 영향도 : 上 (수동 관리 리소스 제거)
@@ -78,7 +78,6 @@
     - 정해진 스케줄이나 데이터가 push될 때 자동으로 배치를 돌리고 결과를 레포지토리에 커밋합니다.
 
     ```YAML
-    # 핵심 자동화 트리거 및 봇 커밋 로직
     name: Auto Merge Post JSONs
 
     on:
@@ -86,8 +85,8 @@
         paths:
         - 'src/data/**'
     schedule:
-        - cron: '0 0,12 * * *' # 매일 오전/오후 12시 실행
-    workflow_dispatch:      # 수동 실행 기능 활성화
+        - cron: '0 0,12 * * *'  # 매일 오전/오후 12시 실행
+    workflow_dispatch:          # 수동 실행 기능 활성화
 
     jobs:
     build:
@@ -169,6 +168,126 @@
         runBatch();
     ```
 
+    **[코드 수정] 백엔드 배치 스크립트 (merge-batch.js)**
+    
+    - 실제 병합된 소스의 변동이 없을 시 머지봇이 Commit을 하지 않도록 설정하여 실제 머지봇이 동작 유무를 식별이 어려워 로그를 추가 
+    - 실제 게시물의 시간이 표준 방식으로 안 들어 온 케이스를 방지하기 위해 시간 체크 로직 추가
+
+    ```JavaScript
+    const fs = require('fs');
+    const path = require('path');
+    const crypto = require('crypto');
+
+    const DATA_ROOT = path.join(__dirname, 'src', 'data');
+    const TOTAL_OUTPUT = path.join(DATA_ROOT, 'total_posts.json');
+    const RECENT_OUTPUT = path.join(DATA_ROOT, 'recent_3.json');
+
+    function getHash(data) {
+        return crypto.createHash('md5').update(JSON.stringify(data)).digest('hex');
+    }
+
+    function getAllFiles(dirPath, arrayOfFiles = []) {
+        const files = fs.readdirSync(dirPath);
+        files.forEach(function(file) {
+            const fullPath = path.join(dirPath, file);
+            if (fs.statSync(fullPath).isDirectory()) {
+                arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+            } else if (file.toLowerCase() === 'list.json') {
+                arrayOfFiles.push(fullPath);
+                console.log(`🔍 발견된 리스트 : ${fullPath}`);
+            }
+        });
+        return arrayOfFiles;
+    }
+
+    function runBatch() {
+        console.log("[merge_bot] 봇: 포스트 리스트 병합 및 인덱싱을 시작합니다...");
+
+        if (!fs.existsSync(DATA_ROOT)) {
+            fs.mkdirSync(DATA_ROOT, { recursive: true });
+            console.log(`📁 폴더가 없어서 생성 : ${DATA_ROOT}`);
+        }
+
+        const allJsonFiles = getAllFiles(DATA_ROOT);
+        let allPosts = [];
+
+        allJsonFiles.forEach(filePath => {
+            if (filePath.includes('total_posts.json') || filePath.includes('recent_3.json')) return;
+
+            try {
+                const fileContent = fs.readFileSync(filePath, 'utf-8');
+                let posts = JSON.parse(fileContent);
+                if (!Array.isArray(posts)) posts = [posts];
+
+                const correctedPosts = posts.map(post => {
+                    if (post.data_url) {
+                        const rawPath = post.data_url;
+                        const listFolder = path.dirname(filePath.split(path.join('src', 'data'))[1]); 
+                        const finalPath = path.join(rawPath).replace(/\\/g, '/');
+                        
+                        post.data_url = finalPath; 
+                    }
+                    return post;
+                });
+                allPosts = allPosts.concat(correctedPosts);
+            } catch (err) {
+                console.error(`[merge_bot] 봇 에러❌ (데이터 파싱 실패): ${filePath}`, err);
+            }
+        });
+
+        allPosts.sort((a, b) => {
+            const [dateA, timeA] = (a.date || '1970.01.01').split(' ');
+            const [dateB, timeB] = (b.date || '1970.01.01').split(' ');
+
+            const normDateA = dateA.replace(/\./g, '-').trim();
+            const normDateB = dateB.replace(/\./g, '-').trim();
+            
+            const normTimeA = timeA ? timeA : '23:59:59'; 
+            const normTimeB = timeB ? timeB : '23:59:59';
+
+            const finalDateA = new Date(`${normDateA}T${normTimeA}`);
+            const finalDateB = new Date(`${normDateB}T${normTimeB}`);
+
+            const timeAStamp = isNaN(finalDateA.getTime()) ? 0 : finalDateA.getTime();
+            const timeBStamp = isNaN(finalDateB.getTime()) ? 0 : finalDateB.getTime();
+
+            return timeBStamp - timeAStamp;
+        });
+
+        const uniquePosts = Array.from(new Map(allPosts.map(p => [p.id || p.data_url, p])).values());
+
+        let isChanged = true;
+        if (fs.existsSync(TOTAL_OUTPUT)) {
+            const oldContent = fs.readFileSync(TOTAL_OUTPUT, 'utf-8');
+            const oldHash = getHash(JSON.parse(oldContent));
+            const newHash = getHash(uniquePosts);
+
+            if (oldHash === newHash) {
+                isChanged = false;
+            }
+        }
+
+        if (!isChanged) {
+            console.log("✨ [No Change] 모든 데이터가 최신 상태입니다. 배포 파이프라인을 건너뜁니다.");
+            return;
+        }
+
+        try {
+            fs.writeFileSync(TOTAL_OUTPUT, JSON.stringify(allPosts, null, 2), 'utf-8');
+            fs.writeFileSync(RECENT_OUTPUT, JSON.stringify(allPosts.slice(0, 3), null, 2), 'utf-8');
+            
+            console.log("✅ 배치 완료!");
+            console.log("🚀 [Deployed] 새로운 포스트가 감지되어 성공적으로 병합되었습니다!");
+            console.log(`   - 총 포스트 수: ${allPosts.length}개`);
+            console.log(`   - 최신글(3개) 파일 생성 완료: ${RECENT_OUTPUT}`);
+        } catch (err) {
+            console.error("[merge_bot] 봇 에러❌ (파일 쓰기 실패):", err);
+        }
+    }
+
+    runBatch();
+    ```
+
 ## 핵심 구현 포인트
  - 경로 정규화: 윈도우(\)와 리눅스(/) 환경 차이를 replace(/\\/g, '/')로 해결하여 웹 브라우저에서 경로가 깨지지 않도록 보정
  - 무한 루프 방지: 커밋 메시지에 [skip ci]를 포함하여, 봇이 푸시한 커밋이 다시 액션을 트리거하지 않도록 설정
@@ -195,8 +314,8 @@
 ## 정합성
 
 > GitHub Actions 로그 분석 결과, 현재 포스트(155개)된 데이터를 누락 없이 수집하고
-> 더미 데이터 만개를 가지고 테스트 결과 정상적으로 출력되며, 
-> recent_3.json 파일을 정상 생성함을 검증 완료하였습니다.
+> 더미 데이터 10000개를 가지고 테스트한 결과 작성 속도는 4회 실행 시 최대 13초로 정상적으로 출력되며, 
+> total_posts.json(병합 리스트 목록)과 recent_3.json(최신 목록 3개) 파일을 정상 생성함을 검증 완료하였습니다.
 
 
 ## 효율성
@@ -233,3 +352,4 @@
 - 정확성: 많은 양의 데이터를 반복 처리해도 오류가 거의 없을 정도로 정확하다.
 
 # 개발 추가 보안점
+-  2026.04.20 : 변동사항 없을시 merge Bot이 commit을 안 하기 때문에 실제 작동 여부 확인 불가 로그를 통한 실행 확인 추가
