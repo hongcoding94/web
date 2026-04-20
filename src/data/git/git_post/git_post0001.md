@@ -110,6 +110,16 @@
             git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]" && git push)
     ```
 
+    **git auto build Option**
+    ```YAML
+    # 소스 변동 유무에 따른 Commit 중단 및 배포 & git push 사용시 머지봇 실행
+    git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]" && git push)
+    
+    # 소스 변동 유무에 따른 Commit 중단 및 배포 & git push 사용시 머지봇은 동작하지 않음
+    git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]")
+    ```
+
+
     **백엔드 배치 스크립트 (merge-batch.js)**
     - 이 스크립트는 프로젝트 루트에서 실행되며, 재귀적으로 모든 list.json을 찾아 브라우저가 인식 가능한 상대 경로(./src/data/...)로 교정하여 병합합니다.
 
