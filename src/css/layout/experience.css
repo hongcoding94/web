@@ -153,7 +153,7 @@
     transform: rotate(-45deg); 
     text-align: center; 
     font-weight: 800; 
-    font-size: 18px; 
+    font-size: 16px; 
     color: #ffffff !important; 
     line-height: 1.2;
 }
@@ -200,7 +200,7 @@
 .close { 
     position: absolute; 
     right: 25px; top: 20px; 
-    font-size: 28px; 
+    font-size: 24px; 
     cursor: pointer; 
     color: var(--modal-sub); 
 }

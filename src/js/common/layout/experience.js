@@ -50,25 +50,39 @@ function adjustSpine() {
 }
 
 function openM(i) {
-    console.log("프로젝트 상세 열기", { index: i});
     const data = projectData[i];
     if(!data) return;
 
     document.getElementById('mT').innerText = data.projectName;
-    document.getElementById('mD').innerText = data.period.start + " ~ " + data.period.end + " (" + `${data.status.active === "ACTIVE" ? "진행중" : data.status.active === "PLANNED" ? "진행예정" : "종료"}` + ")";
+	document.getElementById('mD').innerText = data.summary;
     
     let techStackHtml = '';
     if(data.techStack) {
-        const md = data.techStack;
+        const md = data;
         techStackHtml = `
+            <hr/>
+            <p>
+                <strong>기간 :</strong> ${md.period.start} ~ ${md.period.end}
+                <span className="project-status">
+                    ${md.status.active === "ACTIVE" ? "<strong>진행중</strong>"
+                        : md.status.active === "PLANNED" ? "<strong>진행예정</strong>"
+                        : "<strong>종료</strong>"}
+                </span>
+            </p>
             <br/>
 
             <div class="modal-tech-section">
                 <h3>기술 스택</h3>
-                <p><strong>OS :</strong> ${md.os.join(', ') || '-'}</p>
-                <p><strong>DBMS :</strong> ${md.dbms.join(', ') || '-'}</p>
-                <p><strong>Backend :</strong> ${md.backend.join(', ') || '-'}</p>
-                <p><strong>Frontend :</strong> ${md.frontend.join(', ') || '-'}</p>
+                <p><strong>OS :</strong> ${md.techStack.os.join(', ') || '-'}</p>
+                <p><strong>DBMS :</strong> ${md.techStack.dbms.join(', ') || '-'}</p>
+                <p><strong>Backend :</strong> ${md.techStack.backend.join(', ') || '-'}</p>
+                <p><strong>Frontend :</strong> ${md.techStack.frontend.join(', ') || '-'}</p>
+            </div>
+            <br/>
+            
+            <div class="modal-tech-section">
+                <h3>기여도</h3>
+                <p>-</p>
             </div>
         `;
     }
