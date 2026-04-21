@@ -29,6 +29,7 @@
 		"status": {
 			"active": "ACTIVE"
 		},
+		"contributionRate": 10,
 		"tags": [
 			"모니모", "금융", "웹", "KYC", "CDD", "EDD", "FATCA", "해외납세의무자", "고객확인의무", "React", "SpringBoot"
 		]
@@ -63,6 +64,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 80,
 		"tags": [
 			"운영", "자동화", "에이전트", "멀티 DB"
 		]
@@ -93,6 +95,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 40,
 		"tags": [
 			"배치", "금융", "개인정보", "모니터링"
 		]
@@ -127,6 +130,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 10,
 		"tags": [
 			"기업인터넷뱅킹", "데일리브리핑", "자금보고서", "고액거래모니터링", "SpringBatch", "금융배치"
 		]
@@ -161,6 +165,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 20,
 		"tags": [
 			"인프라", "보안", "운영", "Log4j"
 		]
@@ -191,6 +196,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 40,
 		"tags": [
 			"웹", "포털", "업무시스템"
 		]
@@ -221,6 +227,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 100,
 		"tags": [
 			"웹표준", "포털", "리뉴얼"
 		]
@@ -247,6 +254,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 25,
 		"tags": [
 			"공공", "행정", "시스템"
 		]
@@ -273,6 +281,7 @@
 		"status": {
 			"active": "ENDED"
 		},
+		"contributionRate": 100,
 		"tags": [
 			"유지보수", "어드민", "게시판"
 		]

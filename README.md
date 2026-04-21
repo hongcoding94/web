@@ -1,15 +1,17 @@
 # Git.io - web개발
 
-> 가이드명 : GUIDE.md <br/>
->수정 이력
+> 가이드명 : GUIDE.md
+> 수정 이력
 
- ※ git 컨벤션
+<br/>
+
+[※ git 컨벤션]
 - Feat　: 새로운기능 추가
 - Fix: 기능 수정
 - Remove : 삭제
 - Refactor : 리팩토링 	
 
-| **수정타입**|**수정일자**|**수정내역**|
+| **타입**|**수정일자**|**수정내역**|
 | :---: | :---: | --- |
 | Feat | 2026.03 13  | - 페이지 구성 |
 | Feat  | 2026.03.16  | - 페이지 간 이동<br/> - 메인 페이지 구성  |
@@ -29,60 +31,76 @@
 ## 디렉토리 구조
 
 ```PowerShell
-
+|   .gitignore
+|   index.html
+|   merge-batch.js
+|   README.md
+|   
++---.github
+|   \---workflows
+|           merge-json.yml
+|           
++---.vscode
+|       settings.json
+|       
++---assets
+|       preview.png
+|       
+\---src
+    +---css
+    |   +---components
+    |   |       
+    |   +---layout
+    |   |       
+    |   \---list
+    |           
+    +---data
+    |   |   recent_3.json
+    |   |   total_posts.json
+    |   |   
+    |   +---backend
+    |   |           
+    |   +---chapter
+    |   |       
+    |   +---dbms
+    |   |           
+    |   +---frontend
+    |   |           
+    |   +---git
+    |   |           
+    |   \---project
+    | 
+    |                   
+    +---img
+    |           
+    +---js
+    |   \---common
+    |       +---layout
+    |       |       
+    |       +---list
+    |       |       
+    |       \---tiles
+    |               
+    +---pages
+    |   |   experience.html
+    |   |   index.html
+    |   |   main.html
+    |   |   
+    |   +---components
+    |   |       list.html
+    |   |       
+    |   \---tiles
+    |           content.html
+    |           footer.html
+    |           header.html
+    |           sidebar.html
+    |           
+    \---test
+            tableType.html
 ```
 	
 <hr/>
 
-## 1) Tiles
-	※ [주의사항]
-
-### 1.1) Header
-
-### 1.2) SideBar
-
-### 1.3) content 
-
- - 1.3.1) main.html
- 
- - 1.3.2) experience.html
- 
- - 1.3.3) content.html
-
-### 1.4) Footer 
-
-<hr/>
-
-## 2) Common Function
-
-### 2.1) Hisotry Page Function
-
-<hr/>
-
-## 3) Header Function
-
-### 3.1) Dark / White mode Toggle
-
-<hr/>
-
-## 4)　SideBar Function 
-
-### 4.1) Side Manu
-- Depth 구조[ 2Depth까지 구현가능 ] 
-
-### 4.2)
-
-<hr/>
-
-## 5)Content Function 
-
-### 5.1)
-
-<hr/>
-
-## 6) Footer Function
-
-<hr/>
 
 
 

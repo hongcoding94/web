@@ -3,10 +3,9 @@ let projectData = [];
 async function renderTimeline() {
     const projects = await fetch("../data/project/project_history.json");
     if (!projects.ok) throw new Error("projects.json load failed");
+    
     const data = await projects.json();
     projectData = data;
-
-    console.log("프로젝트 타임라인 데이터 로드 완료", { projectData });
 
     const fc = document.getElementById('fc');
     const sc = document.getElementById('sc');
@@ -54,49 +53,52 @@ function openM(i) {
     if(!data) return;
 
     document.getElementById('mT').innerText = data.projectName;
-	document.getElementById('mD').innerText = data.summary;
+    document.getElementById('mD').innerText = data.summary;
     
-    let techStackHtml = '';
-    if(data.techStack) {
-        const md = data;
-        techStackHtml = `
-            <hr/>
-            <p>
-                <strong>기간 :</strong> ${md.period.start} ~ ${md.period.end}
-                <span className="project-status">
-                    ${md.status.active === "ACTIVE" ? "<strong>진행중</strong>"
-                        : md.status.active === "PLANNED" ? "<strong>진행예정</strong>"
-                        : "<strong>종료</strong>"}
-                </span>
-            </p>
-            <br/>
+    const contributionRate = data.contributionRate || 0;
+    const projectImg = data.projectImage || "";
 
-            <div class="modal-tech-section">
-                <h3>기술 스택</h3>
-                <p><strong>OS :</strong> ${md.techStack.os.join(', ') || '-'}</p>
-                <p><strong>DBMS :</strong> ${md.techStack.dbms.join(', ') || '-'}</p>
-                <p><strong>Backend :</strong> ${md.techStack.backend.join(', ') || '-'}</p>
-                <p><strong>Frontend :</strong> ${md.techStack.frontend.join(', ') || '-'}</p>
+    let techStackHtml = `
+    <div class="project-dashboard-expanded">
+        <div class="gauge-section-expansion">
+            <div class="cylinder-container-big">
+                <div class="cylinder-frame">
+                    <div class="cylinder-glass">
+                        <div class="cylinder-liquid" style="height: ${contributionRate}%;">
+                            <div class="liquid-top-glow"></div>
+                            <div class="liquid-surface"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gauge-label-group">
+                    <span class="label-main">CONTRIBUTION</span>
+                    <span class="label-val">${contributionRate}<small>%</small></span>
+                </div>
             </div>
-            <br/>
-            
-            <div class="modal-tech-section">
-                <h3>기여도</h3>
-                <p>-</p>
+        </div>
+
+        <div class="tech-info-expanded">
+            <div class="tech-list">
+                <div class="t-row"><strong>OS</strong> <span>${data.techStack?.os?.join(', ') || '-'}</span></div>
+                <div class="t-row"><strong>DBMS</strong> <span>${data.techStack?.dbms?.join(', ') || '-'}</span></div>
+                <div class="t-row"><strong>Backend</strong> <span>${data.techStack?.backend?.join(', ') || '-'}</span></div>
+                <div class="t-row"><strong>Frontend</strong> <span>${data.techStack?.frontend?.join(', ') || '-'}</span></div>
             </div>
-        `;
-    }
+        </div>
+    </div>
+    `;
 
     const tagsHtml = data.tags.map(tag => `<span class="tag">#${tag}</span>`).join(' ');
 
     document.getElementById('mB').innerHTML = `
         <div class="modal-body-content">
             ${techStackHtml}
-            <div class="modal-desc-section" style="margin-top:20px;">
+            <div class="modal-desc-section">
                 <h3>상세 내용</h3>
-                <p>${data.description}</p>
+                <p class="desc-text">${data.description}</p>
             </div>
-            <div class="modal-tag-section" style="margin-top:20px; color: var(--exp-accent);">
+
+            <div class="modal-tag-section">
                 ${tagsHtml}
             </div>
         </div>
