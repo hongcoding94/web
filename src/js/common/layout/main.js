@@ -33,15 +33,12 @@ async function initFeaturedProjects() {
   try {
     const projects = await loadProjects();
     renderProjects(projects);
-    enableHorizontalDrag();
   } catch (e) {
     console.error(e);
   }
 }
 
 async function initProjectPosts() {
-  console.log("🔍 최근 게시물 초기화 시작...");
-  
   setTimeout(async () => {
     try {
       const posts = await loadRecentPosts();
@@ -140,13 +137,21 @@ function renderProjects(projects) {
       <span>${p.date}</span>
     `;
 
-    card.addEventListener("click", () => moveTroubleshooting());
+    card.addEventListener("click", () => moveTroubleshooting(p.data_url));
     listEl.appendChild(card);
   });
 }
 
-function moveTroubleshooting() {
-  alert("🚧 프로젝트 상세 페이지는 현재 준비 중입니다. \n최대한 빠르게 완성하여 공개하겠습니다. 감사합니다!");
+function moveTroubleshooting(url) {
+  const newState = {
+    tile: "./tiles/content.html",
+    markdownPath: url
+  };
+
+  if (typeof window.loadTile === 'function') {
+    window.loadTile("content", "./tiles/content.html", newState, true);
+  }
+  // alert("🚧 프로젝트 상세 페이지는 현재 준비 중입니다. \n최대한 빠르게 완성하여 공개하겠습니다. 감사합니다!");
 }
 
 function professionalExperience() {

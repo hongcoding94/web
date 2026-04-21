@@ -16,8 +16,6 @@ window.loadTile = async (id, file, state = {}, push = true) => {
         );
     }
 
-    console.debug(`✅ Loaded tile: ${file} into #${id}`, { file, id, state });
-
     if (id === "header" && window.initHeader) {
         window.initHeader();
     }
