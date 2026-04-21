@@ -1,4 +1,3 @@
-/* Content 영역 */
 #content {
   flex: 1;
   display: flex;
@@ -16,9 +15,6 @@
   width: 100%;
 }
 
-/*
-   Content Article Base
-*/
 .content-article {
   flex-direction: column;
   min-width: 50%;
@@ -36,9 +32,6 @@
   box-sizing: border-box;
 }
 
-/*
-   Light Mode (Default)
-*/
 .content-article {
   --bg-main: #ffffff;
   --bg-card: #f9fafb;
@@ -53,9 +46,6 @@
   --text-code: #e5e7eb;
 }
 
-/*
-   Typography
-*/
 .content-article h1,
 .content-article h2,
 .content-article h3 {
@@ -83,9 +73,6 @@
   color: var(--text-main);
 }
 
-/*
-   Links / Emphasis
-*/
 .content-article a {
   color: var(--text-link);
   text-decoration: underline;
@@ -96,9 +83,6 @@
   font-weight: 600;
 }
 
-/*
-   Lists
-*/
 .content-article ul,
 .content-article ol {
   margin: 1.2em 0 1.2em 1.4em;
@@ -109,9 +93,6 @@
   margin: 0.5em 0;
 }
 
-/*
-   Blockquote / Aside
-*/
 .content-article blockquote {
   margin: 1.8em 0;
   padding: 1.2em 1.4em;
@@ -121,9 +102,6 @@
   border-radius: 6px;
 }
 
-/*
-   Code
-*/
 .content-article code {
   background: rgba(31, 41, 55, 0.08);
   padding: 0.25em 0.4em;
@@ -147,9 +125,6 @@
   font-size: 0.95em;
 }
 
-/*
-   Table
-*/
 .content-article table {
     display: block;
     width: 100%;
@@ -171,18 +146,13 @@
   font-weight: 600;
 }
 
-/*
-   Divider
-*/
+
 .content-article hr {
   margin: 3em 0;
   border: none;
   border-top: 1px solid var(--border-soft);
 }
 
-/*
-   Code Block
-*/
 .code-block {
   position: relative;
   background: #0f172a;
@@ -194,7 +164,7 @@
   font-family: "Fira Code", monospace;
 }
 
-/* 왼쪽 강조 라인 */
+
 .code-block::before {
   content: "";
   position: absolute;
@@ -205,9 +175,6 @@
   background: linear-gradient(180deg, #3b82f6, #60a5fa);
 }
 
-/*
-   Header
-*/
 .code-header {
   display: flex;
   justify-content: space-between;
@@ -231,23 +198,16 @@
   background: #334155;
 }
 
-/*
-   Code Body
-*/
 .code-body {
   display: flex;
   overflow-x: auto;
 }
 
-/* 길면 스크롤 */
 .code-body.long {
   max-height: 100%;
   overflow-y: auto;
 }
 
-/*
-   Line Numbers
-*/
 .line-numbers {
   text-align: right;
   padding: 16px 10px;
@@ -394,10 +354,6 @@ body.dark .toc-wrapper {
     color: var(--text-code);
   }
 
-
-/*
-   Mobile (≤768px)
-*/
 @media (max-width: 1200px) {
   .toc-wrapper {
     display: none;

@@ -24,7 +24,7 @@ function initModal() {
 }
 
 async function loadProjects() {
-  const res = await fetch("../data/project/project_history.json");
+  const res = await fetch("../data/project/shooting_post/list.json");
   if (!res.ok) throw new Error("projects.json load failed");
   return await res.json();
 }
@@ -131,111 +131,22 @@ function renderProjects(projects) {
   
   listEl.innerHTML = "";
 
-  projects.forEach(p => {
+  projects.slice(0, 3).forEach(p => {
     const card = document.createElement("div");
     card.className = "project-card";
     card.innerHTML = `
-      <h3>[${p.customer}] ${p.projectName}</h3>
-      <p>${p.role}</p>
-      <span>${p.period.start} ~ ${p.period.end}</span>
+      <h3>${p.title}</h3>
+      <p>${p.summary}</p>
+      <span>${p.date}</span>
     `;
 
-    card.addEventListener("click", () => openModal(p));
+    card.addEventListener("click", () => moveTroubleshooting());
     listEl.appendChild(card);
   });
 }
 
-function enableHorizontalDrag() {
-  const slider = document.getElementById("projectList");
-  if (!slider) return;
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener("mousedown", e => {
-    isDown = true;
-    slider.classList.add("dragging");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-
-  slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-  });
-
-  slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-  });
-
-  slider.addEventListener("mousemove", e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.2;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  slider.addEventListener("wheel", e => {
-    e.preventDefault();
-    slider.scrollLeft += e.deltaY;
-  });
-}
-
-function openModal(project) {
-    modal = document.getElementById("projectModal");
-    modalBody = document.getElementById("modalBody");
-
-  if (!modal || !modalBody) {
-    return;
-  }
-
-  modalBody.innerHTML = `
-    <h2>[${project.customer}] ${project.projectName}</h2>
-    <p>${project.summary}</p>
-
-    <hr><br/>
-
-    <p><strong>역할 :</strong> ${project.role}</p>
-    <p><strong>기간 :</strong> ${project.period.start} ~ ${project.period.end}
-    <span className="project-status">
-      ${project.status.active === "ACTIVE"
-        ? "<strong>진행중</strong>"
-        : project.status.active === "PLANNED"
-          ? "<strong>진행예정</strong>"
-          : "<strong>종료</strong>"}
-    </span>
-    </p>
-    <br/>
-
-    <h3>기술 스택</h3>
-    <p><strong>OS :</strong> ${project.techStack.os.join(", ")}</p>
-    <p><strong>DBMS :</strong> ${project.techStack.dbms.join(", ")}</p>
-    <p><strong>Backend :</strong> ${project.techStack.backend.join(", ")}</p>
-    <p><strong>Frontend :</strong> ${project.techStack.frontend.join(", ")}</p>
-    
-    <br/>
-
-    <h3>상세 내용</h3>
-    <p>${project.description}</p>
-
-    <br/>
-
-    <h3>태그</h3>
-    <div class="tag-list">
-      ${project.tags.map(tag => `<span class="tag">#${tag}</span>`).join("")}
-    </div>
-  `;
-
-  document.body.classList.add("scroll-lock");
-  modal.classList.remove("hidden");
-}
-
-window.closeModal = function () {
-  document.body.classList.remove("scroll-lock");
-  modal.classList.add("hidden");
+function moveTroubleshooting() {
+  alert("🚧 프로젝트 상세 페이지는 현재 준비 중입니다. \n최대한 빠르게 완성하여 공개하겠습니다. 감사합니다!");
 }
 
 function professionalExperience() {

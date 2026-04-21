@@ -1,8 +1,5 @@
-/* ===============================
-   Scroll To Top Button (Footer)
-================================ */
 #scrollTopBtn {
-    position: fixed; /* footer 안에 있어도 화면 기준 */
+    position: fixed;
     right: 24px;
     bottom: 24px;
 
@@ -24,7 +21,6 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* 보여질 때 */
 #scrollTopBtn.show {
     opacity: 1;
     pointer-events: auto;

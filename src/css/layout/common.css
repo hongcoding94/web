@@ -121,14 +121,12 @@ video {
     background: rgba(99, 102, 241, 0.08);
 }
 
-/* Toggle Icon */
 .toggle-icon {
     width: 16px;
     text-align: center;
     font-weight: bold;
 }
 
-/* Submenu */
 .submenu {
     display: none;
     padding-left: 18px;
@@ -139,7 +137,6 @@ video {
     display: block;
 }
 
-/* Leaf Menu */
 .menu-item {
     padding: 8px 14px;
     font-size: 13px;
@@ -160,9 +157,6 @@ video {
     font-weight: 600;
 }
 
-/*
-   Footer
-*/
 .footer {
     margin-top: 80px;
     padding: 30px;
