@@ -42,7 +42,6 @@
     font-weight: 500;
 }
 
-/* Hero Actions */
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -87,7 +86,6 @@ Section h2 {
     font-size: 24px;
 }
 
-/* Post List */
 .post-filters {
     display: flex;
     gap: 8px;

@@ -23,45 +23,29 @@ function initModal() {
   });
 }
 
-/* 최근 게시물 3개 호출 Start */
-async function initProjectPosts() {
-  setTimeout(async () => {
-    try {
-      const posts = await loadRecentPosts();
-      renderRecentPosts(posts);
-    } catch (e) {
-      console.error("❌ 최근 게시물 초기화 중 예외 발생:", e);
-    }
-  }, 50);
-}
-
-async function loadRecentPosts() {
-  const targetPath = "../data/recent_3.json";
-  
+async function fetchPostData(path) {
   try {
-    const res = await fetch(targetPath);
-    
+    const res = await fetch(path);
     if (!res.ok) {
-      console.warn(`⚠️ 파일을 찾을 수 없습니다 (Status: ${res.status})`);
-      return []; 
+      console.warn(`⚠️ 파일을 찾을 수 없습니다 (Status: ${res.status}): ${path}`);
+      return [];
     }
-
     const data = await res.json();
     return (data && Array.isArray(data)) ? data : [];
   } catch (e) {
-    console.error("❌ Recent Posts Fetch Error:", e);
+    console.error(`❌ Fetch Error (${path}):`, e);
     return [];
   }
 }
 
-function renderRecentPosts(posts) {
-  const listEl = document.getElementById("recent-post-list");
+function renderPostList(containerId, posts , checkPrivate = false) {
+  const listEl = document.getElementById(containerId);
   if (!listEl) return;
 
   if (posts.length === 0) {
     listEl.innerHTML = `
       <li class="no-data">
-        <p>최근 게시물이 없습니다. 곧 새로운 소식으로 찾아뵙겠습니다!</p>
+        <p>게시물이 없습니다. 곧 새로운 소식으로 찾아뵙겠습니다!</p>
       </li>`;
     return;
   }
@@ -80,18 +64,16 @@ function renderRecentPosts(posts) {
           <p>${description}</p>
           <span>${date}</span>
         </a>
-      </li>
-    `;
+      </li>`;
   }).join('');
 
   listEl.querySelectorAll('.tile-link').forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault(); 
-      
+      e.preventDefault();
       const idx = this.getAttribute('data-index');
       const post = posts[idx];
 
-      if (post.private_page === "Y") {
+      if (checkPrivate && post.private_page === "Y") {
         alert("🤖 봇이 최신 데이터를 인덱싱 중입니다. \n누락된 정보가 없도록 꼼꼼히 검토한 뒤 공개하겠습니다.");
         return;
       }
@@ -107,61 +89,25 @@ function renderRecentPosts(posts) {
     });
   });
 }
-/* 최근 게시물 3개 호출 End */
 
-/* 트러블슈팅 게시물 3개 호출 Start */
-async function loadProjects() {
-  const res = await fetch("../data/project/shooting_post/list.json");
-  if (!res.ok) throw new Error("projects.json load failed");
-  return await res.json();
+/* 최근 게시물 (3개) */
+async function initProjectPosts() {
+  setTimeout(async () => {
+    const posts = await fetchPostData("../data/recent_3.json");
+    renderPostList("recent-post-list", posts, true);
+  }, 50);
 }
 
+/* 트러블슈팅 게시물 */
 async function initFeaturedProjects() {
-  try {
-    const projects = await loadProjects();
-    renderProjects(projects);
-  } catch (e) {
-    console.error(e);
-  }
+  const posts = await fetchPostData("../data/project/shooting_post/list.json");
+  renderPostList("trouble-post-list", posts, false);
 }
-
-function renderProjects(projects) {
-  const listEl = document.getElementById("trouble-post-list");
-  if (!listEl)  return;
-  
-  listEl.innerHTML = "";
-
-  projects.slice(0, 3).forEach(p => {
-    const card = document.createElement("ul");
-    card.innerHTML = `
-      <li>
-        <a href="javascript:void(0);" class="tile-link">
-          <strong>${p.title}</strong>
-          <p>${p.summary}</p>
-          <span>${p.date}</span>
-        </a>
-      </li>
-    `;
-
-    card.addEventListener("click", () => moveTroubleshooting(p.data_url));
-    listEl.appendChild(card);
-  });
-}
-
-function moveTroubleshooting(url) {
-  const newState = {
-    tile: "./tiles/content.html",
-    markdownPath: url
-  };
-
-  if (typeof window.loadTile === 'function') {
-    window.loadTile("content", "./tiles/content.html", newState, true);
-  }
-}
-/* 트러블슈팅 게시물 3개 호출 End */
 
 function professionalExperience() {
-  changePage('experience');
+  if (typeof changePage === 'function') {
+    changePage('experience');
+  }
 }
 
 function initProjectSection() {
