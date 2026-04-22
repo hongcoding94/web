@@ -35,36 +35,14 @@
 
 ```powershell
     +---.github
-    |   \---[핵심] workflows
-    \---src
-        +---[핵심] merge-batch.js
-        |
-        +---css
-        |
-        +---data
-        |   +---[핵심] recent_3.json
-        |   +---[핵심] total_posts.json
-        |   |   
-        |   +---backend
-        |   |   +---java_post
-        |   |   +---springBatch_post
-        |   |   \---spring_post
-        |   +---chapter
-        |   +---dbms
-        |   |   +---mysql_post
-        |   |   +---oracle_post
-        |   |   \---postgresql_post
-        |   +---frontend
-        |   |   \---react_post
-        |   +---git
-        |   |   \---git_post
-        |   \---project
-        |       \---shooting_post
-        |           \---markdown
-        +---img
-        +---js
-        +---pages
-        \---test
+        |   \---workflows
+        |       \---merge-json.yml      # CI/CD 파이프라인 설정
+        \---src
+            +---merge-batch.js          # 데이터 병합 및 경로 교정 핵심 엔진
+            +---data
+                +---total_posts.json    # [Output] 병합된 전체 데이터
+                +---recent_3.json       # [Output] 최신글 3개 추출 데이터
+                +---backend/ ...        # [Input] 카테고리별 분산 데이터
 ```
 
 
@@ -78,45 +56,69 @@
     - 정해진 스케줄이나 데이터가 push될 때 자동으로 배치를 돌리고 결과를 레포지토리에 커밋합니다.
 
     ```YAML
-    name: Auto Merge Post JSONs
+    name: Auto Merge Post-List Create JSON 
 
     on:
-    push:
-        paths:
-        - 'src/data/**'
-    schedule:
-        - cron: '0 0,12 * * *'  # 매일 오전/오후 12시 실행
-    workflow_dispatch:          # 수동 실행 기능 활성화
+    # src/data 폴더 내 파일 변경 감지 시 자동 실행  
+    # push:
+    #  paths:
+    #    - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 읽기
+    #  branches:
+    #    - main               # 브랜치명 확인
+    schedule:                 # 매 시간마다 실행 (UTC 기준)
+        - cron: '0 0,6,12,18 * * *'
+    workflow_dispatch:        # 수동 트리거 허용
+
+    concurrency:                # 동시 실행 방지 설정
+    group: "merge-data"
+    cancel-in-progress: true
 
     jobs:
     build:
         runs-on: ubuntu-latest
+        permissions:
+        contents: write
+
         steps:
-        - uses: actions/checkout@v3
+        - name: Checkout code
+            uses: actions/checkout@v4
 
         - name: Setup Node.js
-            uses: actions/setup-node@v3
+            uses: actions/setup-node@v4
             with:
-            node-version: '20'
+            node-version: '24'
 
         - name: Run Merge Script
             run: node merge-batch.js
 
         - name: Commit and Push changes
             run: |
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            # 1. 로봇 계정 설정
+            git config --global user.name "merge_bot"
+            git config --global user.email "merge_bot@users.noreply.github.com"
+            
+            # 2. 배치 스크립트이 생성한 결과물 파일만 추가
             git add src/data/total_posts.json src/data/recent_3.json
+            
+            # 3. 변경 사항이 있을 때만 커밋하고 푸시 (무한 루프 방지 [skip ci] 포함)
             git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]" && git push)
     ```
 
     **git auto build Option**
     ```YAML
-    # 소스 변동 유무에 따른 Commit 중단 및 배포 & git push 사용시 머지봇 실행
-    git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]" && git push)
-    
-    # 소스 변동 유무에 따른 Commit 중단 및 배포 & git push 사용시 머지봇은 동작하지 않음
-    git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update merged data [skip ci]")
+    on:  
+     push:                      # src/data 폴더 내 파일 변경 감지 시 자동 실행
+      paths:
+        - 'src/data/**'         # src/data 폴더 및 하위 모든 파일 읽기
+      branches:
+        - main                  # 브랜치명 확인
+    schedule:                   # 매 시간마다 실행 (UTC 기준)
+        - cron: '0 0,6,12,18 * * *'
+    workflow_dispatch:          # 수동 트리거 허용 git push)
+   
+    concurrency:                # 동시 실행 방지 설정
+        group: "merge-data"
+        cancel-in-progress: true
     ```
 
 
@@ -252,8 +254,8 @@
             const normDateA = dateA.replace(/\./g, '-').trim();
             const normDateB = dateB.replace(/\./g, '-').trim();
             
-            const normTimeA = timeA ? timeA : '23:59:59'; 
-            const normTimeB = timeB ? timeB : '23:59:59';
+            const normTimeA = timeA ? timeA : '00:00:01'; 
+            const normTimeB = timeB ? timeB : '00:00:00';
 
             const finalDateA = new Date(`${normDateA}T${normTimeA}`);
             const finalDateB = new Date(`${normDateB}T${normTimeB}`);
