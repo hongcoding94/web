@@ -74,7 +74,7 @@ window.initList = function (root, state = {}) {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        alert("아직 공개되지 않은 글입니다");
+        showPopup("아직 공개되지 않은 글입니다","modalPopup");
       });
 
       li.classList.add("post-private");

@@ -1,7 +1,7 @@
 # Agent Upgrade Query / Excel Table Column‘Add’ or ‘Modify’ Auto DDL
 
 진행 상황: 최종완료
-최종 업데이트 시간: 2026년 2월 21일 오후 8:01
+최종 업데이트 시간: 2026년 2월 21일 오후 07:38
 개발 상태: 개발 완료
 기술 타입: DBMS, Excel
 영향도: 中

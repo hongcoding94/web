@@ -74,7 +74,7 @@ function renderPostList(containerId, posts , checkPrivate = false) {
       const post = posts[idx];
 
       if (checkPrivate && post.private_page === "Y") {
-        alert("🤖 봇이 최신 데이터를 인덱싱 중입니다. \n누락된 정보가 없도록 꼼꼼히 검토한 뒤 공개하겠습니다.");
+        showPopup("🤖 봇이 최신 데이터를 인덱싱 중입니다. \n누락된 정보가 없도록 꼼꼼히 검토한 뒤 공개하겠습니다.", "modalPopup");
         return;
       }
 
