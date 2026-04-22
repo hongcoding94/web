@@ -27,6 +27,13 @@
     color: var(--text-main);
 }
 
+.post-empty {
+  list-style: none;
+  padding: 50px 0;
+  text-align: center;
+  color: #888;
+}
+
 /*
    Search Area
 */

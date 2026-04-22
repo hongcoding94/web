@@ -45,6 +45,14 @@ window.initList = function (root, state = {}) {
 
   function renderList() {
     listEl.innerHTML = "";
+  
+    if (filtered.length === 0) {
+      const emptyLi = document.createElement("li");
+      emptyLi.className = "post-empty";
+      emptyLi.textContent = "아직 내용이 없습니다";
+      listEl.appendChild(emptyLi);
+      return;
+    }
 
     const start = (currentPage - 1) * pageSize;
     const end = start + pageSize;

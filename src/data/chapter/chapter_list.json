@@ -93,6 +93,12 @@
         "list_path": "../data/project/shooting_post/list.json",
         "page": "list"
       }
+      , {
+        "key": "SideProject",
+        "title": "SideProject",
+        "list_path": "../data/project/sideProject/list.json",
+        "page": "list"
+      }
     ]
   }
 ]
