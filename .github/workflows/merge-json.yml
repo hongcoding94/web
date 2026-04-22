@@ -1,14 +1,19 @@
-name: Auto Merge Post JSONs
+name: Auto Merge Post-List Create JSON 
 
 on:
-  push:
-    paths:
-      - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 읽기
-    branches:
-      - main               # 브랜치명 확인
-  schedule:                # 매 시간마다 실행 (UTC 기준)
-    - cron: '0 0,12 * * *'
-  workflow_dispatch:       # 수동 트리거 허용
+  # src/data 폴더 내 파일 변경 감지 시 자동 실행  
+  # push:
+  #  paths:
+  #    - 'src/data/**'      # src/data 폴더 및 하위 모든 파일 읽기
+  #  branches:
+  #    - main               # 브랜치명 확인
+  schedule:                 # 매 시간마다 실행 (UTC 기준)
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch:        # 수동 트리거 허용
+
+concurrency:                # 동시 실행 방지 설정
+  group: "merge-data"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -18,12 +23,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Run Merge Script
         run: node merge-batch.js

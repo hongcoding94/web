@@ -66,8 +66,8 @@ function runBatch() {
         const normDateA = dateA.replace(/\./g, '-').trim();
         const normDateB = dateB.replace(/\./g, '-').trim();
         
-        const normTimeA = timeA ? timeA : '23:59:59'; 
-        const normTimeB = timeB ? timeB : '23:59:59';
+        const normTimeA = timeA ? timeA : '00:00:00'; 
+        const normTimeB = timeB ? timeB : '00:00:00';
 
         const finalDateA = new Date(`${normDateA}T${normTimeA}`);
         const finalDateB = new Date(`${normDateB}T${normTimeB}`);

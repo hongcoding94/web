@@ -23,21 +23,7 @@ function initModal() {
   });
 }
 
-async function loadProjects() {
-  const res = await fetch("../data/project/shooting_post/list.json");
-  if (!res.ok) throw new Error("projects.json load failed");
-  return await res.json();
-}
-
-async function initFeaturedProjects() {
-  try {
-    const projects = await loadProjects();
-    renderProjects(projects);
-  } catch (e) {
-    console.error(e);
-  }
-}
-
+/* 최근 게시물 3개 호출 Start */
 async function initProjectPosts() {
   setTimeout(async () => {
     try {
@@ -69,7 +55,7 @@ async function loadRecentPosts() {
 }
 
 function renderRecentPosts(posts) {
-  const listEl = document.getElementById("dynamic-post-list");
+  const listEl = document.getElementById("recent-post-list");
   if (!listEl) return;
 
   if (posts.length === 0) {
@@ -121,20 +107,40 @@ function renderRecentPosts(posts) {
     });
   });
 }
+/* 최근 게시물 3개 호출 End */
+
+/* 트러블슈팅 게시물 3개 호출 Start */
+async function loadProjects() {
+  const res = await fetch("../data/project/shooting_post/list.json");
+  if (!res.ok) throw new Error("projects.json load failed");
+  return await res.json();
+}
+
+async function initFeaturedProjects() {
+  try {
+    const projects = await loadProjects();
+    renderProjects(projects);
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 function renderProjects(projects) {
-  const listEl = document.getElementById("projectList");
+  const listEl = document.getElementById("trouble-post-list");
   if (!listEl)  return;
   
   listEl.innerHTML = "";
 
   projects.slice(0, 3).forEach(p => {
-    const card = document.createElement("div");
-    card.className = "project-card";
+    const card = document.createElement("ul");
     card.innerHTML = `
-      <h3>${p.title}</h3>
-      <p>${p.summary}</p>
-      <span>${p.date}</span>
+      <li>
+        <a href="javascript:void(0);" class="tile-link">
+          <strong>${p.title}</strong>
+          <p>${p.summary}</p>
+          <span>${p.date}</span>
+        </a>
+      </li>
     `;
 
     card.addEventListener("click", () => moveTroubleshooting(p.data_url));
@@ -151,8 +157,8 @@ function moveTroubleshooting(url) {
   if (typeof window.loadTile === 'function') {
     window.loadTile("content", "./tiles/content.html", newState, true);
   }
-  // alert("🚧 프로젝트 상세 페이지는 현재 준비 중입니다. \n최대한 빠르게 완성하여 공개하겠습니다. 감사합니다!");
 }
+/* 트러블슈팅 게시물 3개 호출 End */
 
 function professionalExperience() {
   changePage('experience');
