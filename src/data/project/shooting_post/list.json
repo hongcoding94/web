@@ -4,7 +4,7 @@
     "id": "hongcoding94",
     "category": "Operation",
     "title": "[Quartz Scheduler 完] 장애 자동 감지/자가 복구 도입 결과 요약",
-    "date": "2026.02.22 20:15",
+    "date": "2026.04.21 22:59",
     "summary": "Quartz Schedulerr 특정 job의 정지에 따른 원인 분석 및 장애 자동 감지/자가 복구 도입 결과 요약",
     "data_url": "../data/project/shooting_post/markdown/shooting_post0006.md",
     "private_page": "N"
