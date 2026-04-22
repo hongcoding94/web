@@ -1,5 +1,15 @@
 [
   {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Operation",
+    "title": "[Quartz Scheduler 完] 장애 자동 감지/자가 복구 도입 결과 요약",
+    "date": "2026.04.21 22:59",
+    "summary": "Quartz Schedulerr 특정 job의 정지에 따른 원인 분석 및 장애 자동 감지/자가 복구 도입 결과 요약",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0006.md",
+    "private_page": "N"
+  },
+  {
     "no": "41",
     "id": "hongcoding94",
     "title": "Spring Batch 메타 테이블 운영 전략",
@@ -17,14 +27,5 @@
     "summary": "최신글 병합 및 메인화면 반영 자동화",
     "data_url": "../data/git/git_post/git_post0001.md",
     "private_page": "N"
-  },
-  {
-    "no": "42",
-    "id": "hongcoding94",
-    "title": "Spring Batch Multi DataSource 구성",
-    "date": "2026.04.18",
-    "summary": "여러 DB 환경 배치 설계",
-    "data_url": "../backend/20260418-batch-multidatasource.html",
-    "private_page": "Y"
   }
 ]
