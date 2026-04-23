@@ -1,5 +1,50 @@
 # Git.io - web개발
 
+## tiles 영역별 function 역할
+※ 수정 중에 변동사항이 생길수 있습니다.
+	
+### tiles영역 
+```PwoerShell
+	.. tiles영역 이외 내용 생략
+	|
+	+---pages
+	|   experience.html
+	|   index.html
+	|   main.html
+	| 
+	+---components
+	|   list.html
+	| 
+	\---tiles
+		content.html
+		footer.html
+		header.html
+		sidebar.html
+```
+	
+### tiles 사용자 영역별 소개
+1) **공통 영역**
+	- TosatPopup / modalPopup 지원
+
+2) **메인 영역**
+	- 사용자 지원 기능 없음
+
+3) **header 영역**
+	- 화이트모드 / 다크모드 on/off Toggle
+	- [Mobile 용] sidebar open/close Toggle 
+
+4) **side 영역**
+	- 사용자 지원 기능 없음
+
+5) **content 영역**
+	- 코드 Copy 버튼 모드
+	- [Web 용] content 영역별 목차 현황
+
+6) **footer 영역**
+	- 일정이상 스크롤 다운시 최상단 Top Toggle
+
+<hr/>
+
 ## git 컨벤션 & 수정 이력
 | 타입 명 | 기능 추가 | 기능 수정 | 삭제 | 리팩토링 | 버그 수정 |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -13,7 +58,7 @@
 | Feat | 2026.03.18 | - Top버튼 추가<br/> - markdown "```"를 div 코드화면으로 변경 <br/>- sideBar 프로필사진 추가<br/> - header icon추가  |
 | Feat | 2026.03.19 | - 코드화면 라인추가<br/> - content 리스트페이지 구성 |
 | Feat | 2026.03.20 | -메인 페이지 일부 내용 추가 |
-| Fix | 2026.03.21 | - Sidebar 정적에서 동적으로 수정<br/>- tiles function　 호출 구간 전체 수정<br/> - content 모바일 영역 수정 |
+| Fix | 2026.03.21 | - Sidebar 정적에서 동적으로 수정<br/>- tiles function 호출 구간 전체 수정<br/> - content 모바일 영역 수정 |
 | Feat | 2026.03.23 | - 이전페이지 히스토리 function 생성<br/> - list페이지 정적에서 동적으로 수정<br/>- JsonData 추가 |
 | Feat | 2026.03.24 | - markdown에서 html변환작업 처리<br/> - 메인화면 css  추가 |
 | Fix | 2026.03.26 | - 전반적인 css 수정 |
@@ -95,7 +140,6 @@
 ```
 	
 <hr/>
-
 
 
 
