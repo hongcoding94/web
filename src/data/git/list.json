@@ -1,5 +1,15 @@
 [
-  {
+ {
+    "no": "2",
+    "id": "hongcoding94",
+    "category": "Operation",
+    "title": "실무 Git 사용 가이드 (협업 사고 방지용)",
+    "date": "2026.04.25 02:20",
+    "summary": "협업 시 발생할 수 있는 Git 관련 사고 방지 및 효율적인 사용 방법",
+    "data_url": "../data/git/git_post/git_post0002.md",
+    "private_page": "N"
+  }
+  , {
     "no": "1",
     "id": "hongcoding94",
     "category": "Operation",
