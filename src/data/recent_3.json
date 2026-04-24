@@ -1,5 +1,15 @@
 [
   {
+    "no": "2",
+    "id": "hongcoding94",
+    "category": "Operation",
+    "title": "실무 Git 사용 가이드 (협업 사고 방지용)",
+    "date": "2026.04.25 02:20",
+    "summary": "협업 시 발생할 수 있는 Git 관련 사고 방지 및 효율적인 사용 방법",
+    "data_url": "../data/git/git_post/git_post0002.md",
+    "private_page": "N"
+  },
+  {
     "no": "6",
     "id": "hongcoding94",
     "category": "Operation",
@@ -18,14 +28,5 @@
     "summary": "최신글 병합 및 메인화면 반영 자동화",
     "data_url": "../data/git/git_post/git_post0001.md",
     "private_page": "N"
-  },
-  {
-    "no": "41",
-    "id": "hongcoding94",
-    "title": "Spring Batch 메타 테이블 운영 전략",
-    "date": "2026.04.19",
-    "summary": "운영 환경 이력 관리",
-    "data_url": "../backend/20260419-batch-meta.html",
-    "private_page": "Y"
   }
 ]
