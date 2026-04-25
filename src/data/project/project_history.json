@@ -169,121 +169,121 @@
 		"tags": [
 			"인프라", "보안", "운영", "Log4j"
 		]
-	},
-	{
-		"id": 4,
-		"projectName": "Compliance 통합 관리 업무 홈페이지 신규 개발",
-		"customer": "삼성증권",
-		"contractor": "디컴즈주식회사",
-		"period": {
-			"start": "2020.09.01",
-			"end": "2020.12.31"
-		},
-		"role": "웹 개발 및 시스템 개발",
-		"summary": "업무 통합 관리 웹 포털 개발",
-		"description": "업무 통합 관리 웹 포털 설계 및 개발, DB 기반 To-Do List 및 알림 기능 구현, 문서 미리보기 기능 적용",
-		"techStack": {
-			"os": [],
-			"dbms": [],
-			"backend": [
-				"Spring"
-			],
-			"frontend": [
-				"JSP"
-			],
-			"protocol": []
-		},
-		"status": {
-			"active": "ENDED"
-		},
-		"contributionRate": 40,
-		"tags": [
-			"웹", "포털", "업무시스템"
-		]
-	},
-	{
-		"id": 3,
-		"projectName": "사내 포털(PLUSi) Java 업그레이드 및 웹 표준화 고도화",
-		"customer": "LG생활건강",
-		"contractor": "디컴즈주식회사",
-		"period": {
-			"start": "2021.07.06",
-			"end": "2022.01.06"
-		},
-		"role": "프론트엔드 및 백엔드 개발",
-		"summary": "사내 포털 Java 업그레이드 및 웹 표준화",
-		"description": "Java 업그레이드, HTML5 웹 표준화, 멀티 브라우저 지원, API 연계, 메뉴바 리뉴얼 및 페이지 기능 개발",
-		"techStack": {
-			"os": [],
-			"dbms": [],
-			"backend": [
-				"Spring"
-			],
-			"frontend": [
-				"JSP"
-			],
-			"protocol": []
-		},
-		"status": {
-			"active": "ENDED"
-		},
-		"contributionRate": 100,
-		"tags": [
-			"웹표준", "포털", "리뉴얼"
-		]
-	},
-	{
-		"id": 2,
-		"projectName": "읍·면·동 취학아동 주민등록정보 고도화 시스템 개발",
-		"customer": "행정안전부",
-		"contractor": "디컴즈주식회사",
-		"period": {
-			"start": "2021.01.12",
-			"end": "2021.04.30"
-		},
-		"role": "시스템 개발",
-		"summary": "취학아동 정보 관리 시스템 고도화",
-		"description": "취학아동 지문·서명 관리, 전입 이력 기반 조회 기능 고도화, 통지서 발급 및 분기별 미발급자 관리 기능 구현",
-		"techStack": {
-			"os": [],
-			"dbms": [],
-			"backend": ["spring"],
-			"frontend": ["Nexacro"],
-			"protocol": []
-		},
-		"status": {
-			"active": "ENDED"
-		},
-		"contributionRate": 25,
-		"tags": [
-			"공공", "행정", "시스템"
-		]
-	},
-	{
-		"id": 1,
-		"projectName": "내부 어드민 홈페이지 유지보수 및 게시판 기능 개선",
-		"customer": "한국수자원공사",
-		"contractor": "디컴즈주식회사",
-		"period": {
-			"start": "2021.05.03",
-			"end": "2021.05.31"
-		},
-		"role": "백엔드 및 프론트엔드 개발",
-		"summary": "내부 홈페이지 유지보수 및 게시판 개선",
-		"description": "내부 홈페이지 유지보수 단독 수행, 디컴파일 후 로직 복원, 3-Depth 네비게이션 개선 및 게시판 기능 개발",
-		"techStack": {
-			"os": [],
-			"dbms": [],
-			"backend": ["spring"],
-			"frontend": ["JSP"],
-			"protocol": []
-		},
-		"status": {
-			"active": "ENDED"
-		},
-		"contributionRate": 100,
-		"tags": [
-			"유지보수", "어드민", "게시판"
-		]
+	}
+	, {
+        "id": 4,
+        "projectName": "사내 포털(PLUSi) Java 업그레이드 및 웹 표준화 고도화",
+        "customer": "LG생활건강",
+        "contractor": "디컴즈주식회사",
+        "period": {
+            "start": "2021.07.06",
+            "end": "2022.01.06"
+        },
+        "role": "프론트엔드 및 백엔드 개발",
+        "summary": "사내 포털 Java 업그레이드 및 웹 표준화",
+        "description": "Java 업그레이드, HTML5 웹 표준화, 멀티 브라우저 지원, API 연계, 메뉴바 리뉴얼 및 페이지 기능 개발",
+        "techStack": {
+            "os": [],
+            "dbms": [],
+            "backend": [
+                "Spring"
+            ],
+            "frontend": [
+                "JSP"
+            ],
+            "protocol": []
+        },
+        "status": {
+            "active": "ENDED"
+        },
+        "contributionRate": 100,
+        "tags": [
+            "웹표준", "포털", "리뉴얼"
+        ]
+    }
+    , {
+        "id": 3,
+        "projectName": "내부 어드민 홈페이지 유지보수 및 게시판 기능 개선",
+        "customer": "한국수자원공사",
+        "contractor": "디컴즈주식회사",
+        "period": {
+            "start": "2021.05.03",
+            "end": "2021.05.31"
+        },
+        "role": "백엔드 및 프론트엔드 개발",
+        "summary": "내부 홈페이지 유지보수 및 게시판 개선",
+        "description": "내부 홈페이지 유지보수 단독 수행, 디컴파일 후 로직 복원, 3-Depth 네비게이션 개선 및 게시판 기능 개발",
+        "techStack": {
+            "os": [],
+            "dbms": [],
+            "backend": ["spring"],
+            "frontend": ["JSP"],
+            "protocol": []
+        },
+        "status": {
+            "active": "ENDED"
+        },
+        "contributionRate": 100,
+        "tags": [
+            "유지보수", "어드민", "게시판"
+        ]
+    }
+	, {
+        "id": 2,
+        "projectName": "읍·면·동 취학아동 주민등록정보 고도화 시스템 개발",
+        "customer": "행정안전부",
+        "contractor": "디컴즈주식회사",
+        "period": {
+            "start": "2021.01.12",
+            "end": "2021.04.30"
+        },
+        "role": "시스템 개발",
+        "summary": "취학아동 정보 관리 시스템 고도화",
+        "description": "취학아동 지문·서명 관리, 전입 이력 기반 조회 기능 고도화, 통지서 발급 및 분기별 미발급자 관리 기능 구현",
+        "techStack": {
+            "os": [],
+            "dbms": [],
+            "backend": ["spring"],
+            "frontend": ["Nexacro"],
+            "protocol": []
+        },
+        "status": {
+            "active": "ENDED"
+        },
+        "contributionRate": 25,
+        "tags": [
+            "공공", "행정", "시스템"
+        ]
+    }
+	,{
+        "id": 1,
+        "projectName": "Compliance 통합 관리 업무 홈페이지 신규 개발",
+        "customer": "삼성증권",
+        "contractor": "디컴즈주식회사",
+        "period": {
+            "start": "2020.09.01",
+            "end": "2020.12.31"
+        },
+        "role": "웹 개발 및 시스템 개발",
+        "summary": "업무 통합 관리 웹 포털 개발",
+        "description": "업무 통합 관리 웹 포털 설계 및 개발, DB 기반 To-Do List 및 알림 기능 구현, 문서 미리보기 기능 적용",
+        "techStack": {
+            "os": [],
+            "dbms": [],
+            "backend": [
+                "Spring"
+            ],
+            "frontend": [
+                "JSP"
+            ],
+            "protocol": []
+        },
+        "status": {
+            "active": "ENDED"
+        },
+        "contributionRate": 5,
+        "tags": [
+            "금융", "삼성증권", "내부시스템", "전산시스템"
+        ]
 	}
 ]
