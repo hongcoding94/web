@@ -1,5 +1,15 @@
 [
- {
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Operation",
+    "title": "PR 단계에서 GitHub Actions으로 협업 규칙을 강제하는 구조",
+    "date": "2026.04.25 18:40",
+    "summary": "",
+    "data_url": "../data/git/git_post/git_post0003.md",
+    "private_page": "Y"
+  }
+  , {
     "no": "2",
     "id": "hongcoding94",
     "category": "Operation",
