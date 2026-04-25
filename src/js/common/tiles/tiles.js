@@ -1,4 +1,7 @@
 window.loadTile = async (id, file, state = {}, push = true) => {
+    document.body.classList.remove('scroll-lock');
+    document.body.style.overflow = '';
+
     const res = await fetch(file);
     if (!res.ok) throw new Error(file);
 
