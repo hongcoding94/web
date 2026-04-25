@@ -2,6 +2,7 @@
   {
     "no": "1",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle JDBC 연결과 쿼리 실행",
     "date": "2026.03.01",
     "summary": "Connection, Statement, PreparedStatement 활용",
@@ -11,6 +12,7 @@
   {
     "no": "2",
     "id": "devhong",
+    "category" : "Oracle",
     "title": "Oracle 트랜잭션 관리와 커밋 전략",
     "date": "2026.03.02",
     "summary": "Spring Transaction과 트랜잭션 전파 이해",
@@ -20,6 +22,7 @@
   {
     "no": "3",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle 테이블 및 컬럼 구조 조회",
     "date": "2026.03.03",
     "summary": "메타테이블 기반 테이블/컬럼 조회와 관리",
@@ -29,6 +32,7 @@
   {
     "no": "4",
     "id": "api_master",
+    "category" : "Oracle",
     "title": "Oracle 대용량 데이터 처리 전략",
     "date": "2026.03.04",
     "summary": "Chunk 단위 배치와 인덱스 활용",
@@ -38,6 +42,7 @@
   {
     "no": "5",
     "id": "springhong",
+    "category" : "Oracle",
     "title": "Oracle Sequence와 Auto Increment 활용",
     "date": "2026.03.05",
     "summary": "PK 생성과 연속성 관리 방법",
@@ -47,6 +52,7 @@
   {
     "no": "6",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle Index 설계와 성능 최적화",
     "date": "2026.03.06",
     "summary": "B-Tree, Bitmap 인덱스 활용 전략",
@@ -56,6 +62,7 @@
   {
     "no": "7",
     "id": "frontendlab",
+    "category" : "Oracle",
     "title": "Oracle View와 Materialized View 활용",
     "date": "2026.03.07",
     "summary": "데이터 조회 최적화와 정기 리프레시 관리",
@@ -65,6 +72,7 @@
   {
     "no": "8",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle Join과 서브쿼리 활용",
     "date": "2026.03.08",
     "summary": "복합 쿼리 설계와 성능 고려",
@@ -74,6 +82,7 @@
   {
     "no": "9",
     "id": "devops_hong",
+    "category" : "Oracle",
     "title": "Oracle PL/SQL 기초",
     "date": "2026.03.09",
     "summary": "프로시저, 함수, 트리거 설계와 구현",
@@ -83,6 +92,7 @@
   {
     "no": "10",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle Lock과 동시성 제어",
     "date": "2026.03.10",
     "summary": "테이블/행 단위 잠금과 트랜잭션 충돌 방지",
@@ -92,6 +102,7 @@
   {
     "no": "11",
     "id": "springhong",
+    "category" : "Oracle",
     "title": "Oracle 파티셔닝 전략 이해",
     "date": "2026.03.11",
     "summary": "대규모 테이블 관리와 쿼리 최적화",
@@ -101,6 +112,7 @@
   {
     "no": "12",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle 트리거와 이벤트 활용",
     "date": "2026.03.12",
     "summary": "데이터 변경 이벤트 기반 로직 처리",
@@ -110,6 +122,7 @@
   {
     "no": "13",
     "id": "backendlab",
+    "category" : "Oracle",
     "title": "Oracle 데이터 타입과 제약조건 관리",
     "date": "2026.03.13",
     "summary": "NOT NULL, UNIQUE, CHECK, FK 관리 전략",
@@ -119,6 +132,7 @@
   {
     "no": "14",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle 성능 모니터링과 통계 테이블",
     "date": "2026.03.14",
     "summary": "자동 통계 갱신과 쿼리 튜닝 지표 활용",
@@ -128,6 +142,7 @@
   {
     "no": "15",
     "id": "devhong",
+    "category" : "Oracle",
     "title": "Oracle 데이터 마이그레이션 전략",
     "date": "2026.03.15",
     "summary": "테이블 복사, 덤프, 데이터 이동 전략",
@@ -137,6 +152,7 @@
   {
     "no": "16",
     "id": "hongcoding94",
+    "category" : "Oracle",
     "title": "Oracle 백업과 복구 전략",
     "date": "2026.03.16",
     "summary": "RMAN과 Export/Import를 활용한 안정적 관리",
@@ -146,6 +162,7 @@
   {
     "no": "17",
     "id": "backendlab",
+    "category" : "Oracle",
     "title": "Oracle 보안과 사용자 권한 관리",
     "date": "2026.03.17",
     "summary": "Role, Privilege 기반 접근 제어 설계",

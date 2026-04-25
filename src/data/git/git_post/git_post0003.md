@@ -104,9 +104,12 @@
 
 ### Git Actions이 구성되지 않은 프로젝트
 
+
 ### Git Actions이 구성된 프로젝트 (예제 포함)
 
+
 ### Git Actions 유무에 따른 비교점
+
 
 <hr/>
 

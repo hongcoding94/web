@@ -20,8 +20,15 @@ async function renderTimeline() {
         n.innerHTML = `
             <div class="card" onclick="openM(${i})">
                 <h3>${p.projectName}</h3>
-                <p>${p.period.start} ~ ${p.period.end} 
-                    <strong>( ${p.status.active === "ACTIVE" ? "진행중" : p.status.active === "PLANNED" ? "진행예정" : "종료"} )</strong>
+                <p>
+                    고객사 : ${p.customer}
+                </p>
+                <p>
+                    프로젝트 상태 : 
+                    <strong>${p.status.active === "ACTIVE" ? "진행중" : p.status.active === "PLANNED" ? "진행예정" : "종료"}</strong>
+                </p>
+                <p>
+                    일정 : ${p.status.start} ~ ${p.status.end}
                 </p>
             </div>
             <div class="diagonal"></div>
@@ -55,7 +62,7 @@ function openM(i) {
     document.getElementById('mT').innerText = data.projectName;
     document.getElementById('mD').innerText = data.summary;
     
-    const contributionRate = data.contributionRate || 0;
+    const contribution = data.status.contribution || 0;
     const projectImg = data.projectImage || "";
 
     let techStackHtml = `
@@ -64,7 +71,7 @@ function openM(i) {
             <div class="cylinder-container-big">
                 <div class="cylinder-frame">
                     <div class="cylinder-glass">
-                        <div class="cylinder-liquid" style="height: ${contributionRate}%;">
+                        <div class="cylinder-liquid" style="height: ${contribution}%;">
                             <div class="liquid-top-glow"></div>
                             <div class="liquid-surface"></div>
                         </div>
@@ -72,7 +79,7 @@ function openM(i) {
                 </div>
                 <div class="gauge-label-group">
                     <span class="label-main">CONTRIBUTION</span>
-                    <span class="label-val">${contributionRate}<small>%</small></span>
+                    <span class="label-val">${contribution}<small>%</small></span>
                 </div>
             </div>
         </div>
@@ -95,7 +102,9 @@ function openM(i) {
             ${techStackHtml}
             <div class="modal-desc-section">
                 <h3>상세 내용</h3>
-                <p class="desc-text">${data.description}</p>
+                ${data.description && data.description.length > 0 
+                    ? data.description.map(desc => `<p class="desc-text"> • ${desc}</p>`).join('') 
+                    : '<p class="desc-text"> • 상세 내용이 없습니다.</p>'}
             </div>
 
             <div class="modal-tag-section">

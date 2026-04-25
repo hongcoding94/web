@@ -2,7 +2,8 @@
   {
     "no": "1",
     "id": "hongcoding94",
-    "title": "PostgreSQL JDBC 연결과 쿼리 실행",
+    "category" : "Postgresql",
+    "title":"PostgreSQL JDBC 연결과 쿼리 실행",
     "date": "2026.03.01",
     "summary": "Connection, Statement, PreparedStatement 활용",
     "data_url": "../backend/postgresql/20260301-jdbc.html",
@@ -11,7 +12,8 @@
   {
     "no": "2",
     "id": "devhong",
-    "title": "PostgreSQL 트랜잭션 관리와 커밋 전략",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 트랜잭션 관리와 커밋 전략",
     "date": "2026.03.02",
     "summary": "Spring Transaction과 트랜잭션 전파 이해",
     "data_url": "../backend/postgresql/20260302-transaction.html",
@@ -20,7 +22,8 @@
   {
     "no": "3",
     "id": "hongcoding94",
-    "title": "PostgreSQL 테이블 및 컬럼 구조 조회",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 테이블 및 컬럼 구조 조회",
     "date": "2026.03.03",
     "summary": "information_schema 기반 테이블/컬럼 조회",
     "data_url": "../backend/postgresql/20260303-metadata.html",
@@ -29,7 +32,8 @@
   {
     "no": "4",
     "id": "api_master",
-    "title": "PostgreSQL 대용량 데이터 처리 전략",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 대용량 데이터 처리 전략",
     "date": "2026.03.04",
     "summary": "Chunk 단위 배치와 인덱스 활용",
     "data_url": "../backend/postgresql/20260304-batch.html",
@@ -38,7 +42,8 @@
   {
     "no": "5",
     "id": "springhong",
-    "title": "PostgreSQL SERIAL과 시퀀스 활용",
+    "category" : "Postgresql",
+    "title":"PostgreSQL SERIAL과 시퀀스 활용",
     "date": "2026.03.05",
     "summary": "PK 생성과 연속성 관리 방법",
     "data_url": "../backend/postgresql/20260305-serial.html",
@@ -47,7 +52,8 @@
   {
     "no": "6",
     "id": "hongcoding94",
-    "title": "PostgreSQL Index 설계와 성능 최적화",
+    "category" : "Postgresql",
+    "title":"PostgreSQL Index 설계와 성능 최적화",
     "date": "2026.03.06",
     "summary": "B-Tree, GIN, GiST 인덱스 활용 전략",
     "data_url": "../backend/postgresql/20260306-index.html",
@@ -55,8 +61,9 @@
   },
   {
     "no": "7",
-    "id": "frontendlab",
-    "title": "PostgreSQL View와 Materialized View 활용",
+    "id": "postgresqllab",
+    "category" : "Postgresql",
+    "title":"PostgreSQL View와 Materialized View 활용",
     "date": "2026.03.07",
     "summary": "데이터 조회 최적화 및 정기 리프레시 관리",
     "data_url": "../backend/postgresql/20260307-view.html",
@@ -65,7 +72,8 @@
   {
     "no": "8",
     "id": "hongcoding94",
-    "title": "PostgreSQL Join과 서브쿼리 활용",
+    "category" : "Postgresql",
+    "title":"PostgreSQL Join과 서브쿼리 활용",
     "date": "2026.03.08",
     "summary": "복합 쿼리 설계와 성능 고려",
     "data_url": "../backend/postgresql/20260308-join.html",
@@ -74,7 +82,8 @@
   {
     "no": "9",
     "id": "devops_hong",
-    "title": "PostgreSQL Function과 Trigger 활용",
+    "category" : "Postgresql",
+    "title":"PostgreSQL Function과 Trigger 활용",
     "date": "2026.03.09",
     "summary": "데이터 변경 이벤트 기반 로직 처리",
     "data_url": "../backend/postgresql/20260309-function.html",
@@ -83,7 +92,8 @@
   {
     "no": "10",
     "id": "hongcoding94",
-    "title": "PostgreSQL Lock과 동시성 제어",
+    "category" : "Postgresql",
+    "title":"PostgreSQL Lock과 동시성 제어",
     "date": "2026.03.10",
     "summary": "행 단위 잠금과 트랜잭션 충돌 방지",
     "data_url": "../backend/postgresql/20260310-lock.html",
@@ -92,7 +102,8 @@
   {
     "no": "11",
     "id": "springhong",
-    "title": "PostgreSQL 파티셔닝 전략 이해",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 파티셔닝 전략 이해",
     "date": "2026.03.11",
     "summary": "대규모 테이블 관리와 쿼리 최적화",
     "data_url": "../backend/postgresql/20260311-partition.html",
@@ -101,7 +112,8 @@
   {
     "no": "12",
     "id": "hongcoding94",
-    "title": "PostgreSQL 데이터 타입과 제약조건 관리",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 데이터 타입과 제약조건 관리",
     "date": "2026.03.12",
     "summary": "NOT NULL, UNIQUE, CHECK, FK 관리 전략",
     "data_url": "../backend/postgresql/20260312-datatype.html",
@@ -110,7 +122,8 @@
   {
     "no": "13",
     "id": "backendlab",
-    "title": "PostgreSQL 성능 모니터링과 통계 활용",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 성능 모니터링과 통계 활용",
     "date": "2026.03.13",
     "summary": "EXPLAIN, VACUUM, ANALYZE 기반 최적화",
     "data_url": "../backend/postgresql/20260313-performance.html",
@@ -119,7 +132,8 @@
   {
     "no": "14",
     "id": "hongcoding94",
-    "title": "PostgreSQL 데이터 마이그레이션 전략",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 데이터 마이그레이션 전략",
     "date": "2026.03.14",
     "summary": "테이블 복사, 덤프, 데이터 이동 전략",
     "data_url": "../backend/postgresql/20260314-migration.html",
@@ -128,7 +142,8 @@
   {
     "no": "15",
     "id": "devhong",
-    "title": "PostgreSQL 백업과 복구 전략",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 백업과 복구 전략",
     "date": "2026.03.15",
     "summary": "pg_dump, pg_restore 기반 관리",
     "data_url": "../backend/postgresql/20260315-backup.html",
@@ -137,7 +152,8 @@
   {
     "no": "16",
     "id": "hongcoding94",
-    "title": "PostgreSQL 보안과 권한 관리",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 보안과 권한 관리",
     "date": "2026.03.16",
     "summary": "Role, Privilege 기반 접근 제어 설계",
     "data_url": "../backend/postgresql/20260316-security.html",
@@ -146,7 +162,8 @@
   {
     "no": "17",
     "id": "backendlab",
-    "title": "PostgreSQL 고가용성과 복제 전략",
+    "category" : "Postgresql",
+    "title":"PostgreSQL 고가용성과 복제 전략",
     "date": "2026.03.17",
     "summary": "Streaming Replication, Patroni 활용",
     "data_url": "../backend/postgresql/20260317-replication.html",
