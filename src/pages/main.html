@@ -40,28 +40,31 @@
   </section>
 
   <!-- 게시물 카테고리 분포 -->
-  <div class="chart_dashboard_wrapper">
-      <div class="chart_container_layout">
-          <div class="chart_card">
-              <h2 class="chart_title">Analytics</h2>
-              <div class="chart_canvas_area">
-                  <canvas id="categoryChart"></canvas>
-                  <div class="chart_center_info">
-                      <span class="chart_total_count" id="totalCount">0</span>
-                      <span class="chart_total_label">POSTS</span>
-                  </div>
-              </div>
-              <div id="customLegend" class="chart_legend_grid"></div>
-          </div>
+  <section class="section">
+    <h2>Activity Log</h2>
+    <div class="chart_dashboard_wrapper">
+        <div class="chart_container_layout">
+            <div class="chart_card">
+                <h2 class="chart_title">Analytics</h2>
+                <div class="chart_canvas_area">
+                    <canvas id="categoryChart"></canvas>
+                    <div class="chart_center_info">
+                        <span class="chart_total_count" id="totalCount">0</span>
+                        <span class="chart_total_label">POSTS</span>
+                    </div>
+                </div>
+                <div id="customLegend" class="chart_legend_grid"></div>
+            </div>
 
-          <div class="chart_card">
-              <h2 class="chart_title">Recent Activity</h2>
-              <div id="timelineContainer" class="chart_timeline">
-                  <p class="chart_loading_text">데이터를 불러오는 중...</p>
-              </div>
-          </div>
-      </div>
-  </div>
+            <div class="chart_card">
+                <h2 class="chart_title">Recent Activity</h2>
+                <div id="timelineContainer" class="chart_timeline">
+                    <p class="chart_loading_text">데이터를 불러오는 중...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
 
   <!-- 기술 스택 -->
   <section class="section">

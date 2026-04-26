@@ -46,6 +46,8 @@ window.loadTile = async (id, file, state = {}, push = true) => {
         if (state?.markdownPath) {
             if (window.loadMarkdown) window.loadMarkdown(state.markdownPath);
         }
+
+        window.initDashboard();
     }
 
     if (id === "sidebar") {

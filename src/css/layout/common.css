@@ -227,81 +227,75 @@ ul, ol {
     font-weight: bold;
 }
 
-/* ===== */
+.chart_dashboard_wrapper {
+    --chart-bg: #;
+    --chart-card: #ffffff;
+    --chart-text: #2d3436;
+    --chart-muted: #636e72;
+    --chart-line: #eee;
+    --chart-point: #0984e3;
+    font-family: 'Pretendard', sans-serif;
+    padding: 0px 20px 20px 0px;
+    background: var(--chart-bg);
+    color: var(--chart-text);
+}
 
-    .chart_dashboard_wrapper {
-        --chart-bg: #;
-        --chart-card: #ffffff;
-        --chart-text: #2d3436;
-        --chart-muted: #636e72;
-        --chart-line: #eee;
-        --chart-point: #0984e3;
-        font-family: 'Pretendard', sans-serif;
-        padding: 20px;
-        background: var(--chart-bg);
-        color: var(--chart-text);
-    }
+body.dark .chart_dashboard_wrapper {
+    --chart-bg: #;
+    --chart-card: #1e1e1e;
+    --chart-text: #e0e0e0;
+    --chart-muted: #a0a0a0;
+    --chart-line: #333;
+    --chart-point: #74b9ff;
+}
 
-    
-    body.dark .chart_dashboard_wrapper {
-        --chart-bg: #;
-        --chart-card: #1e1e1e;
-        --chart-text: #e0e0e0;
-        --chart-muted: #a0a0a0;
-        --chart-line: #333;
-        --chart-point: #74b9ff;
-    }
-    
+.chart_container_layout { 
+    max-width: 900px; margin: 0 auto; 
+    display: grid; grid-template-columns: 380px 1fr; gap: 16px; 
+}
 
-    .chart_container_layout { 
-        max-width: 1000px; margin: 0 auto; 
-        display: grid; grid-template-columns: 380px 1fr; gap: 24px; 
-    }
+@media (max-width: 850px) { .chart_container_layout { grid-template-columns: 1fr; } }
 
-    @media (max-width: 850px) { .chart_container_layout { grid-template-columns: 1fr; } }
+.chart_card { 
+    background: var(--chart-card); padding: 32px; border-radius: 24px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex; flex-direction: column;
+}
 
-    .chart_card { 
-        background: var(--chart-card); padding: 32px; border-radius: 24px; 
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        display: flex; flex-direction: column;
-    }
+.chart_title { font-size: 1.2rem; font-weight: 700; margin-bottom: 30px; color: var(--chart-text); }
 
-    .chart_title { font-size: 1.2rem; font-weight: 700; margin-bottom: 30px; color: var(--chart-text); }
+.chart_canvas_area { position: relative; width: 200px; height: 200px; margin: 0 auto 30px; }
 
-    .chart_canvas_area { position: relative; width: 200px; height: 200px; margin: 0 auto 30px; }
+.chart_center_info {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); text-align: center; pointer-events: none;
+}
+.chart_total_count { font-size: 1.8rem; font-weight: 800; display: block; color: var(--chart-text); }
+.chart_total_label { font-size: 0.75rem; color: var(--chart-muted); }
 
-    .chart_center_info {
-        position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%); text-align: center; pointer-events: none;
-    }
-    .chart_total_count { font-size: 1.8rem; font-weight: 800; display: block; color: var(--chart-text); }
-    .chart_total_label { font-size: 0.75rem; color: var(--chart-muted); }
+.chart_legend_grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin-top: 10px; max-height: 110px; overflow-y: auto; padding-right: 5px;
+}
+.chart_legend_grid::-webkit-scrollbar { width: 4px; }
+.chart_legend_grid::-webkit-scrollbar-thumb { background: var(--chart-line); border-radius: 10px; }
 
-    .chart_legend_grid {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-        margin-top: 10px; max-height: 110px; overflow-y: auto; padding-right: 5px;
-    }
-    .chart_legend_grid::-webkit-scrollbar { width: 4px; }
-    .chart_legend_grid::-webkit-scrollbar-thumb { background: var(--chart-line); border-radius: 10px; }
+.chart_legend_item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--chart-muted); padding: 4px 6px; }
+.chart_dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.chart_cat_name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chart_cat_val { margin-left: auto; font-size: 0.75rem; opacity: 0.6; }
 
-    .chart_legend_item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--chart-muted); padding: 4px 6px; }
-    .chart_dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .chart_cat_name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .chart_cat_val { margin-left: auto; font-size: 0.75rem; opacity: 0.6; }
-
-    .chart_timeline { border-left: 2px solid var(--chart-line); padding-left: 25px; margin-left: 10px; }
-    .chart_timeline_item { position: relative; margin-bottom: 30px; }
-    .chart_timeline_item::before {
-        content: ''; position: absolute; left: -31px; top: 6px;
-        width: 10px; height: 10px; background: var(--chart-card);
-        border: 2px solid var(--chart-point); border-radius: 50%;
-    }
-    .chart_time_date { font-size: 0.8rem; color: var(--chart-muted); margin-bottom: 6px; }
-    .chart_time_title { font-size: 1rem; margin-bottom: 6px; font-weight: 600; color: var(--chart-text); }
-    .chart_time_tag { font-size: 0.75rem; color: var(--chart-point); font-weight: 500; }
-    .chart_loading_text { color: var(--chart-muted); font-size: 0.9rem; }
-
-/* ===== */
+.chart_timeline { border-left: 2px solid var(--chart-line); padding-left: 25px; margin-left: 10px; }
+.chart_timeline_item { position: relative; margin-bottom: 30px; }
+.chart_timeline_item::before {
+    content: ''; position: absolute; left: -31px; top: 6px;
+    width: 10px; height: 10px; background: var(--chart-card);
+    border: 2px solid var(--chart-point); border-radius: 50%;
+}
+.chart_time_date { font-size: 0.8rem; color: var(--chart-muted); margin-bottom: 6px; }
+.chart_time_title { font-size: 1rem; margin-bottom: 6px; font-weight: 600; color: var(--chart-text); }
+.chart_time_tag { font-size: 0.75rem; color: var(--chart-point); font-weight: 500; }
+.chart_loading_text { color: var(--chart-muted); font-size: 0.9rem; }
 
 @keyframes modalSlideUp {
     from { transform: translateY(20px); opacity: 0; }

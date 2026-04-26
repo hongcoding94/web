@@ -111,13 +111,11 @@ async function loadDashboard() {
         if (!response.ok) return;
         const posts = await response.json();
 
-        // --- [안전장치 1] 필수 DOM 요소 확인 ---
         const totalCountEl = document.getElementById('totalCount');
         const chartCanvas = document.getElementById('categoryChart');
         const legendContainer = document.getElementById('customLegend');
         const timelineContainer = document.getElementById('timelineContainer');
 
-        // 요소가 하나라도 없으면 라이브러리 로드를 기다리거나 실행 중단
         if (!totalCountEl || !chartCanvas) {
             console.warn("⚠️ 대시보드 요소를 찾을 수 없어 로드를 중단합니다.");
             return;
@@ -141,7 +139,6 @@ async function loadDashboard() {
         
         totalCountEl.innerText = dataValues.reduce((a, b) => a + b, 0);
 
-        // --- [안전장치 2] Chart.js 로드 확인 ---
         if (typeof Chart !== 'undefined') {
             new Chart(chartCanvas, {
                 type: 'doughnut',
@@ -163,7 +160,6 @@ async function loadDashboard() {
             });
         }
 
-        // 범례 생성
         if (legendContainer) {
             legendContainer.innerHTML = ''; 
             labels.forEach((label, i) => {
@@ -178,7 +174,6 @@ async function loadDashboard() {
             });
         }
 
-        // 타임라인 생성
         if (timelineContainer) {
             timelineContainer.innerHTML = '';
             posts.slice(0, 3).forEach(post => {
@@ -218,4 +213,9 @@ function initProjectSection() {
   initProjectPosts();
 }
 
+function initDashboard() {
+  loadDashboard();
+}
+
 window.initProjectSection = initProjectSection;
+window.initDashboard = initDashboard;
