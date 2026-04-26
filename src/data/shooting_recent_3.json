@@ -1,0 +1,32 @@
+[
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[Quartz Scheduler 完] 장애 자동 감지/자가 복구 도입 결과 요약",
+    "date": "2026.04.21 22:59",
+    "summary": "Quartz Schedulerr 특정 job의 정지에 따른 원인 분석 및 장애 자동 감지/자가 복구 도입 결과 요약",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0006.md",
+    "private_page": "N"
+  },
+  {
+    "no": "5",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[서비스 대응] 장애 상황 로그 분석 효율 개선",
+    "date": "2026.02.22 20:15",
+    "summary": "로그 통한 장애 분석 효율성 개선",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0005.md",
+    "private_page": "N"
+  },
+  {
+    "no": "4",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[Quartz Scheduler 下] NTP 시간 변경으로 인한 Quartz 스케줄러 특정 Job 미실행 장애 예방 방안",
+    "date": "2026.02.21 13:43",
+    "summary": "Quartz Scheduler 특정 job의 정지에 따른 원인 분석",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0004.md",
+    "private_page": "N"
+  }
+]
