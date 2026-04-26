@@ -98,9 +98,9 @@ async function initProjectPosts() {
   }, 50);
 }
 
-/* 트러블슈팅 게시물 */
+/* 최근 트러블슈팅 게시물 (3개) */
 async function initFeaturedProjects() {
-  const posts = await fetchPostData("../data/project/shooting_post/list.json");
+  const posts = await fetchPostData("../data/shooting_recent_3.json");
   renderPostList("trouble-post-list", posts, false);
 }
 
