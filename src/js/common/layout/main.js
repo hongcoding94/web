@@ -104,6 +104,108 @@ async function initFeaturedProjects() {
   renderPostList("trouble-post-list", posts, false);
 }
 
+/* 최근 활동 분포 */
+async function loadDashboard() {
+    try {
+        const response = await fetch('../data/total_posts.json');
+        if (!response.ok) return;
+        const posts = await response.json();
+
+        // --- [안전장치 1] 필수 DOM 요소 확인 ---
+        const totalCountEl = document.getElementById('totalCount');
+        const chartCanvas = document.getElementById('categoryChart');
+        const legendContainer = document.getElementById('customLegend');
+        const timelineContainer = document.getElementById('timelineContainer');
+
+        // 요소가 하나라도 없으면 라이브러리 로드를 기다리거나 실행 중단
+        if (!totalCountEl || !chartCanvas) {
+            console.warn("⚠️ 대시보드 요소를 찾을 수 없어 로드를 중단합니다.");
+            return;
+        }
+
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const colors = isDark ? 
+            ['#3498db', '#2ecc71', '#f1c40f', '#e67e22', '#9b59b6', '#1abc9c'] : 
+            ['#0984e3', '#00b894', '#fdcb6e', '#e17055', '#6c5ce7', '#1dd1a1'];
+
+        const counts = posts.reduce((acc, p) => {
+            const cat = String(p.category || '').trim();
+            if (cat && cat !== 'undefined' && cat !== 'null') {
+                acc[cat] = (acc[cat] || 0) + 1;
+            }
+            return acc;
+        }, {});
+
+        const labels = Object.keys(counts);
+        const dataValues = Object.values(counts);
+        
+        totalCountEl.innerText = dataValues.reduce((a, b) => a + b, 0);
+
+        // --- [안전장치 2] Chart.js 로드 확인 ---
+        if (typeof Chart !== 'undefined') {
+            new Chart(chartCanvas, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: colors,
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    cutout: '82%',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // 범례 생성
+        if (legendContainer) {
+            legendContainer.innerHTML = ''; 
+            labels.forEach((label, i) => {
+                const item = document.createElement('div');
+                item.className = 'chart_legend_item';
+                item.innerHTML = `
+                    <span class="chart_dot" style="background:${colors[i % colors.length]}"></span>
+                    <span class="chart_cat_name">${label}</span>
+                    <span class="chart_cat_val">${dataValues[i]}</span>
+                `;
+                legendContainer.appendChild(item);
+            });
+        }
+
+        // 타임라인 생성
+        if (timelineContainer) {
+            timelineContainer.innerHTML = '';
+            posts.slice(0, 3).forEach(post => {
+                const el = document.createElement('div');
+                el.className = 'chart_timeline_item';
+                el.innerHTML = `
+                    <div class="chart_time_date">${post.date}</div>
+                    <div class="chart_time_title">${post.title}</div>
+                    <div class="chart_time_tag"># ${post.category}</div>
+                `;
+                timelineContainer.appendChild(el);
+            });
+        }
+
+    } catch (e) {
+        console.error("❌ Dashboard Load Error:", e);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (typeof Chart === 'undefined') {
+        console.error("Chart.js 라이브러리가 로드되지 않았습니다.");
+        return;
+    }
+    loadDashboard();
+});
+
 function professionalExperience() {
   if (typeof changePage === 'function') {
     changePage('experience');
