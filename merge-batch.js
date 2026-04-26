@@ -52,13 +52,14 @@ function runBatch() {
 
     if (!fs.existsSync(DATA_ROOT)) {
         fs.mkdirSync(DATA_ROOT, { recursive: true });
+        console.log(`📁 폴더가 없어서 생성 : ${DATA_ROOT}`);
     }
 
     const allJsonFiles = getAllFiles(DATA_ROOT);
     let rawPosts = [];
 
     allJsonFiles.forEach(filePath => {
-        if (filePath.includes('total_posts.json') || filePath.includes('recent_3.json')) return;
+        if (filePath.includes('total_posts.json') || filePath.includes('recent_3.json') || filePath.includes('shooting_recent_3.json')) return;
 
         try {
             const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
