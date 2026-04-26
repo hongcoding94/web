@@ -35,15 +35,19 @@ function saveFileIfChanged(filePath, newData, logMessage) {
 }
 
 function getAllFiles(dirPath, arrayOfFiles = []) {
+
     const files = fs.readdirSync(dirPath);
     files.forEach(function (file) {
+
         const fullPath = path.join(dirPath, file);
         if (fs.statSync(fullPath).isDirectory()) {
             arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
         } else if (file.toLowerCase() === 'list.json') {
             arrayOfFiles.push(fullPath);
         }
+
     });
+
     return arrayOfFiles;
 }
 
@@ -57,9 +61,12 @@ function runBatch() {
 
     const allJsonFiles = getAllFiles(DATA_ROOT);
     let rawPosts = [];
-
     allJsonFiles.forEach(filePath => {
-        if (filePath.includes('total_posts.json') || filePath.includes('recent_3.json') || filePath.includes('shooting_recent_3.json')) return;
+        if (
+                filePath.includes('total_posts.json') 
+                || filePath.includes('recent_3.json')
+                || filePath.includes('shooting_recent_3.json')
+            ) return;
 
         try {
             const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -89,6 +96,7 @@ function runBatch() {
 
     const uniquePosts = Array.from(new Map(rawPosts.map(p => [p.data_url, p])).values());
 
+    // 전체 머지 포스트
     saveFileIfChanged(TOTAL_OUTPUT, uniquePosts, `전체 포스트 (${uniquePosts.length}개)`);
 
     // 최신 슈팅 포스트 3개
@@ -96,14 +104,14 @@ function runBatch() {
         .filter(post => post.category === 'Shooting')
         .slice(0, 3);
 
-    saveFileIfChanged(SHOOTING_RECENT_OUTPUT, shootingRecent, `최신 슈팅 포스트 (${shootingRecent.length}개)`);
+    saveFileIfChanged(SHOOTING_RECENT_OUTPUT, shootingRecent, `최신 트러블슈팅 포스트 (${shootingRecent.length}개)`);
 
     // 최신 포스트 3개 (슈팅 제외)
-    const Recent = uniquePosts
+    const recent = uniquePosts
         .filter(post => post.category !== 'Shooting')
         .slice(0, 3);
 
-    saveFileIfChanged(RECENT_OUTPUT, Recent, `최신 포스트 (${Recent.length}개)`);
+    saveFileIfChanged(RECENT_OUTPUT, recent, `최신 포스트 (${recent.length}개)`);
 }
 
 // 배치 실행
