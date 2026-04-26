@@ -288,7 +288,7 @@ body.dark .chart_dashboard_wrapper {
 .chart_timeline { border-left: 2px solid var(--chart-line); padding-left: 25px; margin-left: 10px; }
 .chart_timeline_item { position: relative; margin-bottom: 30px; }
 .chart_timeline_item::before {
-    content: ''; position: absolute; left: -31px; top: 6px;
+    content: ''; position: absolute; left: -33px; top: 6px;
     width: 10px; height: 10px; background: var(--chart-card);
     border: 2px solid var(--chart-point); border-radius: 50%;
 }
