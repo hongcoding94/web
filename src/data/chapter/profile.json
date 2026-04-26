@@ -1,0 +1,50 @@
+{
+    "intro": {
+        "slogan": "시스템의 안정성을 위해 본질적인 해결책을 고민하는 개발자",
+        "headline": "Stay<br>Unfinished.",
+        "description": "안정적인 서비스를 제공하기 위해 장애의 발생 원인을 면밀히 분석하고, 재발 방지를 고려한 견고한 구조를 설계하는 데 집중합니다. 지속 가능한 시스템을 만들기 위해 세밀한 부분까지 놓치지 않는 꼼꼼함으로 업무에 임하고 있습니다."
+    },
+    "expertise": [
+        {
+            "title": "Financial System Integrity",
+            "desc": "엄격한 규제와 대규모 트래픽이 공존하는 금융 시스템의 안정성을 책임집니다.",
+            "details": [
+                "<strong>우리은행</strong>: 850만 건 규모 개인정보 분리보관 시스템 구축 및 배치 자동화",
+                "<strong>모니모</strong>: KYC(고객확인) 및 FATCA 연계 모바일 상품 가입 API 설계",
+                "<strong>삼성증권</strong>: Compliance 통합 관리 및 업무 To-Do 프로세스 개발"
+            ]
+        },
+        {
+            "title": "DB & Troubleshooting",
+            "desc": "이기종 DBMS 환경에서 발생하는 복잡한 이슈를 해결하고 쿼리 성능을 최적화합니다.",
+            "details": [
+                "<strong>LG CNS</strong>: 460개 고객사 DB 메타 분석 기반 자동 DDL 생성 로직 설계",
+                "<strong>우리은행</strong>: 마이데이터 연계 수신 데이터 가공 및 SQL 성능 개선"
+            ]
+        },
+        {
+            "title": "Automation & Efficiency",
+            "desc": "반복적인 비효율을 제거하여 개발자와 운영자 모두의 생산성을 높입니다.",
+            "details": [
+                "<strong>LG생활건강</strong>: 사내 포털 Java 1.5 → 1.8 업그레이드 및 웹 표준화 완수",
+                "<strong>Workflow</strong>: GitHub Actions 및 PowerShell을 활용한 반복 작업 자동화",
+                "<strong>행정안전부</strong>: 취학아동 정보 관리 고도화 및 리포트 연동 최적화"
+            ]
+        }
+    ],
+    "systemLogs": [
+        { "label": "Focus_Density", "value": "EXTREME", "desc": "관심 있는 대상에 시간을 잊고 몰두하는 성향" },
+        { "label": "Perfectionism", "value": "HIGH", "desc": "세부 디테일과 결과의 무결성에 대한 집착" },
+        { "label": "Analysis_Depth", "value": "DEEP", "desc": "다층적 분석을 통한 오버싱킹과 본질 파악" },
+        { "label": "Experimental", "value": "FEARLESS", "desc": "새로운 기술적 접근에 대한 주저 없는 시도" }
+    ],
+    "philosophy": [
+        { "title": "Persistence", "content": "에러 로그 속에서 정답을 찾아낼 때까지 멈추지 않는 집요함을 즐깁니다." },
+        { "title": "Meaningful", "content": "작동하는 코드를 넘어, 시스템이 존재해야 하는 '이유'를 설계합니다." },
+        { "title": "Growth", "content": "익숙함에 안주하지 않고, 두려움을 동력 삼아 끊임없이 절벽을 오릅니다." }
+    ],
+    "identity": {
+        "footer": "지금의 나를 만든 것은 과거의 경험과 도전입니다.",
+        "nextStep": ""
+    }
+}

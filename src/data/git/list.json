@@ -3,7 +3,7 @@
     "no": "3",
     "id": "hongcoding94",
     "category": "Git",
-    "title": "PR 단계에서 GitHub Actions으로 협업 규칙을 강제하는 구조",
+    "title": "PR 단계에서 GitHub Actions 구축하여 팀 컨벤션을 자동으로 준수하는 환경 조성",
     "date": "2026.04.25 18:40",
     "summary": "무분별한 Commit&Push를 1차적으로 GitHub Actions를 통한 검증 방법",
     "data_url": "../data/git/git_post/git_post0003.md",

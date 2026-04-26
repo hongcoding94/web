@@ -217,5 +217,9 @@ function initDashboard() {
   loadDashboard();
 }
 
+function aboutProfileInfo() {
+  location.href = "./about.html";
+}
+
 window.initProjectSection = initProjectSection;
 window.initDashboard = initDashboard;
