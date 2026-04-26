@@ -45,7 +45,7 @@ function renderPostList(containerId, posts , checkPrivate = false) {
   if (posts.length === 0) {
     listEl.innerHTML = `
       <li class="no-data">
-        <p>게시물이 없습니다. 곧 새로운 소식으로 찾아뵙겠습니다!</p>
+        <p>게시물이 없습니다. \n곧 새로운 소식으로 찾아뵙겠습니다!</p>
       </li>`;
     return;
   }

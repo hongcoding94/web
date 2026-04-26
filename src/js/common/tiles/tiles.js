@@ -3,7 +3,10 @@ window.loadTile = async (id, file, state = {}, push = true) => {
     document.body.style.overflow = '';
 
     const res = await fetch(file);
-    if (!res.ok) throw new Error(file);
+    if (!res.ok) {
+        location.href = "/web/src/pages/404.html"; 
+        return;
+    };
 
     const html = await res.text();
     const target = document.getElementById(id);
@@ -47,7 +50,9 @@ window.loadTile = async (id, file, state = {}, push = true) => {
             if (window.loadMarkdown) window.loadMarkdown(state.markdownPath);
         }
 
-        window.initDashboard();
+        if(window.initDashboard){
+            window.initDashboard();
+        }
     }
 
     if (id === "sidebar") {
@@ -59,7 +64,6 @@ window.loadTile = async (id, file, state = {}, push = true) => {
             hamburger.onclick = window.toggleSidebar;
         }
     }
-
 };
 
 document.addEventListener("click", (e) => {

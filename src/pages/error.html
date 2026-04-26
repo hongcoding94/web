@@ -79,7 +79,7 @@
     (function() {
         function updateTimestamp() {
             const now = new Date();
-            document.getElementById('timestamp').textContent = now.toISOString().split('.')[0] + 'Z';
+            document.getElementById('timestamp').textContent = now.toISOString().split('.')[0].replace('T', ' ');
         }
         
         updateTimestamp();
