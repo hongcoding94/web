@@ -72,8 +72,8 @@
     ]
   }
   , {
-    "key": "Git",
-    "title": "Git",
+    "key": "Configuration",
+    "title": "Configuration",
     "children": [
       {
         "key": "Git",
