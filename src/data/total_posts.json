@@ -1,0 +1,1575 @@
+[
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Git",
+    "title": "PR 단계에서 GitHub Actions으로 협업 규칙을 강제하는 구조",
+    "date": "2026.04.25 18:40",
+    "summary": "",
+    "data_url": "../data/git/git_post/git_post0003.md",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "hongcoding94",
+    "category": "Git",
+    "title": "실무 Git 사용 가이드 (협업 사고 방지용)",
+    "date": "2026.04.25 02:20",
+    "summary": "협업 시 발생할 수 있는 Git 관련 사고 방지 및 효율적인 사용 방법",
+    "data_url": "../data/git/git_post/git_post0002.md",
+    "private_page": "N"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[Quartz Scheduler 完] 장애 자동 감지/자가 복구 도입 결과 요약",
+    "date": "2026.04.21 22:59",
+    "summary": "Quartz Schedulerr 특정 job의 정지에 따른 원인 분석 및 장애 자동 감지/자가 복구 도입 결과 요약",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0006.md",
+    "private_page": "N"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Git",
+    "title": "GitHub Actions를 활용한 JSON 파일 자동 병합 및 배포",
+    "date": "2026.04.19 23:12",
+    "summary": "최신글 병합 및 메인화면 반영 자동화",
+    "data_url": "../data/git/git_post/git_post0001.md",
+    "private_page": "N"
+  },
+  {
+    "no": "41",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch 메타 테이블 운영 전략",
+    "date": "2026.04.19",
+    "summary": "운영 환경 이력 관리",
+    "data_url": "../backend/20260419-batch-meta.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "42",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Multi DataSource 구성",
+    "date": "2026.04.18",
+    "summary": "여러 DB 환경 배치 설계",
+    "data_url": "../backend/20260418-batch-multidatasource.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "43",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch PagingItemReader 적용",
+    "date": "2026.04.17",
+    "summary": "페이징 기반 데이터 처리",
+    "data_url": "../backend/20260417-batch-paging.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "44",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch JDBC Cursor 기반 처리",
+    "date": "2026.04.16",
+    "summary": "대용량 조회 성능 관리",
+    "data_url": "../backend/20260416-batch-jdbc-cursor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "45",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch ItemWriter 성능 최적화",
+    "date": "2026.04.15",
+    "summary": "Batch Insert와 Flush 전략",
+    "data_url": "../backend/20260415-batch-itemwriter.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "46",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch ItemProcessor 책임 분리",
+    "date": "2026.04.14",
+    "summary": "비즈니스 로직 처리 전략",
+    "data_url": "../backend/20260414-batch-itemprocessor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "47",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Custom ItemReader 구현",
+    "date": "2026.04.13",
+    "summary": "복잡한 조회 로직 분리 설계",
+    "data_url": "../backend/20260413-batch-itemreader.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "48",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch JobParameters 설계 기준",
+    "date": "2026.04.12",
+    "summary": "재실행 방지를 위한 파라미터 전략",
+    "data_url": "../backend/20260412-batch-jobparameters.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "49",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Flow 기반 Job 제어",
+    "date": "2026.04.11",
+    "summary": "Flow와 Decider 활용 전략",
+    "data_url": "../backend/20260411-batch-flow.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "50",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Multi-Step Job 설계 패턴",
+    "date": "2026.04.10",
+    "summary": "Step 흐름 제어와 조건 분기",
+    "data_url": "../backend/20260410-batch-multistep.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "51",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Partition 방식 적용 사례",
+    "date": "2026.04.09",
+    "summary": "대량 데이터 분할 처리 전략",
+    "data_url": "../backend/20260409-batch-partition.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "52",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch 병렬 처리 구조 설계",
+    "date": "2026.04.08",
+    "summary": "TaskExecutor 기반 병렬 Step 실행",
+    "data_url": "../backend/20260408-batch-parallel.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "53",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch StepExecution 흐름 분석",
+    "date": "2026.04.07",
+    "summary": "Step 상태 관리와 종료 조건",
+    "data_url": "../backend/20260407-batch-stepexecution.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "54",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch 실패 재처리 전략",
+    "date": "2026.04.06",
+    "summary": "Skip, Retry 정책 활용",
+    "data_url": "../backend/20260406-batch-skip-retry.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "55",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch 재시작 가능한 Job 설계",
+    "date": "2026.04.05",
+    "summary": "ExecutionContext 기반 Restart 처리",
+    "data_url": "../backend/20260405-batch-restart.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "56",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch 트랜잭션 경계 설정 전략",
+    "date": "2026.04.04",
+    "summary": "Chunk 단위 트랜잭션 관리 방식",
+    "data_url": "../backend/20260404-batch-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "57",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch JobRepository 내부 동작 원리",
+    "date": "2026.04.03",
+    "summary": "메타 테이블과 실행 이력 관리 구조",
+    "data_url": "../backend/20260403-batch-jobrepository.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "58",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch JobLauncher 실행 구조 분석",
+    "date": "2026.04.02",
+    "summary": "동기·비동기 Job 실행 방식 비교",
+    "data_url": "../backend/20260402-batch-joblauncher.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "59",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Job과 Step 책임 분리 설계",
+    "date": "2026.04.01",
+    "summary": "Job 흐름과 Step 단위 실행 전략",
+    "data_url": "../backend/20260401-batch-job-step.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "60",
+    "id": "hongcoding94",
+    "category": "SpringBatch",
+    "title": "Spring Batch Chunk 기반 대용량 데이터 처리 아키텍처",
+    "date": "2026.03.31",
+    "summary": "ItemReader-Processor-Writer 구조를 활용한 안정적인 배치 처리",
+    "data_url": "../backend/20260331-batch-chunk.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "30",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "서비스 아키텍처 회고",
+    "date": "2026.03.30",
+    "summary": "확장성과 유지보수 관점 정리",
+    "data_url": "../pages/tiles/content.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "29",
+    "id": "devhong",
+    "category": "Frontend",
+    "title": "API 버저닝 전략",
+    "date": "2026.03.29",
+    "summary": "하위 호환성 유지 방법",
+    "data_url": "/backend/20260329-version.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "28",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "보안 필터 체인 이해",
+    "date": "2026.03.28",
+    "summary": "Spring Security 동작 구조",
+    "data_url": "/backend/20260328-security.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "27",
+    "id": "frontendlab",
+    "category": "Frontend",
+    "title": "CSR과 SSR 비교",
+    "date": "2026.03.27",
+    "summary": "렌더링 방식 차이",
+    "data_url": "/backend/20260327-render.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "26",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "프론트-백엔드 역할 분리",
+    "date": "2026.03.26",
+    "summary": "협업을 위한 책임 분리",
+    "data_url": "/backend/20260326-role.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "25",
+    "id": "devhong",
+    "category": "Frontend",
+    "title": "API 응답 표준화",
+    "date": "2026.03.25",
+    "summary": "공통 Response 구조 설계",
+    "data_url": "/backend/20260325-response.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "24",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Exception Handler 구성",
+    "date": "2026.03.24",
+    "summary": "전역 예외 처리 패턴",
+    "data_url": "/backend/20260324-exception.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "23",
+    "id": "backendlab",
+    "category": "Frontend",
+    "title": "로그 설계 베스트 프랙티스",
+    "date": "2026.03.23",
+    "summary": "장애 분석을 위한 로그 전략",
+    "data_url": "/backend/20260323-log.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "22",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Spring Batch Chunk 방식",
+    "date": "2026.03.22",
+    "summary": "읽기-처리-쓰기 구조 이해",
+    "data_url": "/backend/20260322-chunk.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "21",
+    "id": "devhong",
+    "category": "Frontend",
+    "title": "배치 처리 개념 정리",
+    "date": "2026.03.21",
+    "summary": "대용량 데이터 처리 전략",
+    "data_url": "/backend/20260321-batch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "20",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "트랜잭션 전파 속성",
+    "date": "2026.03.20",
+    "summary": "Spring 트랜잭션 동작 원리",
+    "data_url": "/backend/20260320-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "19",
+    "id": "backendlab",
+    "category": "Frontend",
+    "title": "DB 커넥션 풀 개념",
+    "date": "2026.03.19",
+    "summary": "성능 개선을 위한 필수 개념",
+    "data_url": "/backend/20260319-datasource.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "18",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "HTTP 상태 코드 정리",
+    "date": "2026.03.18",
+    "summary": "자주 쓰이는 상태 코드 의미",
+    "data_url": "/backend/20260318-httpcode.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "frontendlab",
+    "title": "React 프론트엔드 테스트 전략",
+    "date": "2026.03.17",
+    "summary": "Jest, React Testing Library를 활용한 단위/통합 테스트",
+    "data_url": "../frontend/20260317-react-test.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "securitylab",
+    "category": "Frontend",
+    "title": "세션과 토큰 비교",
+    "date": "2026.03.17",
+    "summary": "상태 관리 방식의 차이",
+    "data_url": "/backend/20260317-session.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "backendlab",
+    "category": "Postgresql",
+    "title": "PostgreSQL 고가용성과 복제 전략",
+    "date": "2026.03.17",
+    "summary": "Streaming Replication, Patroni 활용",
+    "data_url": "../backend/postgresql/20260317-replication.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "backendlab",
+    "category": "Oracle",
+    "title": "Oracle 보안과 사용자 권한 관리",
+    "date": "2026.03.17",
+    "summary": "Role, Privilege 기반 접근 제어 설계",
+    "data_url": "../backend/oracle/20260317-security.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "backendlab",
+    "category": "Mysql",
+    "title": "MySQL 복제와 고가용성 전략",
+    "date": "2026.03.17",
+    "summary": "Master-Slave, Group Replication 활용",
+    "data_url": "../backend/mysql/20260317-replication.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "17",
+    "id": "backendlab",
+    "category": "Java",
+    "title": "Java 서버 아키텍처 회고",
+    "date": "2026.03.17",
+    "summary": "확장성과 유지보수 관점 정리",
+    "data_url": "../pages/tiles/20260317-java-architecture.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "reacthong",
+    "title": "React 서버 사이드 렌더링(SSR) 기본",
+    "date": "2026.03.16",
+    "summary": "Next.js 기반 SSR 개념과 초기 구현",
+    "data_url": "../frontend/20260316-react-ssr.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "JWT 인증 흐름 정리",
+    "date": "2026.03.16",
+    "summary": "토큰 기반 인증 구조",
+    "data_url": "/backend/20260316-jwt.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL 보안과 권한 관리",
+    "date": "2026.03.16",
+    "summary": "Role, Privilege 기반 접근 제어 설계",
+    "data_url": "../backend/postgresql/20260316-security.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle 백업과 복구 전략",
+    "date": "2026.03.16",
+    "summary": "RMAN과 Export/Import를 활용한 안정적 관리",
+    "data_url": "../backend/oracle/20260316-backup.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL 보안과 사용자 권한 관리",
+    "date": "2026.03.16",
+    "summary": "Role, Privilege 기반 접근 제어 설계",
+    "data_url": "../backend/mysql/20260316-security.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "16",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java API 응답 구조 설계",
+    "date": "2026.03.16",
+    "summary": "REST API Response 표준화 설계",
+    "data_url": "../pages/tiles/20260316-java-response.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "frontendlab",
+    "title": "React Form Validation 심화",
+    "date": "2026.03.15",
+    "summary": "React Hook Form 및 Yup 활용",
+    "data_url": "../frontend/20260315-react-validation.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Frontend",
+    "title": "CORS 오류 발생 원인",
+    "date": "2026.03.15",
+    "summary": "브라우저 보안 정책 이해",
+    "data_url": "/backend/20260315-cors.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Postgresql",
+    "title": "PostgreSQL 백업과 복구 전략",
+    "date": "2026.03.15",
+    "summary": "pg_dump, pg_restore 기반 관리",
+    "data_url": "../backend/postgresql/20260315-backup.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Oracle",
+    "title": "Oracle 데이터 마이그레이션 전략",
+    "date": "2026.03.15",
+    "summary": "테이블 복사, 덤프, 데이터 이동 전략",
+    "data_url": "../backend/oracle/20260315-migration.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Mysql",
+    "title": "MySQL 백업과 복구 전략",
+    "date": "2026.03.15",
+    "summary": "mysqldump와 복원 전략",
+    "data_url": "../backend/mysql/20260315-backup.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Spring",
+    "title": "CORS 오류와 백엔드 처리 이해",
+    "date": "2026.03.15",
+    "summary": "브라우저 보안 정책과 백엔드 처리 이해",
+    "data_url": "../pages/tiles/20260315-cors.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "15",
+    "id": "devhong",
+    "category": "Java",
+    "title": "Java Spring Interceptor 활용",
+    "date": "2026.03.15",
+    "summary": "공통 로직 처리와 요청 필터링",
+    "data_url": "../pages/tiles/20260315-java-interceptor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "reacthong",
+    "title": "React 최적화와 렌더링 성능 개선",
+    "date": "2026.03.14",
+    "summary": "React.memo, useMemo, useCallback 활용",
+    "data_url": "../frontend/20260314-react-optimize.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "ES6 모듈 시스템 이해",
+    "date": "2026.03.14",
+    "summary": "import/export 구조와 번들링",
+    "data_url": "/backend/20260314-module.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL 데이터 마이그레이션 전략",
+    "date": "2026.03.14",
+    "summary": "테이블 복사, 덤프, 데이터 이동 전략",
+    "data_url": "../backend/postgresql/20260314-migration.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle 성능 모니터링과 통계 테이블",
+    "date": "2026.03.14",
+    "summary": "자동 통계 갱신과 쿼리 튜닝 지표 활용",
+    "data_url": "../backend/oracle/20260314-statistics.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL 데이터 마이그레이션 전략",
+    "date": "2026.03.14",
+    "summary": "테이블 복사, 덤프, 데이터 이동 전략",
+    "data_url": "../backend/mysql/20260314-migration.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "ES6 모듈 시스템과 백엔드 연동",
+    "date": "2026.03.14",
+    "summary": "import/export 구조와 번들링, 백엔드 연동 고려",
+    "data_url": "../pages/tiles/20260314-module.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "14",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java Servlet 기반 JWT 인증 처리",
+    "date": "2026.03.14",
+    "summary": "토큰 기반 인증 흐름과 세션 관리",
+    "data_url": "../pages/tiles/20260314-java-jwt.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "frontendlab",
+    "title": "React 컴포넌트 재사용 패턴",
+    "date": "2026.03.13",
+    "summary": "재사용 가능한 UI 컴포넌트 구조 설계",
+    "data_url": "../frontend/20260313-react-reuse.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Frontend",
+    "title": "페이징 처리 기본 공식",
+    "date": "2026.03.13",
+    "summary": "limit, offset 기반 페이징 설계",
+    "data_url": "/backend/20260313-paging.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Postgresql",
+    "title": "PostgreSQL 성능 모니터링과 통계 활용",
+    "date": "2026.03.13",
+    "summary": "EXPLAIN, VACUUM, ANALYZE 기반 최적화",
+    "data_url": "../backend/postgresql/20260313-performance.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Oracle",
+    "title": "Oracle 데이터 타입과 제약조건 관리",
+    "date": "2026.03.13",
+    "summary": "NOT NULL, UNIQUE, CHECK, FK 관리 전략",
+    "data_url": "../backend/oracle/20260313-datatype.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Mysql",
+    "title": "MySQL 성능 모니터링과 쿼리 최적화",
+    "date": "2026.03.13",
+    "summary": "EXPLAIN, 쿼리 캐시, 인덱스 활용",
+    "data_url": "../backend/mysql/20260313-performance.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Spring",
+    "title": "백엔드 페이징 처리 공식",
+    "date": "2026.03.13",
+    "summary": "limit, offset 기반 백엔드 페이징 설계",
+    "data_url": "../pages/tiles/20260313-paging.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "13",
+    "id": "backendlab",
+    "category": "Java",
+    "title": "Java 로깅과 예외 추적",
+    "date": "2026.03.13",
+    "summary": "Log4j, SLF4J를 활용한 장애 분석",
+    "data_url": "../pages/tiles/20260313-java-log.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "reacthong",
+    "title": "React 비동기 데이터 처리 (Thunk, Saga)",
+    "date": "2026.03.12",
+    "summary": "백엔드 API 호출과 상태 동기화",
+    "data_url": "../frontend/20260312-react-async.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Servlet과 Filter 차이",
+    "date": "2026.03.12",
+    "summary": "요청 흐름 기준으로 이해하기",
+    "data_url": "/backend/20260312-filter.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL 데이터 타입과 제약조건 관리",
+    "date": "2026.03.12",
+    "summary": "NOT NULL, UNIQUE, CHECK, FK 관리 전략",
+    "data_url": "../backend/postgresql/20260312-datatype.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle 트리거와 이벤트 활용",
+    "date": "2026.03.12",
+    "summary": "데이터 변경 이벤트 기반 로직 처리",
+    "data_url": "../backend/oracle/20260312-trigger.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL 데이터 타입과 제약조건 관리",
+    "date": "2026.03.12",
+    "summary": "NOT NULL, UNIQUE, CHECK, FK 관리 전략",
+    "data_url": "../backend/mysql/20260312-datatype.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "Servlet/Filter 백엔드 요청 흐름 이해",
+    "date": "2026.03.12",
+    "summary": "요청 흐름 기준으로 백엔드 처리 이해",
+    "data_url": "../pages/tiles/20260312-filter.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "12",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Spring Batch Chunk 처리 이해",
+    "date": "2026.03.12",
+    "summary": "대용량 데이터 읽기-처리-쓰기 구조",
+    "data_url": "../pages/tiles/20260312-java-batch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "frontendlab",
+    "title": "React Redux Toolkit 활용",
+    "date": "2026.03.11",
+    "summary": "Redux 보일러플레이트 감소와 구조화",
+    "data_url": "../frontend/20260311-react-redux-toolkit.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Frontend",
+    "title": "Interceptor 활용 사례",
+    "date": "2026.03.11",
+    "summary": "공통 로직 처리와 인증 필터링",
+    "data_url": "/backend/20260311-interceptor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Postgresql",
+    "title": "PostgreSQL 파티셔닝 전략 이해",
+    "date": "2026.03.11",
+    "summary": "대규모 테이블 관리와 쿼리 최적화",
+    "data_url": "../backend/postgresql/20260311-partition.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Oracle",
+    "title": "Oracle 파티셔닝 전략 이해",
+    "date": "2026.03.11",
+    "summary": "대규모 테이블 관리와 쿼리 최적화",
+    "data_url": "../backend/oracle/20260311-partition.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Mysql",
+    "title": "MySQL 파티셔닝 전략 이해",
+    "date": "2026.03.11",
+    "summary": "대규모 테이블 관리와 쿼리 최적화",
+    "data_url": "../backend/mysql/20260311-partition.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Spring",
+    "title": "Spring Interceptor 활용 백엔드 사례",
+    "date": "2026.03.11",
+    "summary": "공통 로직 처리와 인증 필터링, 백엔드 적용",
+    "data_url": "../pages/tiles/20260311-interceptor.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "11",
+    "id": "springhong",
+    "category": "Java",
+    "title": "Spring Controller와 RequestMapping",
+    "date": "2026.03.11",
+    "summary": "백엔드 요청 처리와 책임 분리 설계",
+    "data_url": "../pages/tiles/20260311-java-spring-controller.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "reacthong",
+    "title": "React 상태관리 라이브러리 Redux 기초",
+    "date": "2026.03.10",
+    "summary": "스토어, 액션, 리듀서 개념 이해",
+    "data_url": "../frontend/20260310-react-redux.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Axios vs Fetch 비교",
+    "date": "2026.03.10",
+    "summary": "라이브러리 선택 기준 정리",
+    "data_url": "/backend/20260310-axios.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL Lock과 동시성 제어",
+    "date": "2026.03.10",
+    "summary": "행 단위 잠금과 트랜잭션 충돌 방지",
+    "data_url": "../backend/postgresql/20260310-lock.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle Lock과 동시성 제어",
+    "date": "2026.03.10",
+    "summary": "테이블/행 단위 잠금과 트랜잭션 충돌 방지",
+    "data_url": "../backend/oracle/20260310-lock.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL Lock과 동시성 제어",
+    "date": "2026.03.10",
+    "summary": "테이블/행 단위 잠금과 트랜잭션 충돌 방지",
+    "data_url": "../backend/mysql/20260310-lock.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "Axios/Fetch 기반 백엔드 통신 비교",
+    "date": "2026.03.10",
+    "summary": "백엔드 통신 라이브러리 선택 기준",
+    "data_url": "../pages/tiles/20260310-axios.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "10",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java Servlet과 Filter 구조 이해",
+    "date": "2026.03.10",
+    "summary": "HTTP 요청/응답 흐름과 필터링 구조",
+    "data_url": "../pages/tiles/20260310-java-servlet.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "frontendlab",
+    "title": "React 이벤트와 DOM 조작",
+    "date": "2026.03.09",
+    "summary": "SyntheticEvent와 ref 활용 방법",
+    "data_url": "../frontend/20260309-react-event.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Frontend",
+    "title": "JSON 응답 구조 설계 팁",
+    "date": "2026.03.09",
+    "summary": "프론트엔드 친화적인 응답 포맷",
+    "data_url": "/backend/20260309-json.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Postgresql",
+    "title": "PostgreSQL Function과 Trigger 활용",
+    "date": "2026.03.09",
+    "summary": "데이터 변경 이벤트 기반 로직 처리",
+    "data_url": "../backend/postgresql/20260309-function.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Oracle",
+    "title": "Oracle PL/SQL 기초",
+    "date": "2026.03.09",
+    "summary": "프로시저, 함수, 트리거 설계와 구현",
+    "data_url": "../backend/oracle/20260309-plsql.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Mysql",
+    "title": "MySQL Trigger와 이벤트 활용",
+    "date": "2026.03.09",
+    "summary": "데이터 변경 이벤트 기반 로직 처리",
+    "data_url": "../backend/mysql/20260309-trigger.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Spring",
+    "title": "백엔드 친화적 JSON 응답 구조 설계",
+    "date": "2026.03.09",
+    "summary": "프론트엔드 친화적이지만 백엔드 처리 기준 포함",
+    "data_url": "../pages/tiles/20260309-json.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "9",
+    "id": "devops_hong",
+    "category": "Java",
+    "title": "Java 트랜잭션 관리 이해",
+    "date": "2026.03.09",
+    "summary": "Spring Transaction과 전파 속성 활용",
+    "data_url": "../pages/tiles/20260309-java-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "reacthong",
+    "title": "React 컴포넌트 라이프사이클 이해",
+    "date": "2026.03.08",
+    "summary": "클래스형과 함수형 컴포넌트 비교",
+    "data_url": "../frontend/20260308-react-lifecycle.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Fetch 에러 처리 패턴",
+    "date": "2026.03.08",
+    "summary": "네트워크 오류와 서버 오류 분리 처리",
+    "data_url": "/backend/20260308-fetch-error.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL Join과 서브쿼리 활용",
+    "date": "2026.03.08",
+    "summary": "복합 쿼리 설계와 성능 고려",
+    "data_url": "../backend/postgresql/20260308-join.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle Join과 서브쿼리 활용",
+    "date": "2026.03.08",
+    "summary": "복합 쿼리 설계와 성능 고려",
+    "data_url": "../backend/oracle/20260308-join.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL Join과 서브쿼리 활용",
+    "date": "2026.03.08",
+    "summary": "복합 쿼리 설계와 성능 고려",
+    "data_url": "../backend/mysql/20260308-join.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "백엔드 연동 Fetch 에러 처리 패턴",
+    "date": "2026.03.08",
+    "summary": "백엔드 오류와 네트워크 오류 분리 처리",
+    "data_url": "../pages/tiles/20260308-fetch-error.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "8",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java JDBC 연동과 DB 처리",
+    "date": "2026.03.08",
+    "summary": "Connection, Statement, PreparedStatement 활용",
+    "data_url": "../pages/tiles/20260308-java-jdbc.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "title": "React Hooks 심화 활용",
+    "date": "2026.03.07",
+    "summary": "useMemo, useCallback 등 성능 최적화",
+    "data_url": "../frontend/20260307-react-hooks.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "category": "Frontend",
+    "title": "SPA와 MPA 구조 차이",
+    "date": "2026.03.07",
+    "summary": "페이지 전환 방식의 구조적 차이",
+    "data_url": "/backend/20260307-spa-mpa.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "postgresqllab",
+    "category": "Postgresql",
+    "title": "PostgreSQL View와 Materialized View 활용",
+    "date": "2026.03.07",
+    "summary": "데이터 조회 최적화 및 정기 리프레시 관리",
+    "data_url": "../backend/postgresql/20260307-view.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "category": "Oracle",
+    "title": "Oracle View와 Materialized View 활용",
+    "date": "2026.03.07",
+    "summary": "데이터 조회 최적화와 정기 리프레시 관리",
+    "data_url": "../backend/oracle/20260307-view.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "category": "Mysql",
+    "title": "MySQL View와 Stored Procedure 활용",
+    "date": "2026.03.07",
+    "summary": "데이터 조회 최적화 및 재사용 로직 설계",
+    "data_url": "../backend/mysql/20260307-view.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "category": "Spring",
+    "title": "SPA/MPA 구조와 백엔드 요청 처리 차이",
+    "date": "2026.03.07",
+    "summary": "페이지 전환 방식과 백엔드 데이터 처리 차이",
+    "data_url": "../pages/tiles/20260307-spa-mpa.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "7",
+    "id": "frontendlab",
+    "category": "Java",
+    "title": "Java I/O와 파일 처리",
+    "date": "2026.03.07",
+    "summary": "InputStream, OutputStream, Reader/Writer 활용",
+    "data_url": "../pages/tiles/20260307-java-io.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "reacthong",
+    "title": "React Form과 Controlled Components",
+    "date": "2026.03.06",
+    "summary": "폼 데이터 처리와 validation 구현",
+    "data_url": "../frontend/20260306-react-form.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "Tiles 기반 화면 구성 이해",
+    "date": "2026.03.06",
+    "summary": "공통 레이아웃과 영역 분리 전략",
+    "data_url": "/backend/20260306-tiles.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL Index 설계와 성능 최적화",
+    "date": "2026.03.06",
+    "summary": "B-Tree, GIN, GiST 인덱스 활용 전략",
+    "data_url": "../backend/postgresql/20260306-index.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle Index 설계와 성능 최적화",
+    "date": "2026.03.06",
+    "summary": "B-Tree, Bitmap 인덱스 활용 전략",
+    "data_url": "../backend/oracle/20260306-index.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL Index 설계와 성능 최적화",
+    "date": "2026.03.06",
+    "summary": "B-Tree, FULLTEXT 인덱스 활용 전략",
+    "data_url": "../backend/mysql/20260306-index.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "백엔드 연동 Tiles 기반 화면 구성",
+    "date": "2026.03.06",
+    "summary": "공통 레이아웃과 영역 분리 전략, 백엔드 연계 고려",
+    "data_url": "../pages/tiles/20260306-tiles.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "6",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java 동기/비동기 처리 구조",
+    "date": "2026.03.06",
+    "summary": "멀티스레드, Future, CompletableFuture 이해",
+    "data_url": "../pages/tiles/20260306-java-async.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "frontendlab",
+    "title": "React Router를 이용한 SPA 라우팅",
+    "date": "2026.03.05",
+    "summary": "페이지 전환과 URL 기반 라우팅 구현",
+    "data_url": "../frontend/20260305-react-router.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Frontend",
+    "title": "Spring Controller 구조 정리",
+    "date": "2026.03.05",
+    "summary": "RequestMapping 설계와 책임 분리",
+    "data_url": "/backend/20260305-controller.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Postgresql",
+    "title": "PostgreSQL SERIAL과 시퀀스 활용",
+    "date": "2026.03.05",
+    "summary": "PK 생성과 연속성 관리 방법",
+    "data_url": "../backend/postgresql/20260305-serial.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Oracle",
+    "title": "Oracle Sequence와 Auto Increment 활용",
+    "date": "2026.03.05",
+    "summary": "PK 생성과 연속성 관리 방법",
+    "data_url": "../backend/oracle/20260305-sequence.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Mysql",
+    "title": "MySQL AUTO_INCREMENT 활용과 PK 관리",
+    "date": "2026.03.05",
+    "summary": "PK 생성과 연속성 관리 방법",
+    "data_url": "../backend/mysql/20260305-autoinc.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Spring",
+    "title": "Spring Controller 책임 분리와 백엔드 설계",
+    "date": "2026.03.05",
+    "summary": "RequestMapping 설계와 책임 분리, 백엔드 처리 흐름 이해",
+    "data_url": "../pages/tiles/20260305-controller.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "springhong",
+    "category": "Java",
+    "title": "Java Stream API와 람다식 활용",
+    "date": "2026.03.05",
+    "summary": "함수형 프로그래밍 기반 데이터 처리",
+    "data_url": "../pages/tiles/20260305-java-stream.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "reacthong",
+    "title": "React Context API 활용",
+    "date": "2026.03.04",
+    "summary": "글로벌 상태 관리와 Context 구조 이해",
+    "data_url": "../frontend/20260304-react-context.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Frontend",
+    "title": "GET과 POST 차이 제대로 이해하기",
+    "date": "2026.03.04",
+    "summary": "보안과 데이터 전달 관점에서의 차이",
+    "data_url": "/backend/20260304-getpost.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Postgresql",
+    "title": "PostgreSQL 대용량 데이터 처리 전략",
+    "date": "2026.03.04",
+    "summary": "Chunk 단위 배치와 인덱스 활용",
+    "data_url": "../backend/postgresql/20260304-batch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Oracle",
+    "title": "Oracle 대용량 데이터 처리 전략",
+    "date": "2026.03.04",
+    "summary": "Chunk 단위 배치와 인덱스 활용",
+    "data_url": "../backend/oracle/20260304-batch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Mysql",
+    "title": "MySQL 대용량 데이터 처리 전략",
+    "date": "2026.03.04",
+    "summary": "Chunk 단위 배치와 인덱스 활용",
+    "data_url": "../backend/mysql/20260304-batch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Spring",
+    "title": "GET/POST 처리와 백엔드 데이터 흐름 이해",
+    "date": "2026.03.04",
+    "summary": "보안과 데이터 전달 관점에서 GET/POST 차이",
+    "data_url": "../pages/tiles/20260304-getpost.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "4",
+    "id": "api_master",
+    "category": "Java",
+    "title": "Java 컬렉션 프레임워크 활용",
+    "date": "2026.03.04",
+    "summary": "List, Set, Map 등 컬렉션 기본과 활용",
+    "data_url": "../pages/tiles/20260304-java-collection.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "frontendlab",
+    "title": "React Props와 이벤트 처리",
+    "date": "2026.03.03",
+    "summary": "컴포넌트 간 데이터 전달과 이벤트 처리 패턴",
+    "data_url": "../frontend/20260303-react-props.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "REST API 설계 기본 원칙",
+    "date": "2026.03.03",
+    "summary": "URI 설계와 HTTP Method 사용 기준",
+    "data_url": "/backend/20260303-rest.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL 테이블 및 컬럼 구조 조회",
+    "date": "2026.03.03",
+    "summary": "information_schema 기반 테이블/컬럼 조회",
+    "data_url": "../backend/postgresql/20260303-metadata.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle 테이블 및 컬럼 구조 조회",
+    "date": "2026.03.03",
+    "summary": "메타테이블 기반 테이블/컬럼 조회와 관리",
+    "data_url": "../backend/oracle/20260303-metadata.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL 테이블 및 컬럼 구조 조회",
+    "date": "2026.03.03",
+    "summary": "INFORMATION_SCHEMA 기반 테이블/컬럼 조회",
+    "data_url": "../backend/mysql/20260303-metadata.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "REST API 설계와 백엔드 원칙",
+    "date": "2026.03.03",
+    "summary": "URI 설계와 HTTP Method 사용 기준",
+    "data_url": "../pages/tiles/20260303-rest.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java 예외 처리와 Exception Handler",
+    "date": "2026.03.03",
+    "summary": "try-catch, throws, 전역 예외 처리 패턴",
+    "data_url": "../pages/tiles/20260303-java-exception.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "reacthong",
+    "title": "React 상태관리 기초 (useState, useEffect)",
+    "date": "2026.03.02",
+    "summary": "컴포넌트 상태와 라이프사이클 이해",
+    "data_url": "../frontend/20260302-react-state.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Frontend",
+    "title": "Promise와 async/await 정리",
+    "date": "2026.03.02",
+    "summary": "비동기 처리 흐름을 깔끔하게 정리하는 방법",
+    "data_url": "/backend/20260302-async.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Postgresql",
+    "title": "PostgreSQL 트랜잭션 관리와 커밋 전략",
+    "date": "2026.03.02",
+    "summary": "Spring Transaction과 트랜잭션 전파 이해",
+    "data_url": "../backend/postgresql/20260302-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Oracle",
+    "title": "Oracle 트랜잭션 관리와 커밋 전략",
+    "date": "2026.03.02",
+    "summary": "Spring Transaction과 트랜잭션 전파 이해",
+    "data_url": "../backend/oracle/20260302-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Mysql",
+    "title": "MySQL 트랜잭션 관리와 커밋 전략",
+    "date": "2026.03.02",
+    "summary": "Spring Transaction과 트랜잭션 전파 이해",
+    "data_url": "../backend/mysql/20260302-transaction.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Spring",
+    "title": "백엔드 비동기 처리 패턴 정리",
+    "date": "2026.03.02",
+    "summary": "백엔드 연동 비동기 처리 흐름 정리",
+    "data_url": "../pages/tiles/20260302-async.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "2",
+    "id": "devhong",
+    "category": "Java",
+    "title": "Java 상속과 인터페이스 활용",
+    "date": "2026.03.02",
+    "summary": "상속 구조와 인터페이스 구현 전략",
+    "data_url": "../pages/tiles/20260302-java-inheritance.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "frontendlab",
+    "title": "React 컴포넌트 기본 구조 이해",
+    "date": "2026.03.01",
+    "summary": "함수형/클래스형 컴포넌트 구조와 props 활용",
+    "data_url": "../frontend/20260301-react-component.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Frontend",
+    "title": "ES6 fetch로 템플릿 로딩하기",
+    "date": "2026.03.01",
+    "summary": "fetch API를 활용한 동적 HTML 로딩 방식",
+    "data_url": "/backend/20260301-fetch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Postgresql",
+    "title": "PostgreSQL JDBC 연결과 쿼리 실행",
+    "date": "2026.03.01",
+    "summary": "Connection, Statement, PreparedStatement 활용",
+    "data_url": "../backend/postgresql/20260301-jdbc.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Oracle",
+    "title": "Oracle JDBC 연결과 쿼리 실행",
+    "date": "2026.03.01",
+    "summary": "Connection, Statement, PreparedStatement 활용",
+    "data_url": "../backend/oracle/20260301-jdbc.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Mysql",
+    "title": "MySQL JDBC 연결과 쿼리 실행",
+    "date": "2026.03.01",
+    "summary": "Connection, Statement, PreparedStatement 활용",
+    "data_url": "../backend/mysql/20260301-jdbc.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Spring",
+    "title": "백엔드 연동용 동적 템플릿 로딩",
+    "date": "2026.03.01",
+    "summary": "fetch API를 활용한 동적 HTML 로딩 방식 (백엔드 연동 포함)",
+    "data_url": "../pages/tiles/20260301-fetch.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Java",
+    "title": "Java 클래스와 객체 기본 설계",
+    "date": "2026.03.01",
+    "summary": "객체 지향 원칙과 클래스 설계 방법",
+    "data_url": "../pages/tiles/20260301-java-class.html",
+    "private_page": "Y"
+  },
+  {
+    "no": "5",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[서비스 대응] 장애 상황 로그 분석 효율 개선",
+    "date": "2026.02.22 20:15",
+    "summary": "로그 통한 장애 분석 효율성 개선",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0005.md",
+    "private_page": "N"
+  },
+  {
+    "no": "4",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[Quartz Scheduler 下] NTP 시간 변경으로 인한 Quartz 스케줄러 특정 Job 미실행 장애 예방 방안",
+    "date": "2026.02.21 13:43",
+    "summary": "Quartz Scheduler 특정 job의 정지에 따른 원인 분석",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0004.md",
+    "private_page": "N"
+  },
+  {
+    "no": "3",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "[Quartz Scheduler 上] Agent Service Memory Issue",
+    "date": "2026.02.20 17:29",
+    "summary": "Quartz Scheduler 특정 job의 정지에 따른 원인 분석",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0003.md",
+    "private_page": "N"
+  },
+  {
+    "no": "2",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "JDK 상위 버전 마이그레이션 시 Windows 서비스 등록 불가로 인한 대처 방안",
+    "date": "2026.02.19 10:41",
+    "summary": "JDK 업그레이드로 Windows서비스 등록 불가",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0002.md",
+    "private_page": "N"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Shooting",
+    "title": "Agent Upgrade Query / Excel Table Column‘Add’ or ‘Modify’ Auto DDL",
+    "date": "2026.02.18 19:38",
+    "summary": "반복된 수행 작업을 Excel과 Query를 통한 자동화",
+    "data_url": "../data/project/shooting_post/markdown/shooting_post0001.md",
+    "private_page": "N"
+  }
+]
