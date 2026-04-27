@@ -108,10 +108,10 @@
    - 팀원들을 레포지토리에 초대할 때 역할을 구분
       - 경로 : Settings > Collaborators and teams
          ※ 팀원이 없을 경우 (아래와 같이 **팀원을 초대가 필요**)
-         ![가이드1](../../../img/git/git_post0003_002.png)
+         ![가이드1](../img/git/git_post0003_002.png)
   
          ※ 팀원이 있을 경우
-         ![가이드2](../../../img/git/git_post0003_003.png)
+         ![가이드2](../img/git/git_post0003_003.png)
 
       <br/>
 
