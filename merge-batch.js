@@ -101,15 +101,13 @@ function runBatch() {
 
     // 최신 슈팅 포스트 3개
     const shootingRecent = uniquePosts
-        .filter(post => post.category === 'Shooting')
-        .slice(0, 3);
+        .filter(post => post.category && post.category.toLowerCase() === 'shooting').slice(0, 3);
 
     saveFileIfChanged(SHOOTING_RECENT_OUTPUT, shootingRecent, `최신 트러블슈팅 포스트 (${shootingRecent.length}개)`);
 
     // 최신 포스트 3개 (슈팅 제외)
     const recent = uniquePosts
-        .filter(post => post.category !== 'Shooting')
-        .slice(0, 3);
+        .filter(post => !post.category || post.category.toLowerCase() !== 'shooting').slice(0, 3);
 
     saveFileIfChanged(RECENT_OUTPUT, recent, `최신 포스트 (${recent.length}개)`);
 }
