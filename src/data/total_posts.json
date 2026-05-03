@@ -1,12 +1,32 @@
 [
   {
+    "no": "2",
+    "id": "hongcoding94",
+    "category": "Linux",
+    "title": "Linux 서버 장애 대응 및 운영 통합 실무 가이드",
+    "date": "2026.05.03 20:00",
+    "summary": "Linux 서버 장애 대응 방법 정리",
+    "data_url": "../data/configuration/linux/linux_post/linux_post0002.md",
+    "private_page": "N"
+  },
+  {
+    "no": "1",
+    "id": "hongcoding94",
+    "category": "Linux",
+    "title": "개발자 실무 Linux 명령어 가이드",
+    "date": "2026.05.03 02:42",
+    "summary": "Linux 명령어 정리 및 활용 방법",
+    "data_url": "../data/configuration/linux/linux_post/linux_post0001.md",
+    "private_page": "N"
+  },
+  {
     "no": "3",
     "id": "hongcoding94",
     "category": "Git",
     "title": "PR 단계에서 GitHub Actions 구축하여 팀 컨벤션을 자동으로 준수하는 환경 조성",
     "date": "2026.04.25 18:40",
     "summary": "무분별한 Commit&Push를 1차적으로 GitHub Actions를 통한 검증 방법",
-    "data_url": "../data/git/git_post/git_post0003.md",
+    "data_url": "../data/configuration/git/git_post/git_post0003.md",
     "private_page": "N"
   },
   {
@@ -16,7 +36,7 @@
     "title": "실무 Git 사용 가이드 (협업 사고 방지용)",
     "date": "2026.04.25 02:20",
     "summary": "협업 시 발생할 수 있는 Git 관련 사고 방지 및 효율적인 사용 방법",
-    "data_url": "../data/git/git_post/git_post0002.md",
+    "data_url": "../data/configuration/git/git_post/git_post0002.md",
     "private_page": "N"
   },
   {
@@ -36,7 +56,7 @@
     "title": "GitHub Actions를 활용한 JSON 파일 자동 병합 및 배포",
     "date": "2026.04.19 23:12",
     "summary": "최신글 병합 및 메인화면 반영 자동화",
-    "data_url": "../data/git/git_post/git_post0001.md",
+    "data_url": "../data/configuration/git/git_post/git_post0001.md",
     "private_page": "N"
   },
   {
