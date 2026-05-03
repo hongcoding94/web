@@ -78,7 +78,13 @@
       {
         "key": "Git",
         "title": "Git",
-        "list_path": "../data/git/list.json",
+        "list_path": "../data/configuration/git/list.json",
+        "page": "list"
+      }
+      , {
+        "key": "Linux",
+        "title": "Linux",
+        "list_path": "../data/configuration/linux/list.json",
         "page": "list"
       }
     ]

@@ -12,7 +12,8 @@
 
 # 배경
 <aside>💡
-    N개 이상의 분산된 <code>list.json</code> 데이터를 수동으로 병합하던 비효율적인 구조를 개선하기 위해, GitHub Actions와 Node.js를 활용한 자동 병합 및 경로 최적화 엔진을 구축함.
+    N개 이상의 분산된 <code>list.json</code> 데이터를 수동으로 병합하던 비효율적인 구조를 개선하기 위해, <br/>
+    GitHub Actions와 Node.js를 활용한 자동 병합 및 경로 최적화 엔진을 구축함.
 </aside>
 
 <hr/>
