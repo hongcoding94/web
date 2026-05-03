@@ -38,14 +38,12 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 
     const files = fs.readdirSync(dirPath);
     files.forEach(function (file) {
-
         const fullPath = path.join(dirPath, file);
         if (fs.statSync(fullPath).isDirectory()) {
             arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
         } else if (file.toLowerCase() === 'list.json') {
             arrayOfFiles.push(fullPath);
         }
-
     });
 
     return arrayOfFiles;
