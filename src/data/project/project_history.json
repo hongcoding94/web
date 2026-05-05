@@ -8,7 +8,8 @@
 		"summary": "KYC(CDD/EDD)·FATCA 관련 React 화면 및 API 연계 개발",
 		"description":[ 
 			"고객확인제도(CDD / EDD) 공통 페이지 개발",
-			"해외계좌납세순응법 FATCA 공통 페이지 개발"
+			"해외계좌납세순응법 FATCA 공통 페이지 개발",
+			"우리은행 형상관리(PCMS) 등록 자동화 스크립트 설계 및 부서 내 배포를 통한 업무 표준화"
 		],
 		"techStack": {
 			"os": [
