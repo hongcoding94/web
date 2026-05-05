@@ -1,18 +1,12 @@
 # Git.io - web개발
 
-## 개발 사유
-리액트 개발 공부를 위해서 기존에 알던,  
-HTML, CSS, JS를 통해서 홈페이지 개발
-
-
-## tiles 영역별 function 역할
-※ 수정 중에 변동사항이 생길수 있습니다.
-	
-### tiles영역 
+### tiles
 ```PwoerShell
 	.. tiles영역 이외 내용 생략
 	|
 	+---pages
+    |   about.html
+    |   error.html
 	|   experience.html
 	|   index.html
 	|   main.html
@@ -73,7 +67,7 @@ HTML, CSS, JS를 통해서 홈페이지 개발
 | Fix<br/> Remove<br/> Feat  | 2026.04.21 | - 프로젝트 수행이력 기여도 퍼센테이지 추가 및 css 수정<br/> - 메인 페이지 프로젝트 수행이력 섹션 제거<br> - 메인 페이지 트러블슈팅 인기글 섹션 3개 노출 추가 |
 | Fix<br/>Feat | 2026.04.22 | - Git Actions Node ver.18 -> 24 업데이트 권장으로 수정<br/> - 머지봇 동시 실행 방지설정 추가<br/> - 메인.js 중복 코드 병합<br/> - modalPopup, toastPopup 기능 추가 |
 | Fix<br/>Feat | 2026.04.26 | - 머지 봇 전체 트러블슈팅 최신글 3개 Json 파일 추가<br/> - Git Actions로 병합한 카테고리 차트로 반영<br/> - error페이지 추가<br/> - 본인소개(about) 페이지 추가 |
-
+| Feat | 2026.05.05 | - content 상태값 수정 - content 단나누기 2단 추가  |
 
 ## 디렉토리 구조
 
@@ -146,10 +140,6 @@ HTML, CSS, JS를 통해서 홈페이지 개발
 ```
 	
 <hr/>
-
-
-
-
 
 
 

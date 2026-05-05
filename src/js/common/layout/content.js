@@ -166,6 +166,8 @@ async function loadMarkdown(path) {
 
             article.innerHTML = html;
 
+            enhanceTwoColumnTables(article);
+            enhanceMarkdownMeta(article);
             replaceVideoLinks(article);
             replaceCodeBlocks(article);
             generateTOC(document);
@@ -209,8 +211,151 @@ function replaceVideoLinks(root) {
     });
 }
 
-/*
-   Export
-*/
+function enhanceTwoColumnTables(root) {
+    if (!root) return;
+
+    const tables = root.querySelectorAll("table");
+
+    tables.forEach(table => {
+        if (table.dataset.twoColumnApplied === "true") return;
+
+        const headers = Array.from(table.querySelectorAll("th"))
+            .map(th => th.textContent.trim());
+
+        const headerSet = new Set(headers);
+
+        const isExactLeftRightTable =
+            headerSet.size === 2 &&
+            headerSet.has("왼쪽") &&
+            headerSet.has("오른쪽");
+
+        if (!isExactLeftRightTable) return;
+
+        const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "two-column-table";
+
+        const leftCol = document.createElement("div");
+        leftCol.className = "two-column left";
+
+        const rightCol = document.createElement("div");
+        rightCol.className = "two-column right";
+
+        const leftTable = document.createElement("table");
+        const rightTable = document.createElement("table");
+
+        const leftTbody = document.createElement("tbody");
+        const rightTbody = document.createElement("tbody");
+
+        rows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            if (cells.length < 2) return;
+
+            const leftCell = cells[0].cloneNode(true);
+            leftCell.querySelectorAll("img, video").forEach(el => {
+                el.classList.add("md-media");
+                if (el.tagName === "VIDEO") {
+                    el.classList.add("md-video");
+                }
+            });
+
+            const leftRow = document.createElement("tr");
+            leftRow.appendChild(leftCell);
+            leftTbody.appendChild(leftRow);
+
+            const rightCell = cells[1].cloneNode(true);
+            rightCell.querySelectorAll("img, video").forEach(el => {
+                el.classList.add("md-media");
+                if (el.tagName === "VIDEO") {
+                    el.classList.add("md-video");
+                }
+            });
+
+            const rightRow = document.createElement("tr");
+            rightRow.appendChild(rightCell);
+            rightTbody.appendChild(rightRow);
+        });
+
+        leftTable.appendChild(leftTbody);
+        rightTable.appendChild(rightTbody);
+
+        leftCol.appendChild(leftTable);
+        rightCol.appendChild(rightTable);
+
+        wrapper.appendChild(leftCol);
+        wrapper.appendChild(rightCol);
+
+        table.dataset.twoColumnApplied = "true";
+        table.replaceWith(wrapper);
+    });
+}
+
+function enhanceMarkdownMeta(article) {
+  if (!article) return;
+
+  const paragraphs = Array.from(article.querySelectorAll("p"));
+
+  for (const p of paragraphs) {
+    const lines = p.textContent
+      .split("\n")
+      .map(l => l.trim())
+      .filter(Boolean);
+
+    if (lines.length < 2) continue;
+
+    const metaItems = [];
+    for (const line of lines) {
+      if (!/^[^:]+:\s?.+/.test(line)) return;
+
+      const [label, ...rest] = line.split(":");
+      metaItems.push({
+        label: label.trim(),
+        value: rest.join(":").trim()
+      });
+    }
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "issue-meta";
+
+    const ul = document.createElement("ul");
+    ul.className = "issue-meta-list";
+
+    let statusValue = "";
+
+    metaItems.forEach(({ label, value }) => {
+      if (label === "진행 상황") statusValue = value;
+
+      const li = document.createElement("li");
+
+      const l = document.createElement("span");
+      l.className = "label";
+      l.textContent = label;
+
+      const v = document.createElement("span");
+      v.className = "value";
+      v.textContent = value;
+
+      li.append(l, v);
+      ul.appendChild(li);
+    });
+
+    if (statusValue) {
+      const badge = document.createElement("span");
+      badge.className = "issue-badge success";
+      badge.textContent = statusValue;
+      wrapper.appendChild(badge);
+    }
+
+    wrapper.appendChild(ul);
+
+    const h1 = article.querySelector("h1");
+    h1?.insertAdjacentElement("afterend", wrapper);
+
+    p.remove();
+    break;
+  }
+}
+
 window.loadMarkdown = loadMarkdown;
 window.initContent = initContent;
