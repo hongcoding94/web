@@ -162,11 +162,13 @@ async function loadMarkdown(path) {
             if (!res.ok) throw new Error(path);
 
             const markdown = await res.text();
-            const html = marked.parse(markdown);
+            const parsedMarkdown = parseTwoColumnMarkdown(markdown);
+            const html = marked.parse(parsedMarkdown);
 
             article.innerHTML = html;
 
-            enhanceTwoColumnTables(article);
+            // enhanceTwoColumnTables(article);
+            enhanceTwoColumnBlocks(article);
             enhanceMarkdownMeta(article);
             replaceVideoLinks(article);
             replaceCodeBlocks(article);
@@ -211,6 +213,72 @@ function replaceVideoLinks(root) {
     });
 }
 
+function parseTwoColumnMarkdown(markdown) {
+    if (!markdown) return markdown;
+
+    const pattern =
+        /<!-- two-column:start -->[\s\S]*?<!-- left -->[\s\S]*?<!-- right -->[\s\S]*?<!-- two-column:end -->/g;
+
+    return markdown.replace(pattern, (block) => {
+        const leftMatch = block.match(/<!-- left -->([\s\S]*?)<!-- right -->/);
+        const rightMatch = block.match(/<!-- right -->([\s\S]*?)<!-- two-column:end -->/);
+
+        if (!leftMatch || !rightMatch) return block;
+
+        return `<div class="two-column-block">
+                    <div class="two-column-raw left">
+                        ${leftMatch[1].trim()}
+                    </div>
+                    <div class="two-column-raw right">
+                        ${rightMatch[1].trim()}
+                    </div>
+                </div>`;
+    });
+}
+
+function enhanceTwoColumnBlocks(root) {
+    if (!root) return;
+
+    const blocks = root.querySelectorAll(".two-column-block");
+
+    blocks.forEach(block => {
+        if (block.dataset.inited === "true") return;
+
+        const leftRaw = block.querySelector(".two-column-raw.left");
+        const rightRaw = block.querySelector(".two-column-raw.right");
+
+        if (!leftRaw || !rightRaw) return;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "two-column-table";
+
+        const leftCol = document.createElement("div");
+        leftCol.className = "two-column left";
+        leftCol.innerHTML = leftRaw.innerHTML;
+
+        const rightCol = document.createElement("div");
+        rightCol.className = "two-column right";
+        rightCol.innerHTML = rightRaw.innerHTML;
+
+        [leftCol, rightCol].forEach(col => {
+            col.querySelectorAll("img, video").forEach(el => {
+                el.classList.add("md-media");
+                if (el.tagName === "VIDEO") {
+                    el.classList.add("md-video");
+                }
+            });
+        });
+
+        wrapper.appendChild(leftCol);
+        wrapper.appendChild(rightCol);
+
+        block.dataset.inited = "true";
+        block.replaceWith(wrapper);
+    });
+}
+
+/*
+ * @memo : markdown에서 html으로 변환 과정에서 부족한 영역이 많음
 function enhanceTwoColumnTables(root) {
     if (!root) return;
 
@@ -290,6 +358,7 @@ function enhanceTwoColumnTables(root) {
         table.replaceWith(wrapper);
     });
 }
+*/
 
 function enhanceMarkdownMeta(article) {
   if (!article) return;
